@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style type="text/css">
+		.class1{
+			font-size: 30px;
+			color:orange;
+		}
+		.first{
+			font-size: 20px;
+			color:pink;
+		}
+	</style>
+</head>
+<body>
+	<div class="wrap">
+		<button v-on:click="reverseMessage">反转字符串</button>
+		<p v-html="message" class="first"></p>
+	</div>
+</body>
+<script type="text/javascript" src="vue.min.js"></script>
+<script type="text/javascript">
+
+new Vue({
+	el:'.wrap',
+	data:{
+		message:'abcdefg',
+	},
+	methods:{
+		reverseMessage:function(){
+			// 获取当前的点击对象
+			var el = event.currentTarget;
+			this.message = this.message.split('').reverse().join('');
+			el.nextElementSibling.className = 'class1';	
+		}
+	}
+})
+
+
+</script>
+</html>

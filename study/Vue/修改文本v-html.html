@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style type="text/css">
+		p{
+			color:orange;
+		}
+	</style>
+</head>
+<body>
+
+	<!-- 使用 v-html 指令用于输出 html 代码 -->
+	<div id="app">
+		<p>{{html}}</p>
+		<p v-html="hello"></p>
+		<p v-html="123"></p>
+	</div>
+
+</body>
+
+<script type="text/javascript" src="vue.min.js"></script>
+<script>
+
+new Vue({
+	el:'#app',
+	data:{
+		html:'hello Vue.js!',
+		hello:'你好',
+		123:'数字',
+	}
+})
+
+</script>
+</html>

@@ -1,0 +1,12 @@
+nav a{
+	display: none;
+}
+.btn{
+	display: block;
+}
+header img{
+	margin-left:10%;
+}
+ul{
+	width: 50%;
+}

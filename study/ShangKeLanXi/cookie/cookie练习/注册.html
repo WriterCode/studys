@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <script src="../cookie.js"></script>
+</head>
+
+<body>
+    <form action="">
+        <p>
+            <label for="userId">用户名:</label>
+            <input type="text" name="userId" id="userId" placeholder="用户名/手机号">
+        </p>
+        <p>
+            <label for="password">密码:</label>
+            <input type="password" name="password" id="password" placeholder="密码">
+        </p>
+        <p>
+            <input type="button" value="登录" id="submit">
+        </p>
+    </form>
+</body>
+<script>
+    var userId = document.getElementById('userId'),
+        password = document.getElementById('password'),
+        submit = document.getElementById('submit');
+
+    submit.onclick = function() {
+        var u_val = userId.value;
+        var p_val = password.value;
+        //将json格式的字符串转换为json对象
+        //var obj = JSON.parse(str);
+        var coo_str = cookies('userInfo');
+        var info_arr = coo_str.split('|');
+        console.log(info_arr);
+        //用户名密码分开存储
+        /*if(!cookies('userId')){
+            alert('请先注册')
+        }else{
+            if(cookies('userId')==u_val&&cookies('password')==p_val){
+                window.location.href = 'http://www.baidu.com';
+            }else{
+                alert('用户名和密码不匹配')
+            }
+        }*/
+        var flag = false;
+        for (var i = 0; i < info_arr.length; i++) {
+            if (u_val == JSON.parse(info_arr[i])['userId'] && p_val == JSON.parse(info_arr[i])['password']) {
+                flag = true;
+                alert('登录成功');
+            }
+        }
+        if (!flag) {
+            alert('用户名或密码不正确');
+        }
+    }
+</script>
+
+</html>

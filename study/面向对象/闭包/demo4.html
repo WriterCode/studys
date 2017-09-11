@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>闭包绑定事件</title>
+</head>
+
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+        <li>8</li>
+        <li>9</li>
+        <li>10</li>
+    </ul>
+    <p>w1</p>
+    <p>w2</p>
+    <p>w3</p>
+    <p>w4</p>
+    <p>w5</p>
+    <p>w6</p>
+    <p>w7</p>
+    <p>w8</p>
+    <p>w9</p>
+    <p>w10</p>
+</body>
+<script>
+    var lis = document.querySelectorAll('li');
+    var ps = document.querySelectorAll('p');
+    for (var i = 0; i < lis.length; i++) {
+        (function(n) {
+            lis[n].onclick = function() {
+                alert(ps[n].innerHTML)
+            }
+        }(i));
+    }
+</script>
+
+</html>

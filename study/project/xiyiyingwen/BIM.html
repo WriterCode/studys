@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<link rel="stylesheet" href="BIM.css">
+	<link rel="stylesheet" href="rendering1.css" media="(max-width:1300px)">
+	<link rel="stylesheet" href="rendering2.css" media="(max-width:1200px)">
+	<link rel="stylesheet" href="rendering3.css" media="(max-width:1100px)">
+</head>
+<body>
+	<header class="header">
+		<nav>
+			<img src="img/1.png">
+			<a href="Home.html" class="home">Home</a>
+			<a href="ABOUT.html">ABOUT</a>
+			<a href="rendering.html">Renderings</a>
+			<a href="3D Animate.html" id="Animate">3D Animate</a>
+			<a href="BIM.html" id="BIM">BIM</a>
+			<a href="Contact.html">Contact</a>
+		</nav>
+		<div class="btn">
+			<p></p>
+			<p></p>
+			<p></p>
+		</div>
+		<div class="tk">
+			<p><a href="Home.html">Home</a></p>
+			<p><a href="ABOUT.html">ABOUT</a></p>
+			<p><a href="rendering.html">Renderings</a></p>
+			<p><a href="3D Animate.html">3D Animate</a></p>
+			<p><a href="BIM.html">BIM</a></p>
+			<p><a href="Contact.html">Contact</a></p>
+		</div>
+	</header>
+	<main class="main">
+		<main class="main-1 clearFix">
+			<main class="main-1-l l">
+				<main class="main-1-l-top">
+					<p style="font-size:18px; color:#616161; margin-top:80px;"><span>1</span>Model Completion</p>
+					<p style="font-size:16px; color:#1a1a1a;">Establishing and creating the visible and </p>
+					<p style="font-size:16px; color:#1a1a1a;">multi-dimension Architecture, Structural and MEP </p>
+				</main>
+				<main class="main-1-l-footer">
+					<img src="img/BIM-p1-1.png">
+					<img src="img/BIM-p1-2.png" style="margin-left:-20px">
+					<img src="img/BIM-p1-3.png" style="margin-left:-20px">
+				</main>
+			</main>
+			<main class="main-1-r l">
+				<img src="img/building1-half-t.png">
+			</main>
+		</main>
+		<main class="main-2 clearFix">
+			<main class="main-2-l l">
+				<main class="main-2-l-top">
+					<p style="font-size:18px; color:#616161; margin-top:80px;"><span>2</span>Model Completion</p>
+					<p style="font-size:16px; color:#1a1a1a;">Establishing and creating the visible and </p>
+					<p style="font-size:16px; color:#1a1a1a;">multi-dimension Architecture, Structural and MEP </p>
+				</main>
+				<main class="main-1-l-footer">
+					<img src="img/BIM-p2-1.jpg">
+					<img src="img/BIM-p2-2.jpg" style="margin-left:10px">
+				</main>
+			</main>
+			<main class="main-2-r l">
+				<img src="img/building1-half-b.png">
+			</main>
+		</main>
+	</main>
+	<footer>
+		<header></header>
+		<main class="footer-main clearFix">
+			<main class="footer-main-1 l"></main>
+			<main class="footer-main-2 l"></main>
+			<main class="footer-main-3 l"></main>
+			<main class="footer-main-4 l"></main>
+		</main>
+		<footer class="footer">
+			<p>Copyinght @ 1998-2015 shining Group</p>
+		</footer>
+	</footer>
+	<script type="text/javascript">
+    	var btn = document.querySelector('.btn');
+    	var tk = document.querySelector('.tk');
+    	var btn1 = document.querySelector('.btn1');
+    	var bol = true;
+    	btn.onclick = function(){
+    		if(bol){
+    			tk.style.display = 'block';
+    			bol = !bol;
+    		}else{
+    			tk.style.display = 'none';
+    			bol = !bol;
+    		}
+    	}
+    	window.onresize = function(){
+    		if(document.documentElement.clientWidth > 1100){
+    			tk.style.display = 'none';
+    		}
+    	}
+    </script>
+</body>
+</html>

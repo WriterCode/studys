@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style type="text/css">
+		#wrap{
+			width: 200px;
+			height: 200px;
+			background: orange;
+			position: absolute;
+		}
+	</style>
+</head>
+<body>
+	<div id="wrap"></div>
+</body>
+<script type="text/javascript">
+
+    // [?]chrome在服务器环境下可以触发onstorage
+
+	var wrap = document.querySelector('#wrap');
+
+	wrap.onmousedown = function(){
+		document.onmousemove = function(e){
+			var ev = window.event || e;
+			localStorage.x = ev.clientX - wrap.offsetWidth/2;
+			localStorage.y = ev.clientY - wrap.offsetHeight/2;
+			wrap.style.top = localStorage.y + 'px';
+			wrap.style.left = localStorage.x + 'px';
+		}
+	}
+	wrap.onmouseup = function(){
+		document.onmousemove = null;
+	}
+
+
+	window.onstorage = function(){
+		wrap.style.top = localStorage.y + 'px';
+		wrap.style.left = localStorage.x + 'px';
+	}
+
+
+</script>
+</html>

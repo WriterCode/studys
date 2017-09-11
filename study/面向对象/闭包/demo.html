@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>闭包</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // 全局作用域下,无法访问局部作用域
+    // function fn() {
+    //     var a = 1;
+    // }
+    // fn();
+    // console.log(a); // 报错
+
+    // function fn() {
+    //     var a = 1;
+
+    //     function son() {
+    //         a = 2; // 赋值
+    //     }
+    //     son();
+    // }
+    // fn();
+    // console.log(a); // 报错
+
+    // function foo() {
+    //     var a = 3;
+    //     return a;
+    // }
+    // var a1 = foo();
+    // console.log(a1); // 3
+
+
+    // 闭包,沟通函数内外的桥梁
+    function foo1() {
+        var a = 4;
+
+        son = function() {
+            console.log(a);
+        }
+    }
+    foo1();
+    son();
+
+    function foo() {
+        var a = 4;
+        return function() {
+            console.log(a);
+        }
+    }
+    var fo = foo();
+    fo();
+
+    function fn(n) {
+        return function() {
+            console.log(n);
+        }
+    }
+    fn(2);
+</script>
+
+</html>

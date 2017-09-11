@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<meta charset="UTF-8"/>
+	<title></title>
+	<style type="text/css">
+	li{
+		/*display: block;*/
+		width: 50px;
+		height: 50px;
+		background:url(img/1.png); 
+	}
+	li:hover{
+		background:url(img/01.png);
+	}
+	</style>
+</html>
+<body>
+	<ul>
+		<li></li>
+	</ul>
+</body>
+   当style样式在css中写的时候要在img前面加../

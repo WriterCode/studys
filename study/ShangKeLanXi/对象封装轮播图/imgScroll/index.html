@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>轮播图封装</title>
+    <script src="js/img_scroll.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        #imgBox {
+            width: 500px;
+            height: 200px;
+            margin: 100px auto;
+            position: relative;
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="imgBox"></div>
+</body>
+<script>
+    var imgList = [{
+            url: "image/p1.jpg",
+            href: "#"
+        },
+        {
+            url: "image/p2.jpg",
+            href: "#"
+        },
+        {
+            url: "image/p3.png",
+            href: "#"
+        },
+        {
+            url: "image/p4.jpg",
+            href: "#"
+        },
+        {
+            url: "image/p5.jpg",
+            href: "#"
+        },
+        {
+            url: "image/p6.jpg",
+            href: "#"
+        }
+    ]
+    
+    var Imgs = new ImgScroll('imgBox',imgList);
+</script>
+
+</html>

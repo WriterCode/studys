@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style type="text/css">
+		*{margin: 0;padding: 0;}
+		fieldset{
+			width: 90%;
+			margin: 0 auto;
+		}
+		input:nth-child(2){
+			width: 300px;
+			height: 40px;
+			outline: 0;
+			border:1px solid #ccc;
+			margin-top:20px;
+			margin-left: 20px;
+			font-size: 20px;
+			color:orange;
+			padding:0 10px;
+		}
+		input:nth-child(4){
+			width: 300px;
+			height: 40px;
+			outline: 0;
+			border:1px solid #ccc;
+			margin-top:20px;
+			margin-left: 20px;
+			font-size: 20px;
+			color:orange;
+			padding:0 10px;
+		}
+		#btn{
+			width: 100px;
+			height: 30px;
+			background: #ff6700;
+			color:#fff;
+			font-size: 18px;
+			margin: 20px 0 0 20px;
+		}
+		.wrap{
+			width: 97%;
+			border:1px solid #ccc;
+			margin: 0 auto;
+			margin-top:20px;
+		}
+		table{
+			width: 100%;
+		}
+		table tr td{
+			border:1px solid #ccc;
+			text-align: center;
+			width: 25%;
+		}
+		table tr td:nth-child(4) button{
+			background:gold;
+			color:#fff;
+			font-size: 20px;
+			width: 100px;
+			height: 30px;
+			outline: 0;
+		}
+		table tr:nth-child(2n){
+			height: 40px;
+			background: skyblue;
+		}
+		table tr:nth-child(2n-1){
+			height: 40px;
+			background: pink;
+		}
+		select{
+			width: 100px;
+			height: 30px;
+			background: green;
+			margin: 20px 0 0 20px;
+			color:#fff;
+			font-size: 16px;
+		}
+	</style>
+</head>
+<body>
+	<fieldset class="gg">
+		<legend>Crent new People</legend>
+		<input type="text" name="" v-model="creat.name"><br/>
+		<input type="text" name="" v-model="creat.age"><br/>
+		<select v-model.lazy="creat.sex">
+			<option name="">男</option>
+			<option name="">女</option>
+		</select><br/>
+		<button id=btn v-on:click="btn">提交</button>
+		<div class="wrap">
+			<table cellspacing="0">
+				<tr>
+					<td>Name</td>
+					<td>Age</td>
+					<td>Sex</td>
+					<td>Delete</td>
+				</tr>
+				<tr v-for="(siet,index) in siets">
+					<td>{{siet.name}}</td>
+					<td>{{siet.age}}</td>
+					<td>{{siet.sex}}</td>
+					<td><button v-on:click="btn2(index)">Delete</button></td>
+				</tr>
+			</table>
+		</div>
+	</fieldset>
+</body>
+<script type="text/javascript" src="vue.min.js"></script>
+<script type="text/javascript">
+	new Vue({
+		el:'.gg',
+		data:{
+			creat:{
+				name:'',
+				age:'',
+				sex:'男',
+				Delete:'Delete',
+			},
+			siets:[],
+		},
+		methods:{
+			btn:function(){
+				this.siets.push(this.creat)
+				this.creat = {name:'',age:'',sex:'男',Delete:'Delete'}
+			},
+			btn2:function(index){
+				this.siets.splice(index,1)
+			}
+		}
+	})
+
+</script>
+</html>

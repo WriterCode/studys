@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .clearFix::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+        
+        ul {
+            list-style: none;
+        }
+        
+        #wrap {
+            width: 960px;
+            height: 600px;
+            margin: 0 auto;
+        }
+        
+        #nav {
+            width: 300px;
+            height: 560px;
+            padding: 20px 0px;
+            background: #6e6568;
+            float: left;
+        }
+        
+        #nav>li {
+            width: 280px;
+            height: 40px;
+            line-height: 40px;
+            padding: 0 10px;
+        }
+        
+        #nav>li:hover {
+            background: #ccc;
+            cursor: pointer;
+        }
+        
+        #nav>li>span {
+            color: #fff;
+            font-size: 16px;
+            padding: 0 5px;
+        }
+        
+        #nav>li>span:nth-child(2n+1):hover {
+            color: orange;
+            cursor: pointer;
+        }
+        
+        #center {
+            width: 660px;
+            height: 600px;
+            float: left;
+            position: relative;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            display: none;
+        }
+        
+        #center>li {
+            width: 660px;
+            height: 600px;
+            box-sizing: border-box;
+            overflow: hidden;
+            display: none;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+        }
+        
+        #center>li>div {
+            overflow: hidden;
+        }
+        
+        #center>li>div ul {
+            float: left;
+        }
+        
+        #center>li>div ul:nth-child(1) {
+            width: 100px;
+            text-align: right;
+            margin-right: 10px;
+            color: #333;
+            font-weight: bold;
+            font-size: 14px;
+            margin-top: 13px;
+        }
+        
+        #center>li>div ul:nth-child(1):hover {
+            color: orange;
+            cursor: pointer;
+        }
+        
+        #center>li>div>ul:nth-child(2) {
+            width: 500px;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 10px;
+        }
+        
+        #center>li>div ul:nth-child(2) li {
+            margin-top: 10px;
+        }
+        
+        #center>li>div ul:nth-child(2) li span {
+            font-size: 14px;
+            color: #666;
+            padding-right: 10px;
+        }
+        
+        #center>li>div ul:nth-child(2) li span:hover {
+            color: orange;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap" class="clearFix">
+        <ul id="nav"></ul>
+        <ul id="center"></ul>
+    </div>
+</body>
+<script>
+    var nav = document.querySelector('#nav');
+    var center = document.querySelector('#center');
+    var xhr = new XMLHttpRequest();
+    xhr.open('get', 'json/京东json.json', true);
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            var data = JSON.parse(xhr.responseText);
+            handle(data);
+        }
+    }
+    xhr.send(null);
+
+    function handle(d) {
+        for (var key in d) {
+            var len = d[key].Name.length;
+            var lis = document.createElement('li');
+            for (var i = 0; i < len; i++) {
+                // var spans = document.createElement('span');
+                if (d[key].Name[i + 1] != undefined) {
+                    lis.innerHTML += '<span>' + d[key].Name[i] + '</span>' + '<span>/</span>';
+                } else {
+                    lis.innerHTML += '<span>' + d[key].Name[i] + '</span>';
+                }
+            }
+            nav.appendChild(lis);
+            lis.index = key;
+            lis.onmouseover = function() {
+                center.style.display = 'block';
+                for (var k = 0; k < nav.children.length; k++) {
+                    center.children[k].style.display = 'none';
+                }
+                center.children[this.index].style.display = 'block';
+            }
+            lis.onmouseout = function() {
+                center.style.display = 'none';
+            }
+        }
+        for (var key in d) {
+            var lis = document.createElement('li');
+            var len = d[key].Class.length;
+            for (var i = 0; i < len; i++) {
+                var divs = document.createElement('div');
+                var len1 = d[key].Class[i].Class.length;
+                divs.innerHTML = '<ul><li>' + d[key].Class[i].Name + '></li></ul>' + '<ul><li></li></ul>';
+                lis.appendChild(divs);
+                for (var j = 0; j < len1; j++) {
+                    var spans = document.createElement('span');
+                    var text = d[key].Class[i].Class[j].Name;
+                    spans.innerHTML = text;
+                    divs.children[1].children[0].appendChild(spans);
+                }
+            }
+            center.appendChild(lis);
+        }
+    }
+    center.onmouseover = function() {
+        center.style.display = 'block';
+    }
+    center.onmouseout = function() {
+        center.style.display = 'none';
+    }
+</script>
+
+</html>

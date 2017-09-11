@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+
+    </div>
+</body>
+<script src="cookie.js"></script>
+<script type="text/javascript">
+    // 存储
+    // cookie:
+    // 简单来说cookie就是一个文件,用于在本地存储用户信息.包括身份识别号码ID 密码 浏览过的网页 停留的时间 用户在web站点购物的方式或用户访问该站点的次数等,当用户在此链接web服务器时,浏览器读取cookie信息并传递给web站点,web快速获取用户信息方便用户行为(账号自动登录等)
+
+
+    // ****需要记住
+    // cookie的功能:在浏览器中进行数据的存储,用户名 密码
+    // cookie的容量:5kb
+    // cookie存储的数据类型:数字 字符串
+    // cookie是以名-值的方式存储:userName = aaa
+    // cookie能存储的条目数为:50条
+    // cookie必须运行在服务器的环境下
+
+
+    // 如何设置cookie
+    // 在js中使用document.cookie = '键 = 值'即可
+    // 但是我们需要加上过期时间,否则关闭浏览器cookie就会丢失
+    // 我们要在后面加上过期时间 expires = 时间
+
+    // cookie封装函数
+    // function setCookieFn(key, val, days) {
+    //     var time = new Date();
+    //     time.setDate(time.getDate() + days);
+    //     document.cookie = key + '=' + val + ';expires=' + time;
+    // }
+    // setCookieFn('账号', '15737893697', 10);
+
+
+
+    // 获取cookie的值
+    // function getCookieFn(name) {
+    //     // 获取cookie,注意存取都是字符串
+    //     var arr = document.cookie.split('; ');
+    //     for (var i = 0; i < arr.length; i++) {
+    //         var arr2 = arr[i].split('=');
+    //         if (arr2[0] == name) {
+    //             return arr2[1];
+    //         }
+    //     }
+    // }
+
+
+    // var d = new Date();
+    // d.setDate(d.getDate() + 7);
+    // document.cookie = 'userName=hello';
+    // document.cookie = 'userName1=hello1' + ';expires=' + d.toString();
+    // console.log(document.cookie);
+    // 同名的cookie会覆盖之前的值
+    // 获取cookie默认不能跨域
+    // 上级目录文件下存取的cookie.下级可以获得
+    // 下级目录文件下存取的cookie.上级不可以获得
+
+
+    // 对中文字符串进行编码
+    var str = '东时教育';
+    var str1 = escape(str);
+    var str2 = unescape(str1);
+    console.log(str);
+    console.log(str1);
+    console.log(str2);
+
+    // setCookie('n', '000');
+    // setCookie('n1', '111');
+    // setCookie('n2', '222');
+    // setCookie('n3', '333');
+
+    // var coo = getCookie();
+    // console.log(coo['n3']);
+    // console.log(document.cookie)
+
+    // 删除cookie:将对应的值设置为空字符串,时间设为-1;
+    // setCookie('n2', '')
+
+
+    cookies('dongshi', '1704');
+</script>
+
+</html>

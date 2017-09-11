@@ -1,0 +1,19 @@
+1,按钮的写法
+   1)<input type="button" value="按钮上显示的文字"
+   2)<button></button>
+ type的属性值:
+   submit 该按钮是提交按钮（除了 Internet Explorer，
+          该值是其他浏览器的默认值）。
+   button 该按钮是可点击的按钮（Internet Explorer 
+          的默认值）。
+   reset  该按钮是重置按钮（清除表单数据）。
+2,图片当按钮
+   有CSS把图片设为按钮背景就可以了
+   例: <input name="" type="button" 
+        style=" width:10px; height:10px;border:0; 
+      background:url(图片路径)"/>
+      把按钮的宽高设的和图片一样
+    给按钮定义个clss比较好,可以重复利用,减少垃圾代码
+3,弹出窗口
+    <button type="button" 
+    onclick="alert('提交的文字')">提交<button>

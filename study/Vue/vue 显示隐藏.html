@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+		.wrap div{
+			width: 200px;
+			height: 200px;
+			background: orange;
+		}
+	</style>
+</head>
+<body>
+	<div class="wrap">
+		<button v-on:click="btn">按钮</button>
+		<div v-if="bol"></div>
+	</div>
+</body>
+<script type="text/javascript" src="vue.min.js"></script>
+<script type="text/javascript">
+new Vue({
+	el:'.wrap',
+	data:{
+		bol:false,
+	},
+	methods:{
+		btn:function(){
+			console.log(this)
+			if(this.bol == true){
+				this.bol = false;
+			}else{
+				this.bol = true;
+			}
+		}
+	}
+})
+
+</script>
+</html>

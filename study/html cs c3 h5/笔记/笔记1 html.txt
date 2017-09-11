@@ -1,0 +1,46 @@
+1, html
+   hyper text markup language
+   超文本      标记标签  语言
+   标记标签：由尖括号包围起来的关键词<>
+   特殊：2个半闭合标签 <meta/> <img/>
+2, html格式：
+   <!DOCTYPE html>
+   <html>
+      <head>头
+         <title>标题</title>
+         <meta char="UTF-8"/>半闭合标签 编码格式
+         <style></style>样式
+      </head>
+      <body> 身体
+        内容
+      </body>
+   </html>
+3, 标题标签：<h1></h1>-------<h6></h6>写标题用的
+4，段落标签：<p></p>写长文本用
+5，短文本：<span></span>写短文本用
+6, 区块标签：<div>把文章分成一个个模块
+7，斜体<i></i>
+   强调斜体<em></em>
+   加粗<b></b>
+   强调加粗<strong></strong>
+8, 无序标签<ul> 
+              <li>无序项</li>
+           </ul>
+   有序标签<ol>
+               <li>有序项</li>
+           </ol>
+9，自定义列表<dl>
+                <dt>标题</dt>
+                <dd>内容</dd> 
+             </dl>
+   dl层级高于dt  dt层级高于dd
+10，图片插入：<img/>
+        <h2>相对路径</h2>
+	<img src="水果.jpg"/>
+	<img src="img/img/boy.jpg"/>
+	<img src="img/girl.jpg"/>
+	<h3>绝对路径</h3>
+	<img src="../sansui.jpg"/>
+相对路径就是往下一个层级找  img/img/img/
+绝对路径就是网上一个层级找  ../../ 最多不过两级
+src是属性值

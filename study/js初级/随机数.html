@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+		
+		// 随机数
+		// (0~1)不包含0和1
+		// (0~10)不包含0和10
+		// var rand = Math.random() * 10;
+		// document.write(rand);
+
+
+		// parseInt();
+		// 只取小数点之前的数
+		// var a = 12.3213232443;
+		// 当遇到字母是停止取数
+		// var b = '21dsad2345'
+		// document.write(parseInt(b));
+
+		// 随机数公式:random() * (max - min + 1) + min
+
+		for(var i = 0;i < 10;i++){
+			document.write(randomFn(0,10));
+		}
+		function randomFn (max,min) {
+			var rand = Math.random() * (max - min + 1) + min;
+			return parseInt(rand);
+		}
+
+
+
+	</script>
+</body>
+</html>

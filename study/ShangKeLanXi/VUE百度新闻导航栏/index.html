@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style type="text/css">
+		*{margin: 0;padding: 0;}
+		.clearFix::after{
+			content: '';
+			display: block;
+			clear:both;
+		}
+		.l{
+			float:left;
+		}
+		#wrap{
+			background: #01204f;
+		}
+		ul{
+			list-style: none;
+			width: 984px;
+			height: 40px;
+			position: relative;
+			margin: 0 auto;
+		}
+		ul li{
+			color:#fff;
+			font-size: 14px;
+			line-height: 40px;
+			font-weight: 700;	
+		}
+		ul li a{
+			color:#fff;
+			padding: 0 10px;
+			text-decoration: none;
+			position: relative;
+			z-index: 10;
+		}
+		ul li:nth-child(1){
+			background: #c00;
+		}
+		.back{
+			position: absolute;
+			left:0;
+			top:0;
+			height: 40px;
+			background: #c00;
+			transition-duration: 0.5s;
+		}
+	</style>
+</head>
+<body>
+	<div id="wrap">
+		<ul class="clearFix">
+			<li v-for="(item,index) in tabs" @mouseenter="tab(index)" @mouseleave="tab1(index)" class="l"><a href="">{{item}}</a></li>
+			<div class="back" :style="{width:width + 'px',left:left + 'px'}"></div>
+		</ul>
+	</div>
+</body>
+<script type="text/javascript" src="vue.min.js"></script>
+<script type="text/javascript">
+new Vue({
+	el:'#wrap',
+	data:{
+		tabs:['首页','百家号','国内','国际','军事','社会','财经','娱乐','体育','互联网','科技','游戏','时尚','女人','汽车','房产','个性推荐'],
+		width:48,
+		left:0,
+	},
+	methods:{
+		tab(index){
+			var lis = document.querySelectorAll('li');
+			this.width = lis[index].offsetWidth;
+			this.left = lis[index].offsetLeft;
+		},
+		tab1(index){
+			this.width = 48;
+			this.left = 0;
+		}
+	}
+})
+
+</script>
+</html>

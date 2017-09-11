@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style type="text/css">
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		#time{
+			width: 300px;
+			height: 300px;
+			border-radius: 50%;
+			border:5px solid skyblue;
+			margin:0 auto;
+			background:-webkit-radial-gradient(40% 40%,#fff,#000);
+			position: relative;
+		}
+		#yd{
+			width: 20px;
+			height: 20px;
+			border-radius: 50%;
+			background: red;
+			position: absolute;
+			top:140px;
+			left:140px;
+			z-index: 100;
+		}
+		#hou{
+			width: 12px;
+			height: 90px;
+			background: orange;
+			position: absolute;
+			top:73px;
+			left:144px;
+			transform-origin:50% 85%;
+		}
+		#min{
+			width: 8px;
+			height: 110px;
+			background: blue;
+			position: absolute;
+			top:56px;
+			left:146px;
+			transform-origin:50% 85%;
+		}
+		#sec{
+			width: 4px;
+			height: 130px;
+			background: yellow;
+			position: absolute;
+			top:40px;
+			left:148px;
+			transform-origin:50% 85%; 
+		}
+		p{
+			font-size:14px;
+			color:black;
+			position: absolute;
+			font-weight: bolder;
+		}
+		span{
+			font-size: 12px;
+			color:black;
+			position: absolute;
+			top:175px;
+			left: 110px;
+		}
+		h1{
+			font-size: 18px;
+			color:black;
+			position: absolute;
+			top:187px;
+			left: 129px;
+			font-weight: bolder;
+		}
+	</style>
+</head>
+<body>
+	<div id="time">
+		<div id="yd"></div>
+		<div id="hou"></div>
+		<div id="min"></div>
+		<div id="sec"></div>
+	</div>
+	<script type="text/javascript">
+		var time = document.querySelector('#time');
+		var k = time.clientWidth * 0.5 - 8;
+		var j = time.clientHeight * 0.5 - 8;
+		for(var i = 1;i < 13;i++){
+			var p = document.createElement('p');
+			var hudu = (Math.PI / 6) * i;
+			var x = k + Math.sin(hudu) * 138;
+			var y = j - Math.cos(hudu) * 138;
+			p.innerHTML = i;
+			p.style.left = x + 'px';
+			p.style.top = y + 'px';
+            time.appendChild(p);	
+		}
+		var huors = document.querySelector('#hou');
+		var mins = document.querySelector('#min');
+		var secs = document.querySelector('#sec');
+		setInterval(function(){
+			var today = new Date();
+			secs.style.webkitTransform = 'rotateZ(' + today.getSeconds() * 6 + 'deg)';  
+        	mins.style.webkitTransform = 'rotateZ(' + (today.getMinutes() + today.getSeconds() / 60) * 6 + 'deg)';  
+       	 	huors.style.WebkitTransform = 'rotateZ(' + (today.getHours() % 12 + today.getMinutes() / 60 + today.getSeconds() / 3600) * 30 + 'deg)'; 
+		},1000)
+
+		var spans = document.createElement('span');
+		var h1 = document.createElement('h1');
+		var a = new Date();
+		var arr = ['星期零','星期一','星期二','星期三','星期四','星期五','星期六'];
+		var b = a.getDay();
+		spans.innerHTML = a.getFullYear() + '年' + ':' + (a.getMonth() + 1) + '月' + ':' + a.getDate() + '日';
+		h1.innerHTML = arr[b];
+		time.appendChild(spans);
+		time.appendChild(h1);
+
+
+	</script>
+</body>
+</html>

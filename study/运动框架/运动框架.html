@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style type="text/css">
+		#wrap{
+			width: 300px;
+			height: 300px;
+			border-radius: 50%;
+			background: orange;
+			position: absolute;
+		}
+	</style>
+</head>
+<body>
+	<div id="wrap"></div>
+	<script type="text/javascript" src="js/tween.js"></script>
+	<script type="text/javascript">
+		var wrap = document.querySelector('#wrap');
+	
+		// 运动方式(运动轨迹)
+		// 开始位置
+		// 结束位置
+		// 变化量 = 结束位置 - 开始位置
+		// 开始步数
+		// 结束步数
+		// var timer = setInterval(function(){
+				// 开始的步数++;
+				// if(开始的步数 >= 结束的步数){
+				// 	clearInterval(timer);
+
+				// }
+				// Tween.Bounce.easeOut(
+					// 开始的步数,开始的距离,变化量,结束的步数
+				// );
+		// },30)
+
+
+
+		var startL = 0;
+		var endL = 500;
+		var changeL = endL - startL;
+		var startStep = 0;
+		var endStep = 50;
+		var timer = setInterval(function(){
+			startStep ++ ;
+			if(startStep >= endStep){
+				clearInterval(timer);
+			}
+			wrap.style.left = Tween.Bounce.easeIn(startStep,startL,changeL,endStep) + 'px';
+		},30);
+
+
+
+
+</script>
+</body>
+
+</html>

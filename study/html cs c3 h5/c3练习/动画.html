@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style type="text/css">
+		.box{
+			width: 500px;
+			height: 500px;
+			border-radius: 250px;
+			border:1px solid yellow;
+			margin: 100px 0 0 200px;
+		}
+		.box div{
+			width: 200px;
+			height: 200px;
+			margin-top:150px;
+			background:repeating-radial-gradient(red 8%,blue 8%,yellow 16%);
+			/*background:red;*/
+			border-radius: 100px;
+			position: relative;
+			-webkit-animation: myfirst 5s linear infinite;
+		}
+		.box div:hover{
+			-webkit-animation-play-state:;
+		}
+		@-webkit-keyframes myfirst
+		{
+		/*0%   {left:0px; top:0px;}
+		25%  {left:200px; top:0px;}
+		50%  {left:200px; top:200px;}
+		75%  {left:0px; top:200px;}
+		100% {left:0px; top:0px;}*/
+		0%   {-webkit-transform:rotate(0deg);}
+		25%  {
+			background:repeating-radial-gradient(red 8%,blue 8%,yellow 16%);
+			-webkit-transform:rotate(90deg);}
+		50%  {
+			background:repeating-radial-gradient(red 6%,blue 6%,yellow 12%);
+			-webkit-transform:rotate(180deg);}
+		75%  {
+			background:repeating-radial-gradient(red 4%,blue 4%,yellow 8%);
+			-webkit-transform:rotate(270deg);}
+		100% {-webkit-transform:rotate(360deg);}
+		/*0%   {-webkit-transform:rotate(0deg);}
+		25%  {
+			background:pink;
+			-webkit-transform:rotate(90deg);}
+		50%  {
+			background:blue;
+			-webkit-transform:rotate(180deg);}
+		75%  {
+			background:orange;
+			-webkit-transform:rotate(270deg);}
+		100% {-webkit-transform:rotate(360deg);}
+		}*/
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div></div>
+	</div>
+</body>
+</html>

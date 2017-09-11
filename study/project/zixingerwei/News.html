@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<link rel="stylesheet" href="css/topbottom.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<style type="text/css">
+		.main-bottom{
+			width: 85%;
+			margin:0 auto;
+			padding:50px 0;
+		}
+		.main-bottom a{
+			text-decoration: none;
+		}
+		.main-bottom div{
+			width: 23%;
+		}
+		.main-bottom img{
+			width: 100%;
+			display: block;
+		}
+		.main-bottom-1,.main-bottom-2,.main-bottom-3{
+			position: relative;
+		}
+		.main-bottom-4,.main-bottom-2,.main-bottom-3{
+			margin-left: 2%;
+		}
+		.wq{
+			width: 100%;
+			position: absolute;
+			left:0;
+			bottom:0px;
+			background:rgba(0,0,0,0.4);
+			padding:10px 0;
+			text-align: center;
+		}
+		.rd{
+			width: 100%;
+			position: absolute;
+			left:0;
+			bottom:0px;
+			background:rgba(0,0,0,0.4);
+			padding:10px 0;
+			text-align: center;
+		}
+		.zx{
+			width: 100%;
+			position: absolute;
+			left:0;
+			bottom:0px;
+			background:rgba(0,0,0,0.4);
+			padding:10px 0;
+			text-align: center;
+		}
+		.news01{
+			width: 90%;
+			margin:40px auto;
+			background:#f5f5f5;
+		}
+		.news01 img{
+			display: block;
+			width: 100%;
+		}
+		.news01-l{
+			width: 40%;
+			height: 100%;
+		}
+		.news01-r{
+			width: 60%;
+		}
+		.news01-l p:nth-child(1){
+			width: 70%;
+			font-size:14px;
+			color:#00bd70;
+			padding:20px 0 0 20px;
+		}
+		.news01-l p:nth-child(2){
+			width: 70%;
+			font-size:24px;
+			font-weight:bold;
+			color:#000;
+			padding:40px 0 0 20px;
+		}
+		.news01-l p:nth-child(3){
+			width: 70%;
+			font-size:14px;
+			color:#5a5a5a;
+			padding:30px 0 0 20px;
+		}
+		.xMeau{
+			height: 0;
+			background:#f5f5f5;
+		}
+		#xMeau1{
+			overflow: hidden;
+			transition-duration: 0.5s;
+		}
+		.xM{
+			height: 200px;
+			background:#f5f5f5;
+		}
+		.xMeau,.xM p{
+			width: 80%;
+			margin:0 auto;
+			color:#5a5a5a;
+		}
+		#newsL1{
+			background:#f5f5f5;
+		}
+		#btn5{
+			font-size:70px;
+			color:#ccc;
+			text-align: center;
+			transform: rotateZ(-90deg);
+		}
+		.news01:hover{
+			cursor: pointer;
+		}
+		@media screen and (max-width:900px){
+			.main-bottom div{
+				width: 49%;
+			}
+			.main-bottom div:nth-child(3){
+				margin-left:0;
+				margin-top:20px;
+			}
+			.main-bottom div:nth-child(4){
+				margin-top:10px;
+			}
+			.news01-l{
+				width: 50%;
+			}
+			.news01-r{
+				width: 50%;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="header">
+		<div class="nav">
+			<img src="img/7.png" class="logo">
+			<a href="公司简介.html">公司简介</a>
+			<a href="应用案例.html">应用案例</a>
+			<a href="新闻动态.html">新闻动态</a>
+			<a href="招聘信息.html">招聘信息</a>
+			<a href="联系我们.html">联系我们</a>
+			<span id="btn1">中　文<img src="img/9.png"></span>
+			<img src="img/8.png" id="btn2">
+			<div class="zw">
+				<p>中　文</p>
+				<p>English</p>
+			</div>
+			<div class="sousuo">
+				<input type="text" name="" placeholder="请输入内容">
+				<img src="img/8.png">
+			</div>
+		</div>
+		<div id="navBtn">
+			<p></p>
+			<p></p>
+			<p></p>
+		</div>
+	</div>
+	<div class="xl">
+		<div id="menu">
+			<p><a href="公司简介.html">公司简介</a></p>
+			<p><a href="应用案例.html">应用案例</a></p>
+			<p><a href="新闻动态.html">新闻动态</a></p>
+			<p><a href="招聘信息.html">招聘信息</a></p>
+			<p><a href="联系我们.html">联系我们</a></p>
+		</div>
+	</div>
+	<div style="background: #ccc;">
+		<div class="header-bottom clearFix" id="gd">
+			<div class="header-bottom-l l">
+				<p id="back"><</p>
+			</div>
+			<div class="header-bottom-r r">
+				<h1>新闻动态</h1>
+				<p>News</p>
+			</div>
+		</div>
+	</div>
+	<div class="news01 clearFix">
+		<div class="news01-l l" id="newsL1">
+			<p>News 01</p>
+			<p>详解可穿戴的分叉路口：手机思维、还是穿戴思维？</p>
+			<p>Apple Watch发布，但可穿戴依然迷雾重重</p>
+			<p id="btn5" style="margin-top:54px;"><</p>
+		</div>
+		<div class="news01-r r">
+			<img src="img/new1.jpg">
+		</div>
+	</div>
+	<div class="xMeau" id="xMeau1">
+		<p style="padding-top:40px;">2015年伊始，CES展、MWC展、Apple watch发布，接连三把火使得智能可穿戴进入舆论中心。各方论坛各种解读层出不穷，有人热血澎湃万物智能时代开启，有人依然忧心忡忡画饼毕竟不能充饥……是大时代开启还是依然迷雾重重? 　　看趋势，要抓源头，芯片是智能终端创新的源头风向标，我们发现芯片厂商确实在积极布局物联网、可穿戴、车联网等新兴领域，见表1。于是乎，后智能手机时代，可穿戴即将取代智能手机的讨论被提上了日程。真的到了后智能手机时代了吗?大趋势确定，但时间上言之尚早，当下依然骨感。芯片产品相对消费级产品一般至少有6-12个月的时间提前量，从资源投入角度看，个人认为布局试水多过真正实质性资源投入，智能手机仍是主战场。</p>
+		<p style="text-align:right;">Close</p>
+	</div>
+	<div class="news01 clearFix">
+		<div class="news01-l l" id="newsL1">
+			<p>News 02</p>
+			<p>马云12亿重资入股第一财经：我一直希望中国诞生自己的华尔街日报、彭博社</p>
+			<p>马云、SMG总裁王建军、SMG董事长黎瑞刚悉数参加了签约仪式。几位大佬都说了什么呢？</p>
+			<p id="btn5"><</p>
+		</div>
+		<div class="news01-r r">
+			<img src="img/new2.jpg">
+		</div>
+	</div>
+	<div class="xMeau" id="xMeau1">
+		<p style="padding-top:40px;">2015年伊始，CES展、MWC展、Apple watch发布，接连三把火使得智能可穿戴进入舆论中心。各方论坛各种解读层出不穷，有人热血澎湃万物智能时代开启，有人依然忧心忡忡画饼毕竟不能充饥……是大时代开启还是依然迷雾重重? 　　看趋势，要抓源头，芯片是智能终端创新的源头风向标，我们发现芯片厂商确实在积极布局物联网、可穿戴、车联网等新兴领域，见表1。于是乎，后智能手机时代，可穿戴即将取代智能手机的讨论被提上了日程。真的到了后智能手机时代了吗?大趋势确定，但时间上言之尚早，当下依然骨感。芯片产品相对消费级产品一般至少有6-12个月的时间提前量，从资源投入角度看，个人认为布局试水多过真正实质性资源投入，智能手机仍是主战场。</p>
+		<p style="text-align:right;">Close</p>
+	</div>
+	<div class="news01 clearFix">
+		<div class="news01-l l" id="newsL1">
+			<p>News 03</p>
+			<p>微软 vs. 亚马逊：曾像海盗一样的微软，为何变得如此胆小如鼠？</p>
+			<p>我们应该拥抱亚马逊式的新颖的”发展定江山式”的商业模式才能做大做强</p>
+			<p id="btn5"><</p>
+		</div>
+		<div class="news01-r r">
+			<img src="img/new3.jpg">
+		</div>
+	</div>
+	<div class="xMeau" id="xMeau1">
+		<p style="padding-top:40px;">2015年伊始，CES展、MWC展、Apple watch发布，接连三把火使得智能可穿戴进入舆论中心。各方论坛各种解读层出不穷，有人热血澎湃万物智能时代开启，有人依然忧心忡忡画饼毕竟不能充饥……是大时代开启还是依然迷雾重重? 　　看趋势，要抓源头，芯片是智能终端创新的源头风向标，我们发现芯片厂商确实在积极布局物联网、可穿戴、车联网等新兴领域，见表1。于是乎，后智能手机时代，可穿戴即将取代智能手机的讨论被提上了日程。真的到了后智能手机时代了吗?大趋势确定，但时间上言之尚早，当下依然骨感。芯片产品相对消费级产品一般至少有6-12个月的时间提前量，从资源投入角度看，个人认为布局试水多过真正实质性资源投入，智能手机仍是主战场。</p>
+		<p style="text-align:right;">Close</p>
+	</div>
+	<div class="main-bottom clearFix">
+		<div class="main-bottom-1 l">
+			<a href=""><img src="img/new_bm1.jpg"></a>
+			<p class="wq"><a href="" style="color:#fff;">往期回顾</a></p>
+		</div>
+		<div class="main-bottom-2 l">
+			<a href=""><img src="img/new_bm2.jpg"></a>
+			<p class="rd"><a href="" style="color:#fff;">热点推荐</a></p>
+		</div>
+		<div class="main-bottom-3 l">
+			<a href=""><img src="img/new_bm3.jpg"></a>
+			<p class="zx"><a href="" style="color:#fff;">最新动态</a></p>
+		</div>
+		<div class="main-bottom-4 l">
+			<p style="color:#5a5a5a; font-size:18px;">更多热点新闻动态看这里 更多热点新闻动态</p>
+			<a href="" style="color:#00bd70; font-size:14px;">更多动态</a>
+		</div>
+	</div>
+	<div class="footer">
+		<div class="footer1 clearFix">
+			<div class="footer-1 l">
+				<p><a href="">关于我们</a></p>
+				<p><a href="">视频介绍</a></p>
+				<p><a href="">公司简介</a></p>
+				<p><a href="">企业文化</a></p>
+				<p><a href="">公司愿景</a></p>
+			</div>
+			<div class="footer-2 l">
+				<p><a href="">新闻动态</a></p>
+				<p><a href="">公司动态</a></p>
+				<p><a href="">行业动态</a></p>
+			</div>
+			<div class="footer-3 l">
+				<p><a href="">联系我们</a></p>
+				<p><a href="">上海</a></p>
+				<p><a href="">北京</a></p>
+				<p><a href="">国内合作</a></p>
+				<p><a href="">国际业务</a></p>
+			</div>
+			<div class="footer-4 l">
+				<p><a href="">招聘中心</a></p>
+				<p><a href="">职位分类</a></p>
+				<p><a href="">简历投递</a></p>
+			</div>
+			<div class="footer-5 l">
+				<p><a href="">客服热线</a></p>
+				<p><a href="">400-8888-8888</a></p>
+				<p><a href="">在线客服</a></p>
+				<p><img src="img/company_name.png"></p>
+			</div>
+		</div>
+		<div class="footer2">
+			<div class="footer2-1 clearFix">
+				<p class="l" style="font-size:18px;">TANGRAM</p>
+				<p class="r English">English></p>
+			</div>
+			<p class="footer2-2" style="font-size:12px;">2015©tangramtek.com</p>
+			<p class="footer2-3" style="font-size:14px;">沪ICP备15005621号</p>
+		</div>
+	</div>
+</body>
+<script type="text/javascript" src="js/topbottom.js"></script>
+<script type="text/javascript">
+	var news01 = document.querySelectorAll('.news01');
+	var xMeau = document.querySelectorAll('#xMeau1');
+	var newsL1 = document.querySelectorAll('#newsL1');
+	for(var i = 0;i < news01.length;i++){
+		news01[i].onclick = function(){
+			var bol = (this.nextElementSibling.className == 'xM');
+			for(var j = 0;j < xMeau1.length;j++){
+				xMeau[j].className = 'xMeau';
+				newsL1[j].style.background = '#f5f5f5';
+			}
+			if(bol){
+				this.nextElementSibling.className = 'xMeau';
+				this.children[0].style.background = '#f5f5f5';
+			}else{
+				this.nextElementSibling.className = 'xM';
+				this.children[0].style.background = '#00bd70';
+			}
+		}
+	}
+</script>
+</html>

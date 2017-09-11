@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    html,body{
+        height: 100%;
+    }
+    .fl{
+        float: left;
+    }
+    .fr{
+        float: right;
+    }
+    .clearfix:after{
+        content: '';
+        display: block;
+        clear:both;
+    }
+    .wrap{
+        position: relative;
+        width: 500px;
+        height: 98%;
+        border: 5px solid #cef;
+        margin:0 auto;
+        background: skyblue;
+        border-radius: 20px;
+    }
+    .countdown,.score{
+        width: 50%;
+        padding: 10px 0 30px;
+        text-align: left;
+        text-indent: 1em;
+        font-size: 30px;
+    }
+    .txt{
+        font-size: 60px;
+        line-height: 180px;
+        text-align: center;
+    }
+    .tip{
+        text-align: center;
+        font-size: 32px;
+        margin-top: 60px;
+    }
+    .btns{
+        width: 510px;
+        height: 100px;
+        position: absolute;
+        left: 0;
+        bottom: 30px;
+        line-height: 100px;
+        margin-left: -10px;
+    }
+    ul.btns li{
+        float: left;
+        width:92px;
+        list-style: none;
+        text-align: center;
+        font-size: 42px;
+        background: #ccc;
+        border-radius: 5px;
+        margin-left: 10px;
+        cursor: pointer;
+    }
+    </style>
+
+</head>
+<body>
+    <div class="wrap">
+        <div class="header clearfix">
+            <div class="countdown fl">倒计时：10</div>
+            <div class="score fr">得分：0</div>
+        </div>
+        <div class="main">
+            <p class="txt">黄</p>
+            <p class="tip">根据字体的颜色选出与其颜色对应的中文描述</p>
+        </div>
+
+        <ul class="btns">
+            <li>红</li>
+            <li>黄</li>
+            <li>蓝</li>
+            <li>绿</li>
+            <li>黑</li>
+        </ul>
+    </div>
+    <script type="text/javascript">
+        // 存放文字的数组
+        var txtArr = ['红','黄','蓝','绿','黑'];
+        // 存放颜色的数组
+        var colorArr = ['red','yellow','blue','green','black'];
+        // 获取中间的文字
+        var txt = document.getElementsByClassName('txt')[0];
+        // 获取所有按钮
+        var btns = document.getElementsByTagName('li');
+        // 获取分数
+        var score = document.getElementsByClassName('score')[0];
+        // 存放分数的变量
+        var count = 0;
+        var fl = document.getElementsByClassName('fl')[0];
+        var a = 10;
+        changeTxtFn();
+        // 随机一组文字的下标
+        changecolorFn();
+        
+
+
+        
+        var timer = setInterval(time,1000);
+            function time(){
+                a--;
+                if(a <= 0){
+                    clearInterval(timer);
+                }
+                if(a == 0){
+                    alert('游戏结束：' +　count + '分');
+                }
+                fl.innerHTML = '倒计时：' + a;
+            };
+
+
+
+
+
+        // 封装函数
+        function changeTxtFn(){
+            // 改变文字颜色
+            txt.style.color = colorArr[randFn(0,4)];
+            // 改变文字内容
+            txt.innerHTML = txtArr[randFn(0,4)];
+        }
+
+        // 封装函数
+        function changecolorFn(){
+            var randTxtArr = randArrFn();
+            // 随机一组颜色的下标
+            var randColorArr = randArrFn();
+            // 给所有按钮添加文字和颜色
+            for(var i = 0;i < btns.length;i++){
+                btns[i].style.color = colorArr[randColorArr[i]];
+                btns[i].innerHTML = txtArr[randTxtArr[i]];
+                // 给所有按钮添加点击事件
+                btns[i].onclick = function(){
+                    if(colorArr.indexOf(txt.style.color) == txtArr.indexOf(this.innerHTML)){
+                        count += 10;
+                        score.innerHTML = '得分：' + count;
+                        changeTxtFn();
+                        changecolorFn();
+                    }else{
+                        count -= 10;
+                        score.innerHTML = '得分：' + count;
+                        changeTxtFn();
+                        changecolorFn();
+                    }   
+                }    
+            }    
+        }
+
+        // 随机函数一个数
+        function randFn(min,max){
+            return parseInt(Math.random() * (max - min + 1) + min);
+        }
+        //随机一组数
+        function randArrFn(){
+            var arr = [];
+            while(arr.length < 5){
+                var bol = true;
+                var rand = randFn(0,4);
+                for(var i = 0;i < arr.length;i++){
+                    if(arr[i] == rand){
+                        bol = false;
+                    }
+                }
+                if(bol){
+                    arr.push(rand);
+                }
+            }
+            return arr;
+        }
+       
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            min-width:980px;
+           /* min-width:最小宽度设置
+            max-width:最大宽度设置*/
+        }
+        .header-top{
+            height: 40px;
+            background: #444;
+            line-height: 40px;
+        }
+        .header-top p{
+            width:80%;
+            text-align:right;
+            font-size:13px;
+            color:#a8a8aa;
+        }
+        ul{
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+            color:#fff;
+        }
+        .header ul li{
+            float: left;
+            margin:5px 35px;
+            font-size:14px;
+            padding-top:8px;
+        }
+        .clearFix::after{
+            content: '';
+            display: block;
+            clear:both;
+        }
+        .header ul{
+            width:960px;
+            margin:0px auto;
+        }
+        .header-top+div{
+            background:#323232;
+            height:44px;
+        }
+        .pad{
+            padding-top:2px !important;
+        }
+        .main-top img{
+            padding-left: 54px;
+        }
+        .main-top+div img{
+            width: 25%;
+            float:left;
+        }
+        .footer-top,.footer-bottom{
+            width: 980px;
+            margin:0 auto;
+            margin-top: 20px;
+        }
+        .footer-top a{
+            color:#555;
+            font-size:12px;
+        }
+        .footer-top ul{
+            float:left;
+            width: 20%;
+        }
+        strong{
+            font-size:12px;
+            color:#333;
+        }
+        .footer-top a:hover,.footer-left a:hover{
+            text-decoration:underline; 
+        }
+        .footer-bottom p,.footer-left span{
+            font-size:12px;
+            color:#888;
+        }
+        .footer-bottom p a{
+            color:#0070c9;
+        }
+        .box{
+            border-top:1px solid #ccc;
+            margin-top:8px;
+        }
+        .footer-bottom{
+            margin-top:40px;
+        }
+        .footer-left a{
+            color:#555;
+            font-size:12px;
+            padding:0 10px;
+            border-left:1px solid #ccc;
+        }
+        .footer-left span{
+            margin-right: 30px;
+        }
+        .footer-left{
+            float:left;
+            width:700px;
+        }
+        .footer-right{
+            float:left;
+            width:200px;
+            padding-top:4px;
+            text-align:right;
+        }
+        .footer-right img{
+            width:21px;
+            vertical-align:top;
+        }
+        .footer-right span{
+            font-size:12px;
+            color:#555;
+        }
+    </style>
+</head>
+<body>
+     <!--  最外层包裹容器 -->
+    <div class="wrapper">
+        <!--    上 -->
+        <div class="header">
+            <div class="header-top">
+                <p><广告></p>
+            </div>
+            <div>
+                <ul class="clearFix">
+                    <li class="pad"><a href=""><img src="2.png"/></a></li>
+                    <li><a href="">Mac</a></li>
+                    <li><a href="">iPad</a></li>
+                    <li><a href="">iPone</a></li>
+                    <li><a href="">watch</a></li>
+                    <li><a href="">Music</a></li>
+                    <li><a href="">技术支持</a></li>
+                    <li class="pad"><a href=""><img src="8.png"/></a></li>
+                    <li class="pad"><a href=""><img src="7.png"/></a></li>
+                </ul>
+            </div>
+        </div>
+       <!--  中 -->
+        <div class="main">
+            <div class="main-top"><img src="main.png"/></div>
+            <div class="clearFix">
+                <img src="bottom1.png"/>
+                <img src="bottom2.png"/>
+                <img src="bottom3.png"/>
+                <img src="bottom4.png"/>
+            </div>
+        </div>
+        <!-- 下 -->
+        <div class="footer">
+            <div class="footer-top clearFix">
+                <ul>
+                    <li><strong>选购及了解</strong></li>
+                    <li><a href="">Mac</a></li>
+                    <li><a href="">iPad</a></li>
+                    <li><a href="">iPhone</a></li>
+                    <li><a href="">Watch</a></li>
+                    <li><a href="">Music</a></li>
+                    <li><a href="">iTunes</a></li>
+                    <li><a href="">iPod</a></li>
+                    <li><a href="">配件</a></li>
+                    <li><a href="">App Store 充值卡</a></li>
+                </ul>
+                <ul>
+                    <li><strong>Apple Store 商店</strong></li>
+                    <li><a href="">查找零售店</a></li>
+                    <li><a href="">Genius Bar 天才吧</a></li>
+                    <li><a href="">Today at Apple</a></li>
+                    <li><a href="">Apple 夏令营</a></li>
+                    <li><a href="">Field Trip 课外活动</a></li>
+                    <li><a href="">Apple Store App</a></li>
+                    <li><a href="">翻新和优惠</a></li>
+                    <li><a href="">分期付款</a></li>
+                    <li><a href="">重复使用和循环利用</a></li>
+                    <li><a href="">订单状态</a></li>
+                    <li><a href="">选购帮助</a></li>
+                </ul>
+                <ul>
+                    <li><strong>教育应用</strong></li>
+                    <li><a href="">Apple 与教育</a></li>
+                    <li><a href="">高校师生选购</a></li>
+                    <li><br/></li>
+                    <li><strong>商务应用</strong></li>
+                    <li><a href="">Apple 与商务</a></li>
+                    <li><a href="">商务选购</a></li>
+                </ul>
+                <ul>
+                    <li><strong>账户</strong></li>
+                    <li><a href="">管理你的 Apple ID</a></li>
+                    <li><a href="">Apple Store 账户</a></li>
+                    <li><a href="">iCloud.com</a></li>
+                    <li><br/></li>
+                    <li><strong>Apple 价值观</strong></li>
+                    <li><a href="">辅助功能</a></li>
+                    <li><a href="">环境责任</a></li>
+                    <li><a href="">隐私</a></li>
+                    <li><a href="">供应商责任</a></li>
+                </ul>
+                <ul>
+                    <li><strong>关于 Apple</strong></li>
+                    <li><a href="">Newsroom</a></li>
+                    <li><a href="">Apple 管理层</a></li>
+                    <li><a href="">工作机会</a></li>
+                    <li><a href="">活动</a></li>
+                    <li><a href="">联系 Apple</a></li>
+                </ul>
+            </div>
+            <div class="footer-bottom">
+                <p>更多选购方式：前往<a>Apple Store 零售店</a>，致电 400-666-8800 或查找在你附近的<a>授权经销商</a>。</p>
+                <div class="box clearFix">
+                    <div class="footer-left">
+                        <span>Copyright © 2017 Apple Inc. 保留所有权利。</span>
+                        <a href="" style="border:none;">隐私政策</a>
+                        <a href="">使用条款</a>
+                        <a href="">销售政策</a>
+                        <a href="">法律信息</a>
+                        <a href="">网站地图</a>
+                    </div>
+                    <div class="footer-right">
+                        <img src="z.png"/>
+                        <span>中国</span>
+                    </div>
+                </div>
+                <p>京公安网安备 11010502008968 <a href="" style="color:#999;">京ICP备10214630</a></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

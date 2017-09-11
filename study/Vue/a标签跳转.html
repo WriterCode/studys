@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+</head>
+
+<body>
+    <ul id="wrap">
+        <li v-for="(index,index1) in siet">
+            <a :href='src[index1]'>{{index}}</a></li>
+    </ul>
+</body>
+<script src="vue.min.js"></script>
+<script>
+    new Vue({
+        el: ' #wrap ',
+        data: {
+            siet: ['新闻 ', '军事 ', '任命 ', '搜索 ', '更多 '],
+            src: ['vue1.html ', 'vue 组件.html ', '事件处理.html ', '数1.html ', 'vue1.html ']
+        }
+    })
+</script>
+
+</html>

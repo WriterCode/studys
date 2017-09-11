@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style: none;
+        }
+        li{
+            float: left;
+            margin: 0px 5px;
+        }
+        a{
+            width: 25px;
+            height: 25px;
+            /*background: red;*/
+            display: block;
+        }
+        .a1{
+            background-image: url(1.png);
+            background-position: 0px 0px;
+        }
+        .a1:hover{
+            background-position: -54px 0px;
+        }
+        .a2{
+            background-image: url(1.png);
+            background-position: 0px -41px;
+        }
+        .a2:hover{
+            background-position: -54px -41px;
+        }
+        .a3{
+            background-image: url(1.png);
+            background-position: 0px -82px;
+        }
+        .a4{
+            background-image: url(1.png);
+            background-position: 0px -118px;
+        }
+        .a5{
+            width: 35px;
+            background-image: url(1.png);
+            background-position: 0px -159px;
+        }
+    </style>
+</head>
+<body>
+    <!--
+        雪碧图、CSS Sprites、css 精灵
+
+        CSS Sprites(图像拼合技术)：将多张图片合在一张图片中，减少服务器压力，使用css background-position技术实现
+
+     -->
+    <section>
+        <ul>
+          <li><a href="" class="a1"></a></li>
+          <li><a href="" class="a2"></a></li>
+          <li><a href="" class="a3"></a></li>
+          <li><a href="" class="a4"></a></li>
+          <li><a href="" class="a5"></a></li>
+      </ul>
+    </section>
+</body>
+</html>

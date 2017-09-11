@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+
+// 数组排序
+var arr = [5,1,6,7,2,3,4];
+var k = 0;
+$(arr).each(function(index){
+	$(arr).each(function(index1){
+		if(arr[index] > arr[index1]){
+			k = arr[index];
+			arr[index] = arr[index1];
+			arr[index1] = k;
+		}
+	})
+})
+console.log(arr);
+
+// 数组去重
+var arr1 = [1,2,3,4,5,6,3,2,1,5,2];
+var arr2 = [];
+$(arr).each(function(index){
+	if(arr2.indexOf(arr1[index]) == -1){
+		arr2.push(arr1[index]);
+	}
+})
+console.log(arr2);
+
+
+
+
+
+</script>
+</html>

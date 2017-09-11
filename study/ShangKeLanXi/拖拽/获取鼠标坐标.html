@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        #wrap {
+            height: 3000px;
+            background: red;
+        }
+        
+        #box1 {
+            width: 400px;
+            height: 400px;
+            background: orange;
+            border: 20px solid #ccc;
+        }
+        
+        #box2 {
+            width: 200px;
+            height: 200px;
+            background: yellow;
+            border: 20px solid #ccc;
+            margin: 100px auto;
+            /*ev.layerX使用*/
+            position: relative;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap">
+        <div id="box1">
+            <div id="box2"></div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+    var wrap = document.querySelector('#wrap');
+    var box1 = document.querySelector('#box1');
+    var box2 = document.querySelector('#box2');
+    // document.onclick = function(e){
+    // 	var ev = window.event || e;
+    // 	相对于可视窗口的坐标
+    // 	console.log(ev.clientX + ',' + ev.clientY)
+    // 	console.log(box1.offsetLeft)
+    // 	console.log(box2.offsetLeft + ',' + box2.offsetTop)
+    // }
+
+    // box1.onclick = function(e){
+    // var ev = window.event || e;
+    // 鼠标在元素上的坐标(内容+padding),border不计算在内,和绑不绑定事件无关
+    // console.log(ev.offsetX + ',' + ev.offsetY)
+
+    // 获取鼠标在元素上的坐标
+    // 绑定元素  后代元素没定位  从绑定事件的元素的的border左上角开始计算
+    // 绑定元素  后代元素定位  从鼠标接触的元素的border左上角开始计算
+    // console.log(ev.layerX + ',' + ev.layerY)
+    // }
+
+    document.onclick = function(e) {
+        var ev = window.event || e;
+        // 获取鼠标相对于html页面的坐标
+        // console.log(ev.pageX + ',' + ev.pageY)e
+        // 替换方式
+        var mouseX = ev.clientX + (document.documentElement.scrollLeft || document.body.scrollLeft);
+        var mouseY = ev.clientY + (document.documentElement.scrollTop || document.body.scrollTop);
+        console.log(mouseX + ',' + mouseY)
+    }
+</script>
+
+</html>

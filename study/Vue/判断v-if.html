@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	<div class="wrap">
+		<p v-if="seen1">我隐藏着</p>
+		<p v-if="seen2">我显示着</p>
+		<p v-if="seen3">我是p3</p>
+	</div>
+</body>
+<script type="text/javascript" src="vue.min.js"></script>
+<script type="text/javascript">
+//  v-if 指令将根据表达式 seen 的值(true 或 false )来决定是否插入 p 元素
+new Vue({
+	el:'.wrap',
+	data:{
+		seen1:false,
+		seen2:true,
+		seen3:true,
+	}
+})
+
+</script>
+</html>

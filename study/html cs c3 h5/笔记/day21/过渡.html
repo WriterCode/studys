@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>过渡</title>
+	<style type="text/css">
+		/*
+			transition:过渡
+		*/
+		
+		.box{
+			width: 300px;
+			height: 300px;
+			margin:100px auto;
+			background: red;
+			/*过渡时间*/
+			transition-duration:3s;
+			/*过渡那些属性*/
+			/*transition-property:width,height;*/
+			/*过渡只能过渡带数值的属性*/
+			transition-property: all;
+			/*过渡效果的方式*/
+			transition-timing-function:cubic-bezier(0, 0, 1,-1.11);
+			/*过渡延迟执行*/
+			transition-delay: 2s;
+			/*trsnsition复合属性*/
+			transition:all 3s cubic-bezier(0, 0, 1,-1.11) 2s;
+			-webkit-transition:all 3s cubic-bezier(0, 0, 1,-1.11) 2s;
+			-o-transition:all 3s cubic-bezier(0, 0, 1,-1.11) 2s;
+			-moz-transition:all 3s cubic-bezier(0, 0, 1,-1.11) 2s;
+			-ms-transition:all 3s cubic-bezier(0, 0, 1,-1.11) 2s;
+		}
+		.box:hover{
+			width: 400px;
+			height: 400px;
+			background: blue;
+		}
+		h1{
+			font-size:50px;
+			color:yellow;
+		}
+		h1:hover{}
+	</style>
+</head>
+<body>
+	<section class="box"></section>
+	<h1>hello word</h1>
+</body>
+</html>

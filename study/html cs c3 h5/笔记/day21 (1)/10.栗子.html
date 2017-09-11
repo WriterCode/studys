@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        .box{
+            border: 1px dashed #ccc;
+        }
+        img{
+            transition-delay: 0s;
+            transform: scale(0.5) rotateY(0deg);
+            transition-duration: 1s;
+            margin: 40px;
+        }
+        .box:hover img{
+            transform: scale(1.5) rotateY(360deg);
+
+        }
+        .img1{
+            transition-delay: 0s;
+        }
+        .img2{
+            transition-delay: 0.3s;
+        }
+        .img3{
+            transition-delay: 0.6s;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <img src="11.png" class="img1">
+        <img src="11.png" class="img2">
+        <img src="11.png" class="img3">
+    </div>
+</body>
+</html>

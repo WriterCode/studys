@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        #wrap {
+            position: relative;
+        }
+        
+        #left {
+            width: 480px;
+            height: 300px;
+            position: relative;
+        }
+        
+        #left img {
+            width: 480px;
+            height: 300px;
+            display: block;
+            border: 0;
+        }
+        
+        #box {
+            width: 120px;
+            height: 75px;
+            background: #00ffff;
+            opacity: 0.4;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        
+        #right {
+            width: 480px;
+            height: 300px;
+            position: absolute;
+            top: 0;
+            right: -500;
+            overflow: hidden;
+        }
+        
+        .show {
+            display: block;
+        }
+        
+        .hide {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap">
+        <div id="left">
+            <img src="" alt="">
+            <div id="box"></div>
+        </div>
+        <div id="right">
+            <img src="" alt="">
+        </div>
+    </div>
+</body>
+<script>
+    var wrap = document.querySelector('#wrap');
+    var left = document.querySelector('#left');
+    var box = document.querySelector('#box');
+    var right = document.querySelector('#right');
+    wrap.onmouseenter = function() {
+        right.className = 'show';
+    }
+    wrap.onmouseleave = function() {
+        right.className = 'hide';
+    }
+</script>
+
+</html>

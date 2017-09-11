@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#wrap{
+			width: 300px;
+			height: 500px;
+			border:1px solid #ccc;
+			position: relative;
+			overflow: hidden;
+		}
+		img{
+			position: absolute;
+			top:0;
+			left:20px;
+		}
+		.banner{
+			height: 14px;
+			width: 600px;
+			background: url(img/banner.jpg);
+			position: absolute;
+			bottom:40px;
+			animation:move 2s infinite linear;
+		}
+		@keyframes move {
+			0% {
+				left:0px;
+			}
+			100%{
+				left:-300px;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div id="wrap">
+		<img src="img/bird0.png">
+		<p class="banner"></p>
+	</div>
+</body>
+<script type="text/javascript">
+	var bird = document.querySelector('img');
+	// 小鸟下落的速度
+	bird.speed = 0;
+	bird.moveTimer = setInterval(function(){
+		bird.speed += 0.5;
+		var birdTop = bird.offsetTop + bird.speed;
+		// 小鸟上升和下落时的图片
+		if(bird.speed > 0){
+			bird.src = 'img/down_bird0.png';
+		}else{
+			bird.src = 'img/up_bird0.png';
+		}
+		bird.style.top = birdTop + 'px';
+	},30)
+
+	document.onkeydown = function(e){
+		var ev = e || window.event;
+		// 当按下空格键时让小鸟的速度为负值向上走
+		if(ev.keyCode == 32){
+			bird.speed = -10;   
+		}
+	}
+
+
+
+</script>
+</html>

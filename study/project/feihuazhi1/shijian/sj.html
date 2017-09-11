@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style type="text/css">
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		#wrap{
+			width: 600px;
+			height: 600px;
+			border-radius: 50%;
+			background: -webkit-linear-gradient(yellow 10%,gold 20%,orange 50%);
+			position: absolute;
+			top:50%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+		}
+		#bp{
+			width: 560px;
+			height: 560px;
+			border-radius: 50%;
+			position: absolute;
+			top:20px;
+			left: 20px;
+			background: -webkit-radial-gradient(30% 30%,#fff,#000)
+		}
+		#huo{
+			width: 14px;
+			height: 160px;
+			background: blue;
+			position: absolute;
+			top:140px;
+			left:293px;
+			transform-origin: bottom;
+		}
+		#min{
+			width: 10px;
+			height: 200px;
+			background: pink;
+			position: absolute;
+			top:100px;
+			left:295px;
+			transform-origin: bottom;
+		}
+		#sec{
+			width: 6px;
+			height: 240px;
+			background: skyblue;
+			position: absolute;
+			top:60px;
+			left:297px;
+			transform-origin: bottom;
+		}
+		#bp span{
+			display: block;
+			width: 30px;
+			height: 30px;
+			font-size: 20px;
+			font-weight: bold;	
+		}
+		#bp div{
+			position: absolute;
+			top:270px;
+			left:10px;
+			width: 100%;
+		}
+		#zb{
+			width: 5px;
+			height: 200px;
+			background: gold;
+			position: absolute;
+			bottom:100px;
+			left:297px;
+			animation:move 1.5s infinite alternate linear;
+			transform: rotateZ(30deg);
+			transform-origin: top;
+		}
+		#zb::before{
+			content: '';
+			display: block;
+			width: 30px;
+			height: 30px;
+			border-radius: 50%;
+			background: purple;
+			position: absolute;
+			top:-15px;
+			left:-13px;
+		}
+		#zb::after{
+			content: '';
+			display: block;
+			width: 20px;
+			height: 20px;
+			border-radius: 50%;
+			background: black;
+			position: absolute;
+			top:195px;
+			left:-8px;
+		}
+		@keyframes move{
+			form {
+				transform: rotateZ(30deg);
+			}
+			to {
+				transform: rotate(-30deg);
+			}
+		}
+		p{
+			font-size: 20px;
+			font-weight: bold;
+			position: absolute;
+			top:305px;
+			left:203px;
+			z-index: 999;
+		}
+		h1{
+			position: absolute;
+			top:330px;
+			left:230px;
+			z-index: 999;
+		}
+	</style>
+</head>
+<body>
+	<div id="wrap">
+		<div id="bp">
+			<div><span>9</span></div>
+			<div><span>10</span></div>
+			<div><span>11</span></div>
+			<div><span>12</span></div>
+			<div><span>1</span></div>
+			<div><span>2</span></div>
+			<div><span>3</span></div>
+			<div><span>4</span></div>
+			<div><span>5</span></div>
+			<div><span>6</span></div>
+			<div><span>7</span></div>
+			<div><span>8</span></div>
+			
+		</div>
+		<div id="huo"></div>
+		<div id="min"></div>
+		<div id="sec"></div>
+		<div id="zb"></div>
+	</div>
+	<script type="text/javascript">
+		var divs = document.querySelectorAll('#bp div');
+		var spans = document.querySelectorAll('#bp span');
+		var hour = document.querySelector('#huo');
+		var min = document.querySelector('#min');
+		var sec = document.querySelector('#sec');
+		for(var i = 0;i < divs.length;i++){
+			divs[i].style.transform = 'rotateZ(' + i * 30 + 'deg)';
+			console.log(spans[i])
+			spans[i].style.transform = 'rotate(' + i * -30+ 'deg)';
+		}
+
+		time();
+
+		setInterval(function(){
+			time();
+		},500)
+
+
+		function time(){
+			var nowDate = new Date();
+			var hours = nowDate.getHours();
+			var nowmin = nowDate.getMinutes();
+			var nowsec = nowDate.getSeconds();
+			sec.style.transform = 'rotate(' + nowsec * 6 + 'deg)';
+			min.style.transform = 'rotate(' + nowmin * 6 + 'deg)';
+			hour.style.transform = 'rotate(' + hours * 30 + 'deg)';
+		}
+
+		var p = document.createElement('p');
+		var h1 = document.createElement('h1');
+		var t = new Date();
+		var y = t.getFullYear();
+		var m = t.getMonth();
+		var d = t.getDate();
+		var day = t.getDay();
+		var arr = ['星期零','星期一','星期二','星期三','星期四','星期五','星期六'];
+		p.innerHTML = y + '年 ' + m + '月 ' + d + '号';
+		h1.innerHTML = arr[day];
+		bp.appendChild(p);
+		bp.appendChild(h1);
+
+
+
+
+
+
+
+
+	</script>
+</body>
+</html>

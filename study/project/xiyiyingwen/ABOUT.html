@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<link rel="stylesheet" href="ABOUT.css">
+	<link rel="stylesheet" href="rendering1.css" media="(max-width:1300px)">
+	<link rel="stylesheet" href="rendering2.css" media="(max-width:1200px)">
+	<link rel="stylesheet" href="rendering3.css" media="(max-width:1100px)">
+</head>
+<body>
+	<header class="header">
+		<nav>
+			<img src="img/1.png">
+			<a href="Home.html" class="home">Home</a>
+			<a href="ABOUT.html" class="about" style="color:#fff;">ABOUT</a>
+			<a href="rendering.html">Renderings</a>
+			<a href="3D Animate.html">3D Animate</a>
+			<a href="BIM.html">BIM</a>
+			<a href="Contact.html">Contact</a>
+		</nav>
+		<div class="btn">
+			<p></p>
+			<p></p>
+			<p></p>
+		</div>
+		<div class="tk">
+			<p><a href="Home.html">Home</a></p>
+			<p><a href="ABOUT.html">ABOUT</a></p>
+			<p><a href="rendering.html">Renderings</a></p>
+			<p><a href="3D Animate.html">3D Animate</a></p>
+			<p><a href="BIM.html">BIM</a></p>
+			<p><a href="Contact.html">Contact</a></p>
+		</div>
+	</header>
+	<main class="main">
+		<main class="bgd">
+			<h1>About Us</h1><br/>
+			<p>Shining CG is a creative corporation that specializes in portraying unbuilt architecture. We help the architect and the owners to convert building still in the design stage, into visual images or video, show the essence of complete building.</p><br/>
+			<p>Since the year of 1998, we have finished more than 20000 3D visualization creativities of all kinds of architecture for more than 2000 different clients coming from 18 countries of 5 continents. We have used 3D technology, shooting, drawing and architectonic to provide the clients with the services of CG rendering, CG animation, BIM and 3D products finally.</p>
+			<main class="main-footer">
+				<a href=""><img src="img/21.png"></a>
+				<a href=""><img src="img/22.png" style="margin-top:18px;"></a>
+				<a href=""><img src="img/23.png" style="margin-top:21px;"></a>
+				<a href=""><img src="img/24.png" style="margin-top:18px;"></a>
+				<a href=""><img src="img/25.png" style="margin-top:16px;"></a>
+				<a href=""><img src="img/26.png"></a>
+				<a href=""><img src="img/28.png"></a>
+				<a href=""><img src="img/29.png"></a>
+				<a href=""><img src="img/30.png"></a>
+				<a href=""><img src="img/31.png" style="margin-top:10px;"></a>
+			</main>
+		</main>
+	</main>
+	<footer>
+		<header></header>
+		<main class="footer-main clearFix">
+			<main class="footer-main-1 l"></main>
+			<main class="footer-main-2 l"></main>
+			<main class="footer-main-3 l"></main>
+			<main class="footer-main-4 l"></main>
+		</main>
+		<footer class="footer">
+			<p>Copyinght @ 1998-2015 shining Group</p>
+		</footer>
+	</footer>
+	<script type="text/javascript">
+    	var btn = document.querySelector('.btn');
+    	var tk = document.querySelector('.tk');
+    	var btn1 = document.querySelector('.btn1');
+    	var bol = true;
+    	btn.onclick = function(){
+    		if(bol){
+    			tk.style.display = 'block';
+    			bol = !bol;
+    		}else{
+    			tk.style.display = 'none';
+    			bol = !bol;
+    		}
+    	}
+    	window.onresize = function(){
+    		if(document.documentElement.clientWidth > 1100){
+    			tk.style.display = 'none';
+    		}
+    	}
+    </script>
+</body>
+</html>

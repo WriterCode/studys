@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style type="text/css">
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	.l{
+		float:left;
+	}
+	.r{
+		float:right;
+	}
+	.clearFix::after{
+		content: '';
+		display: block;
+		clear:both;
+	}
+	.videoPlay{
+		width: 850px;
+		height: 525px;
+		/*height: 0;*/
+		background: #fff;
+		position: fixed;
+		top:50%;
+		left: 50%;
+		transform: translate(-50%,-50%);
+		z-index: 9999;
+		transition-duration: 0.5s;
+		/*overflow: hidden;*/
+	}
+	.videoPlayT{
+		height: 50px;
+		background: #f5f5f5;
+	}
+	.videoPlayT p:nth-child(1){
+		font-size: 18px;
+		color:#424242;
+		font-weight: 400;
+		line-height: 50px;
+		margin-left:20px;
+	}
+	.btn5{
+		width: 37px;
+		height: 35px;
+		background: url(img/qx.png) no-repeat;
+		margin-top:10px;
+		margin-right:20px;
+	}
+	.btn5:hover{
+		background: url(img/qx1.png) no-repeat;
+	}
+	.lz img{
+		width: 850px;
+	}
+	.videoPlayB{
+		width: 100%;
+		position: absolute;
+		bottom:0;
+		z-index: 1;	
+	}
+	.videoPlayBtop{
+		width: 100%;
+		height: 4px;
+		background: rgba(51,51,51,0.6);
+		cursor: pointer;
+		position: absolute;
+		bottom:70px;
+		z-index: 33;
+	}
+	.videoPlayC{
+		width: 90px;
+		height: 90px;
+		background: url(img/big_play_btn.png) no-repeat;
+		position: absolute;
+		top:50%;
+		left:50%;
+		transform: translate(-50%,-50%);
+		z-index: 111;
+	}
+	.videoPlayBbot span:nth-child(1){
+		display: inline-block;
+		width: 20px;
+		height: 20px;
+		background: url(img/btns.png) no-repeat;
+		vertical-align: top;
+		position: absolute;
+		bottom:20px;
+		left:30px;
+		cursor: pointer;
+	}
+	.videoPlayBbot span:nth-child(2){
+		font-size: 12px;
+		color:#fff;
+		position: absolute;
+		bottom:22px;
+		left:90px;
+	}
+	.videoPlayBbot span:nth-child(3){
+		display: inline-block;
+		width: 20px;
+		height: 20px;
+		background: url(img/btns.png) no-repeat -2px -63px;
+		vertical-align: top;
+		position: absolute;
+		bottom:20px;
+		right:180px;
+		cursor: pointer;
+	}
+	.videoPlayBbot div:nth-child(4){
+		display: inline-block;
+		height: 4px;
+		width: 100px;
+		background: rgba(51,51,51,0.6);
+		border-radius: 2px;
+		margin-bottom:4px;
+		position: absolute;
+		bottom:27px;
+		right:80px;
+		cursor: pointer;
+	}
+	.videoPlayBbot span:nth-child(5){
+		display: inline-block;
+		width: 20px;
+		height: 20px;
+		background: url(img/btns.png) no-repeat -2px -103px;
+		vertical-align: top;
+		position: absolute;
+		bottom:20px;
+		right:30px;
+	}
+	.playQ1{
+		width: 10px;
+		height: 10px;
+		background: #fff;
+		border-radius: 5px;
+		position: absolute;
+		left:0;
+		top:-3px;
+		z-index: 2;
+	}
+	.playQ2{
+		width: 10px;
+		height: 10px;
+		background: #fff;
+		border-radius: 5px;
+		position: absolute;
+		left:99px;
+		top:-3px;
+		z-index: 2;
+	}
+	.playQ3{
+		width: 100px;
+		height: 4px;
+		background: #ff6700;
+		border-radius: 5px;
+		position: absolute;
+		z-index: 2;
+	}
+	.videoPlayBtop1{
+		width: 0px;
+		height: 5px;
+		background: #ff6700;
+		cursor: pointer;
+		position: absolute;
+		left:0px;
+		top:-1px;
+	}
+	video{
+		width: 850px;
+		position: absolute;
+		top:50px;
+		z-index: -1;
+	}
+	</style>
+</head>
+<body>
+	<!-- <div class="video">
+		<div class="videoTop clearFix">
+			<span class="l">视频</span>
+			<p class="r">
+				<span class="">查看全部</span>
+				<span class="">></span>
+			</p>
+		</div>
+		<div class="videoBot clearFix">
+			<div class="l plays" style="margin-left:0px;">
+				<img src="img/xmad_1492588199164_Jykpx.jpg">
+				<p><a href="">听雷总讲述小米7年工艺探索之路</a></p>
+				<p>小米6，7年工艺探索的巅峰之作</p>
+				<div id="play"><p></p></div>
+				</div>
+			<div class="l plays">
+				<img src="img/xmad_14925882923733_lghaJ.jpg">
+				<p><a href="">小米6外观设计视频</a></p>
+				<p>震惊！小米6竟然如此之美</p>
+				<div id="play"><p></p></div>
+			</div>
+			<div class="l plays">
+				<img src="img/xmad_14954491368955_oHlMm.jpg">
+				<p><a href="">小米电视4 外观设计视频</a></p>
+				<p>美哭了！史上最美的小米电视</p>
+				<div id="play"><p></p></div>
+			</div>
+			<div class="l plays">
+				<img src="img/xmad_14954492313573_fOVNG.jpg">
+				<p><a href="">4.9mm极超薄电视的诞生揭秘</a></p>
+				<p>小米电视工程师讲述极致之作的背后故事</p>
+				<div id="play"><p></p></div>
+			</div>
+		</div>
+	</div> -->
+	<div class="videoPlay">
+		<div class="videoPlayT clearFix">
+			<p class="l">听雷总讲述小米7年工艺探索之路</p>
+			<p class="btn5 r"></p>
+		</div>
+		<div class="videoPlayB">
+			<div class="videoPlayBtop">
+				<div class="videoPlayBtop1">
+					<div class="playQ1"></div>
+				</div>
+			</div>
+			<div class="videoPlayBbot">
+				<span id="bf"></span>
+				<span id="sj">00:00 / 02:48</span>
+				<span></span>
+				<div class="voice">
+					<div class="playQ3">
+						<div class="playQ2"></div>
+					</div>
+				</div>
+				<span id="qp"></span>
+			</div>
+		</div>
+		<div class="videoPlayC"></div>
+		<video src="League+of+Legends+Cinematic++A+Twist+of+Fate.webm" poster="img/64e4e5e97af343c8a016cb04d0cd863b.jpg"></video>
+	</div>
+</body>
+<script type="text/javascript">
+	// 视频
+	var video = document.querySelector('video');
+	var bol = true;
+	// 点击按钮让div显示和隐藏
+	// var play = document.querySelectorAll('#play');
+	var videoPlay = document.querySelector('.videoPlay');
+	var btn5 = document.querySelector('.btn5');
+	// var totalTime = null;
+	// for(var i = 0;i < play.length;i++){
+	// 	play[i].onclick = function(){
+	// 		videoPlay.style.height = 525 + 'px';
+	// 		// totalTime = video.duration/60;
+	// 	}
+	// }
+	// btn5.onclick = function(){
+	//     videoPlay.style.height = 0 + 'px';
+	//     bf.style.background = '';
+	//     bol = true;
+	//     // 视频从新加载
+	//     video.load();
+	//     videoPlayBtop1.style.width = 0 + 'px';
+	//     playQ1.style.left = 0 + 'px';
+	// }
+
+
+	// 播放和暂停
+	var videoPlayC = document.querySelector('.videoPlayC');
+	var bf = document.querySelector('#bf');
+	// 点击中间播放按钮
+	videoPlayC.onclick = function(){
+		event.stopPropagation();
+		video.style.zIndex = '0';
+		videoPlayC.style.display = 'none';
+		// 改变小的播放按钮的样式
+		bf.style.background = 'url(img/btns.png) no-repeat -4px -22px';
+		// 开始播放视频
+		video.play();
+		bfjdFn();
+		sjFn();
+		bol = false;
+	}
+	// 点击小的播放按钮
+	bf.onclick = function(){
+		event.stopPropagation();
+		if(bol){
+			video.style.zIndex = '0';
+			videoPlayC.style.display = 'none';
+			bf.style.background = 'url(img/btns.png) no-repeat -4px -22px';
+			video.play();
+			// 播放进度函数
+			bfjdFn();
+			// 时间进度函数
+			sjFn();
+			bol = !bol;
+		}else{
+			video.style.zIndex = '0';
+			bf.style.background = '';
+			videoPlayC.style.display = 'block';
+			// 暂停视频
+			video.pause();
+			// 清除定时器
+			clearInterval(timer);
+			bol = !bol;
+		}
+	}
+
+
+
+	// 全屏
+	var qp = document.querySelector('#qp');
+	var videoPlayT = document.querySelector('.videoPlayT');
+	var bol1 = true;
+	qp.onclick = function(){
+		if(bol1){
+			// 点击按钮改变最大div的宽高和视频宽度
+			videoPlay.style.width = '100%';
+			videoPlay.style.height = '100%';
+			video.style.width = '100%';
+			// video.style.height = '100%';
+			videoPlayT.style.display = 'none';
+			video.style.top = 0 + 'px';
+			videoPlay.style.transitionDuration = 0 + 's';
+			// 全屏函数
+			fullScreen(videoPlay);
+			bol1 = !bol1;
+		}else{
+			videoPlay.style.width = 850 +  'px';
+			videoPlay.style.height = 525 + 'px';
+			video.style.width = 850 + 'px';
+			videoPlayT.style.display = 'block';
+			video.style.top = 50 + 'px';
+			videoPlay.style.transitionDuration = 0 + 's';
+			// video.style.height = '';
+			// 取消全屏
+			exitFullScreen(videoPlay);
+			bol1 = !bol1;
+		}
+	}
+	// 双击
+	videoPlay.ondblclick = function(){
+		if(bol1){
+			videoPlay.style.width = '100%';
+			videoPlay.style.height = '100%';
+			video.style.width = '100%';
+			// video.style.height = '100%';
+			video.style.top = 0 + 'px';
+			videoPlay.style.transitionDuration = 0 + 's';
+			videoPlayT.style.display = 'none';
+			fullScreen(videoPlay);
+			bol1 = !bol1;
+		}else{
+			videoPlay.style.width = 850 +  'px';
+			videoPlay.style.height = 525 + 'px';
+			video.style.width = 850 + 'px';
+			videoPlayT.style.display = 'block';
+			video.style.top = 50 + 'px';
+			videoPlay.style.transitionDuration = 0 + 's';
+			// video.style.height = '';
+			exitFullScreen(videoPlay);
+			bol1 = !bol1;
+		}
+	}
+
+	// ESC退出全屏
+	document.onkeydown = function(e){
+		var ev = window.event || e;
+		ev.preventDefault();
+		console.log(ev.keyCode);
+		if(ev.keyCode == 27){
+			videoPlay.style.width = 850 +  'px';
+			videoPlay.style.height = 525 + 'px';
+			video.style.width = 850 + 'px';
+			videoPlayT.style.display = 'block';
+			video.style.top = 50 + 'px';
+			// video.style.height = '';
+			exitFullScreen(videoPlay);
+			bol1 = true;
+		}
+	}
+
+	// 全屏函数
+	function fullScreen(el) {  
+	    var rfs = el.requestFullScreen || el.webkitRequestFullScreen || el.mozRequestFullScreen || el.msRequestFullScreen,  
+	        wscript;  
+	   
+	    if(typeof rfs != "undefined" && rfs) {  
+	        rfs.call(el);  
+	        return;  
+	    }  
+	   
+	    if(typeof window.ActiveXObject != "undefined") {  
+	        wscript = new ActiveXObject("WScript.Shell");  
+	        if(wscript) {  
+	            wscript.SendKeys("{F11}");  
+	        }  
+	    }  
+	}  
+	
+	// 取消全屏  
+	function exitFullScreen(el) {  
+	    var el= document,  
+	        cfs = el.cancelFullScreen || el.webkitCancelFullScreen || el.mozCancelFullScreen || el.exitFullScreen,  
+	        wscript;  
+	   
+	    if (typeof cfs != "undefined" && cfs) {  
+	      cfs.call(el);  
+	      return;  
+	    }  
+	   
+	    if (typeof window.ActiveXObject != "undefined") {  
+	        wscript = new ActiveXObject("WScript.Shell");  
+	        if (wscript != null) {  
+	            wscript.SendKeys("{F11}");  
+	        }  
+	  }  
+	} 
+
+
+	// 获取音量键,调节音量
+	var voice = document.querySelector('.voice');
+	var playQ2 = document.querySelector('.playQ2');
+	var playQ3 = document.querySelector('.playQ3');
+	playQ2.onmousedown = function(e){
+		var ev = window.event || e;
+		ev.preventDefault();
+		ev.stopPropagation();
+		// 让鼠标处在playQ2小球的中间
+		var x = ev.clientX - playQ2.offsetWidth/2 - playQ2.offsetLeft;
+		// var y = ev.clientY - playQ2.offsetHeight/2;
+		document.onmousemove = function(e){
+			var ev = window.event || e;
+			ev.preventDefault();
+			var x1 = ev.clientX - x;
+			// 判断小球的位置 不能超出div的宽
+			if(x1 <= 0){
+				x1 = 0;
+			}
+			if(x1 >= 99){
+				x1 = 99;
+			}
+			playQ2.style.left = x1 + 'px';
+			// 让有色div的宽度跟谁小球的位置变化
+			playQ3.style.width = x1 + 'px';
+			// video.volume获取音量
+			video.volume = x1/100;
+		}
+	}
+
+	// 点击最外层div事件
+	voice.onclick = function(e){
+		var ev = window.event || e;
+		ev.preventDefault();
+		// 获取上下左右居中元素left值 = 最大div的left值 + 最大div宽的一半
+		// 获取鼠标点击时playQ2的left值 = 点击位置 - 最外层div的left值 - 最大div的left值 + 最大div宽的一半
+		var x1 = ev.clientX - voice.offsetLeft - videoPlay.offsetLeft + videoPlay.offsetWidth/2;
+		console.log(ev.clientX)
+		playQ2.style.left = x1 + 'px';
+		playQ3.style.width = x1 + 'px';
+		// video.volume获取音量
+		video.volume = x1/100;
+	}
+
+	// 清除移动事件
+	document.onmouseup = function(){
+		document.onmousemove = null;
+	}
+
+	// 播放进度
+	// 返回视屏总长度
+	// console.log(video.duration);
+	// 返回视频及时进度
+	// console.log(video.currentTime);
+	var videoPlayBtop = document.querySelector('.videoPlayBtop');
+	var videoPlayBtop1 = document.querySelector('.videoPlayBtop1');
+	var playQ1 = document.querySelector('.playQ1');
+	// var time = video.currentTime;
+
+	// 播放进度函数
+	function bfjdFn(){
+		timer = setInterval(function(){
+			// 进度条每秒移动多少 = 进度条总宽度 / 视频总时长
+			// 进度条实时位置 = 进度条总宽度 / 视频总时长 * 视频实时播放时间
+			var timeL = videoPlayBtop.offsetWidth / video.duration * video.currentTime;
+			// console.log(timeL);
+			videoPlayBtop1.style.width = timeL + 'px';
+			playQ1.style.left = timeL + 'px';
+		},1000)
+	}
+
+	// 拖动
+	playQ1.onmousedown = function(e){
+		var ev = window.event || e;
+		ev.preventDefault();
+		ev.stopPropagation();
+		var x3 = ev.clientX - playQ1.offsetWidth/2 - playQ1.offsetLeft;
+		document.onmousemove = function(e){
+			var ev = window.event || e;
+			ev.preventDefault();
+			var x4 = ev.clientX - x3;
+			if(x4 < 0){
+				x4 = 0;
+			}
+			if(x4 > videoPlayBtop.offsetWidth-10){
+				x4 = videoPlayBtop.offsetWidth-10;
+			}
+			playQ1.style.left = x4 + 'px';
+			videoPlayBtop1.style.width = x4 + 'px';
+			// 视频实时播放时间 / 视频总时间 = 进度条实时宽度 / 进度条总宽度
+			video.currentTime = video.duration * x4/(videoPlayBtop.offsetWidth-10); 
+		}
+	}
+
+	// 点击
+	videoPlayBtop.onclick = function(e){
+		var ev = window.event || e;
+		ev.preventDefault();
+		ev.stopPropagation();
+		var x4 = ev.clientX - videoPlay.offsetLeft + videoPlay.offsetWidth/2;
+		playQ1.style.left = x4 + 'px';
+		videoPlayBtop1.style.width = x4 + 'px';
+		video.currentTime = video.duration * x4/(videoPlayBtop.offsetWidth-10);
+		// console.log(x4);
+		 
+	}
+
+	// 时间变动函数
+	var sj = document.querySelector('#sj');
+	function sjFn(){
+		timer1 = setInterval(function(){
+			// video.duration获取的是视频总时长(以秒记)
+			// 总视频时长 / 60 = 多少分钟
+			var minte = parseInt(video.duration/60);
+			// 视频播放的时长多少分钟
+			var minte1 = parseInt(video.currentTime/60); 
+			// 视频播放的时长秒数
+			var sec = parseInt(video.currentTime-minte1*60);
+			// 判断用不用在前面加0
+			if(minte < 10){
+				minte = '0' + minte;
+			}
+			if(minte1 < 10){
+				minte1 = '0' + minte1;
+			}
+			if(sec < 10){
+				sec = '0' + sec;
+			}
+			sj.innerHTML = minte1 + ':' + sec + '/' + minte + ':' + parseInt(video.duration-minte*60);
+		},1000)
+	}
+
+	// 视频播放完成时间
+	video.onended = function(){
+		videoPlayC.style.display = 'block';
+		bf.style.background = '';
+	}
+</script>
+</html>

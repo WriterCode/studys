@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        body{
+            min-width: 640px;
+        }
+        .header{
+            background-color: rgba(0,0,0,0.6);
+            height: 60px;
+        }
+        .header>div{
+            width: 60%;
+            background-color: red;
+            margin: 0 auto;
+        }
+        .header>div a{
+            float: left;
+            width: 25%;
+            text-align: center;
+        }
+        .clearFix::after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+        .main{
+            background-color: blue;
+            height: 10000px;
+            width: 80%;
+            margin: 0 auto;
+        }
+        .main>img{
+            width: 100%;
+        }
+        .footer{
+            background-color: #ccc;
+            height: 300px;
+        }
+        .l{
+            width: 50%;
+            height: 300px;
+            background-color: pink;
+            float: left;
+        }
+        .r{
+            width: 50%;
+            height: 300px;
+            background-color: purple;
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="header">
+            <div class="clearFix">
+                <a href="">HOME</a>
+                <a href="">CART</a>
+                <a href="">MINE</a>
+                <a href="">MOVIE</a>
+            </div>
+        </div>
+        <div class="main">
+            <img src="http://www.infinistudio.cn/Public//Upload/2017-04-23/58fc78b8ba096.jpg">
+        </div>
+        <div class="footer">
+            <div class="l"></div>
+            <div class="r"></div>
+        </div>
+    </div>
+</body>
+</html>

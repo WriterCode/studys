@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        div {
+            /*height: 0;
+			overflow: hidden;*/
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <p>点我</p>
+    <div>dsadsadsadsadsadsadsadsadsadsads</div>
+    <p>点我</p>
+    <div>dsadsadsadsadsadsadsadsadsadsads</div>
+    <p>点我</p>
+    <div>dsadsadsadsadsadsadsadsadsadsads</div>
+    <p>点我</p>
+    <div>dsadsadsadsadsadsadsadsadsadsads</div>
+</body>
+<script type="text/javascript" src="../jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('p').click(function() {
+            if ($(this).next().css('display') == 'block') {
+                $(this).next().hide(1000);
+            } else {
+                $(this).siblings('div').hide(1000);
+                $(this).next().show(1000);
+            }
+            console.log($(this).index('p'));
+        });
+    });
+</script>
+
+</html>

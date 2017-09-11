@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="swiper-3.4.2.min.css">
+	<link rel="stylesheet" type="text/css" href="rendering.css">
+	<link rel="stylesheet" href="rendering1.css" media="(max-width:1300px)">
+	<link rel="stylesheet" href="rendering2.css" media="(max-width:1200px)">
+	<link rel="stylesheet" href="rendering3.css" media="(max-width:1100px)">
+</head>
+<body>
+	<header class="header">
+		<nav>
+			<img src="img/1.png">
+			<a href="Home.html" class="home">Home</a>
+			<a href="ABOUT.html">ABOUT</a>
+			<a href="rendering.html" id="renderings">Renderings</a>
+			<a href="3D Animate.html">3D Animate</a>
+			<a href="BIM.html">BIM</a>
+			<a href="Contact.html">Contact</a>
+		</nav>
+		<div class="btn">
+			<p></p>
+			<p></p>
+			<p></p>
+		</div>
+		<div class="tk">
+			<p><a href="Home.html">Home</a></p>
+			<p><a href="ABOUT.html">ABOUT</a></p>
+			<p><a href="rendering.html">Renderings</a></p>
+			<p><a href="3D Animate.html">3D Animate</a></p>
+			<p><a href="BIM.html">BIM</a></p>
+			<p><a href="Contact.html">Contact</a></p>
+		</div>
+	</header>
+	<main class="main">
+		<div class="swiper-container">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide"><img src="imgs/9k=.jpg"></div>
+				<div class="swiper-slide"><img src="imgs/z.jpg"></div>
+				<div class="swiper-slide"><img src="imgs/z-1.jpg"></div>
+			</div>
+			<div class="swiper-pagination"></div>
+		</div>
+	</main>
+	<div id="wrap" class="clearFix">
+		<ul></ul>
+		<ul></ul>
+		<ul></ul>
+		<ul></ul>
+	</div>
+	<div class="btn1"><img src="" alt=""></div>
+	<footer>
+		<header></header>
+		<main class="footer-main clearFix">
+			<main class="footer-main-1 l"></main>
+			<main class="footer-main-2 l"></main>
+			<main class="footer-main-3 l"></main>
+			<main class="footer-main-4 l"></main>
+		</main>
+		<footer class="footer">
+			<p>Copyinght @ 1998-2015 shining Group</p>
+		</footer>
+	</footer>
+	<script type="text/javascript" src="swiper-3.4.2.min.js"></script>
+	<script>        
+	  	var swiper = new Swiper ('.swiper-container', {pagination : '.swiper-pagination',
+	  		autoplay:1000,
+    		speed:2000,
+	  		loop: true, 
+
+	  })        
+    </script>
+    <script type="text/javascript">
+    	var btn = document.querySelector('.btn');
+    	var tk = document.querySelector('.tk');
+    	var btn1 = document.querySelector('.btn1');
+    	var bol = true;
+    	btn.onclick = function(){
+    		if(bol){
+    			tk.style.display = 'block';
+    			bol = !bol;
+    		}else{
+    			tk.style.display = 'none';
+    			bol = !bol;
+    		}
+    	}
+    	window.onresize = function(){
+    		if(document.documentElement.clientWidth > 1100){
+    			tk.style.display = 'none';
+    		}
+    	}
+    </script>
+    <script type="text/javascript">
+    	var uls = document.querySelectorAll('#wrap ul');
+    	for(var i = 1;i < 79;i++){
+			// 创建li
+			var li = document.createElement('li');
+			// 给li添加图片
+			li.innerHTML = '<img class="image" src="imgs/' + i +'.jpg"/>';
+			// 图片预加载
+			li.children[0].onload = function(){
+				// 判断ul高度,用来存放ul的高度
+				var ulHeightArr = [];
+				for(var j = 0;j < uls.length;j++){
+					ulHeightArr.push(uls[j].offsetHeight);
+				}
+				var minHeight = ulHeightArr[0];
+				var minIndex = 0;
+				for(var k = 0;k < ulHeightArr.length;k++){
+					if(minHeight > ulHeightArr[k]){
+						minHeight = ulHeightArr[k];
+						minIndex = k;
+					}
+				}
+				uls[minIndex].appendChild(this.parentNode);
+				this.onmouseenter = function(){
+					this.style.opacity = '0.5';
+				}
+				this.onmouseleave = function(){
+					this.style.opacity = '1';
+				}
+				this.onclick = function(){
+					var images = document.querySelector('.btn1 img');
+					images.src = this.src;
+					images.parentNode.style.display = 'block';
+					btn1.onclick = function(){
+						btn1.style.display = 'none';
+					}	
+				}
+			}
+		}
+
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title> New Document </title>
+  <meta name="Generator" content="EditPlus">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <style type="text/css">
+    body {
+      -webkit-perspective:3000;
+
+    }
+
+  .outer {
+    margin:100px auto;
+    width:200px; height:400px;
+    border:20px red solid;
+    position:relative;
+    background:url("images/15.jpg");
+    -webkit-transform-style:preserve-3d;
+    /*-webkit-animation:my 10s linear infinite;*/
+    transform:rotateX(-40deg) rotateY(0deg);
+    }
+    @-webkit-keyframes my {
+        from {
+            -webkit-transform:rotateX(-40deg) rotateY(0deg)
+        }
+        to {
+            -webkit-transform:rotateX(-40deg) rotateY(360deg)
+        }
+    }
+    .a,.b,.c,.d,.e,.f,.g,.h,.a2,.b2,.c2,.d2,.e2,.f2,.g2 {
+        width:200px;
+        height:400px;
+        position:absolute;
+    }
+    .a {
+        background:url("images/1.jpg");
+        -webkit-transform:rotateY(0deg) translateZ(400px);
+    }
+    .b {
+        background:url("images/2.jpg");
+        -webkit-transform:rotateY(30deg) translateZ(400px);
+
+    }
+    .c {
+        background:url("images/3.jpg");
+        -webkit-transform:rotateY(60deg) translateZ(400px) ;
+     }
+    .d {
+        background:url("images/4.jpg");
+        -webkit-transform:rotateY(90deg) translateZ(400px) ;
+     }
+    .e {
+        background:url("images/5.jpg");
+        -webkit-transform:rotateY(120deg) translateZ(400px);
+     }
+    .f {
+        background:url("images/6.jpg");
+        -webkit-transform:rotateY(150deg) translateZ(400px) ;
+     }
+    .g {
+        background:url("images/7.jpg");
+        -webkit-transform:rotateY(180deg) translateZ(400px);
+     }
+    .a2 {
+        background:url("images/8.jpg");
+        -webkit-transform:rotateY(0deg) translateZ(400px);
+     }
+    .b2 {
+        background:url("images/9.jpg");
+        -webkit-transform:rotateY(30deg) translateZ(-400px);
+     }
+    .c2 {
+        background:url("images/10.jpg");
+        -webkit-transform:rotateY(60deg) translateZ(-400px);
+     }
+    .d2 {
+        background:url("images/11.jpg");
+        -webkit-transform:rotateY(90deg) translateZ(-400px);
+     }
+    .e2 {
+        background:url("images/12.jpg");
+        -webkit-transform:rotateY(120deg) translateZ(-400px);
+     }
+    .f2 {
+        background:url("images/13.jpg");
+        -webkit-transform:rotateY(150deg) translateZ(-400px);
+     }
+    .g2 {
+        background:url("images/14.jpg");
+        -webkit-transform:rotateY(180deg) translateZ(-400px);
+     }
+  </style>
+ </head>
+
+ <body>
+ <div class="outer">
+  <div class="a"></div>
+  <div class="b"></div>
+  <div class="c"></div>
+  <div class="d"></div>
+  <div class="e"></div>
+  <div class="f"></div>
+  <div class="g"></div>
+  <div class="a2"></div>
+  <div class="b2"></div>
+  <div class="c2"></div>
+  <div class="d2"></div>
+  <div class="e2"></div>
+  <div class="f2"></div>
+ </div>
+ </body>
+</html>

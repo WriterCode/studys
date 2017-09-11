@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        body{
+            /*
+                开启3D非常消耗性能,建议项目中少量使用
+            */
+            /*
+                开启3D
+            */
+            transform-style: preserve-3d;
+            /*
+                调整视觉距离
+            */
+            perspective: 1000px;
+        }
+        .box{
+            width: 300px;
+            height: 200px;
+            background-image: url('http://img5.imgtn.bdimg.com/it/u=158390074,315862021&fm=26&gp=0.jpg');
+            margin: 100px auto;
+            transform: scale(1,1);
+        }
+        .box:hover{
+            transform: scale(1.5,1.5);
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>

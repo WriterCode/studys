@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	<div>
+		<input type="checkbox" name="" id="inp">
+		<span>全选/全不选</span>
+		<input type="checkbox" name="" id="inp1">
+		<span>反选</span><br/>
+	</div>
+	<div id="select">
+		<input type="checkbox" name="">
+		<span>选项1</span><br/>
+		<input type="checkbox" name="">
+		<span>选项2</span><br/>
+		<input type="checkbox" name="">
+		<span>选项3</span><br/>
+		<input type="checkbox" name="">
+		<span>选项4</span><br/>
+		<input type="checkbox" name="">
+		<span>选项5</span><br/>
+		<input type="checkbox" name="">
+		<span>选项6</span><br/>
+		<input type="checkbox" name="">
+		<span>选项7</span><br/>
+		<input type="checkbox" name="">
+		<span>选项8</span><br/>
+		<input type="checkbox" name="">
+		<span>选项9</span><br/>
+		<input type="checkbox" name="">
+		<span>选项10</span><br/>
+	</div>
+</body>
+<script type="text/javascript">
+	var option = document.querySelectorAll('#select input')
+	inp.onchange = function(){
+		if(this.checked){
+			for (var i = 0; i < option.length; i++) {
+				option[i].checked = true;
+			}
+		}else{
+			for (var i = 0; i < option.length; i++) {
+				option[i].checked = false;
+			}
+		}
+	}
+	inp1.onchange = function(){
+		var bol1 = true;
+		for (var i = 0; i < option.length; i++) {
+			option[i].checked = !option[i].checked;
+			if(!option[i].checked){
+				bol1 = false;
+			}
+			inp.checked = bol1;
+		}	
+	}
+
+	for(var j = 0;j < option.length;j++){
+		option[j].onchange = function(){
+			var bol =true;
+			for (var i = 0; i < option.length; i++){
+				if(!option[i].checked){
+					bol = false;
+				}
+			}
+			inp.checked = bol;
+		}
+	}
+
+
+</script>
+</html>

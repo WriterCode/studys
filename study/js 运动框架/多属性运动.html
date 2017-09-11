@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style type="text/css">
+		div{
+			width: 100px;
+			height: 100px;
+			background: yellow;
+		}
+	</style>
+</head>
+<body>
+	<div></div>
+</body>
+<script type="text/javascript">
+function animate(ele,json,times,callback){
+	function getStyle(ele,attr){
+		return ele.currentStyle ? ele.currentStyle[attr] : window.getComputedStyle(ele,null)[attr];
+	}
+	// 定义空数组接收变化的属性
+	var start = {};
+	// 吧初始属性值遍历到start里
+	for(var key in json){
+		start[key] = parseInt(getStyle(ele,key));
+	}
+	var space = times/100;
+	var x = 0;
+	ele.timer = setInterval(function(){
+		x += 9;
+		for(var key in json){
+			var len = (json[key] - start[key])*Math.sin(x/10*(Math.PI/180));
+			ele.style[key] = start[key] + len + 'px';
+		}
+		if(x == 900){
+			clearInterval(ele.timer);
+			if(callback){
+				callback();
+			}
+		}
+	},space)
+}
+
+var divs = document.querySelector('div');
+divs.onmouseenter = function(){
+	animate(this,{
+		width:400,
+		height:300
+	},1000,function(){
+		alert(1);
+	})
+}
+</script>
+</html>

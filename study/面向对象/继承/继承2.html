@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>继承2</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // 父构造函数
+    function fa(n, a, j) {
+        this.name = n;
+        this.age = a;
+        this.job = j;
+    }
+    fa.prototype.say = function() {
+        console.log(this.name);
+    }
+
+    // 子构造函数
+    // 只继承父构造函数 构造函数内部的属性 而不会继承其原先上的方法和属性
+    function son(n, a, j) {
+        // call方法继承
+        fa.call(this, n, a, j);
+        this.getAge = function() {
+            console.log(this.age);
+        }
+    }
+    son.prototype.getName = function() {
+        console.log(this.name);
+    }
+    var s1 = new son('yy', 25, '老师');
+    var s2 = new son('xx', 18, '学生');
+    console.log(s1);
+    console.log(s2);
+    s1.getName();
+    s1.getAge();
+
+    // apply();
+    function so() {
+        // arguments 获取并遍历数组
+        fa.apply(this, arguments);
+    }
+    var so1 = new so('tt', 20, 'kk');
+    console.log(so1);
+</script>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ajax发送数据</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    var u_name = 'yy';
+    var p_word = '1234';
+    var xhr = new XMLHttpRequest();
+    // get请求发送数据,并且返回值
+    // xhr.open('get', 'php/handler.php?username=' + u_name + '&password=' + p_word + '&r=' + new Date().toString(), true);
+    // post请求
+    xhr.open('post', 'php/handler.php', true);
+    xhr.onreadystatechange = function() {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                var data = JSON.parse(xhr.responseText);
+                console.log(data);
+            }
+        }
+        // xhr.send(null);
+        // post请求设置请求头
+    xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    // post请求发送数据
+    xhr.send('username=nn&password=123');
+</script>
+
+</html>

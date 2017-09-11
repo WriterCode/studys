@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <style>
+        #wrap {
+            width: 500px;
+            height: 500px;
+            border: 10px solid #ccc;
+            margin: 100px auto;
+            position: relative;
+        }
+        
+        #box {
+            width: 100px;
+            height: 100px;
+            background: yellow;
+            position: absolute;
+            cursor: move;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap">
+        <div id="box"></div>
+    </div>
+</body>
+<script>
+    var wrap = document.querySelector('#wrap');
+    var box = document.querySelector('#box');
+    box.onmousedown = function(e) {
+        var ev = window.event || e;
+        var mouseX = ev.offsetX + (wrap.offsetWidth - wrap.clientWidth) / 2;
+        var mouseY = ev.offsetY + (wrap.offsetHeight - wrap.clientHeight) / 2;
+        var scrollX = document.documentElement.scrollLeft || document.body.scrollLeft;
+        var scrollY = document.documentElement.scrollTop || document.body.scrollTop;
+        document.onmousemove = function(e) {
+            var ev = window.event || e;
+            var x = ev.clientX - wrap.offsetLeft - mouseX + scrollX;
+            var y = ev.clientY - wrap.offsetTop - mouseY + scrollY;
+            if (x <= 0) {
+                x = 0;
+            } else if (x > wrap.clientWidth - box.clientWidth) {
+                x = wrap.clientWidth - box.clientWidth;
+            }
+            if (y <= 0) {
+                y = 0;
+            } else if (y > wrap.clientHeight - box.clientHeight) {
+                y = wrap.clientHeight - box.clientHeight;
+            }
+            box.style.left = x + 'px';
+            box.style.top = y + 'px';
+        }
+    }
+    document.onmouseup = function() {
+        document.onmousemove = null;
+    }
+</script>
+
+</html>

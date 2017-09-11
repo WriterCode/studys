@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style type="text/css">
+		*{
+			margin:0;
+			padding:0;
+		}
+		.clearFix::after{
+			content:'';
+			display: block;
+			clear:both;
+		}
+		.wrap{
+			width: 680px;
+			height: 344px;
+			border:1px solid #ccc;
+			position: absolute;
+			top:50%;
+			left:50%;
+			transform: translate(-50%,-50%);
+			overflow: hidden;
+		}
+		.left{
+			width: 35%;
+			float:left;
+			position: relative;
+		}
+		.right{
+			width: 65%;
+			float:left;
+		}
+		ul{
+			list-style: none;
+		}
+		.left ul li{
+			height: 85px;
+		}
+		.right div{
+			height: 344px;
+			font-size: 100px;
+			line-height: 344px;
+			text-align: center;
+		}
+		.icon{
+			width: 0;
+			height: 0;
+			border:10px solid transparent;
+			border-right-color:black;
+			position: absolute;
+			top:33px;
+			right:0px;
+			transition:0.3s all;
+		}
+	</style>
+</head>
+<body>
+	<div class="wrap">
+		<div class="left">
+			<ul>
+				<li>1</li>
+				<li>2</li>
+				<li>3</li>
+				<li>4</li>
+			</ul>
+			<div class="icon"></div>
+		</div>
+		<div class="right">
+			<div>1</div>
+			<div>2</div>
+			<div>3</div>
+			<div>4</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		var lis = document.getElementsByTagName('li');
+		var right = document.getElementsByClassName('right')[0];
+		// 根据right找到right下面的所有div
+		var divs = right.getElementsByTagName('div');
+		// 给所有按钮添加点击事件
+		var icon = document.getElementsByClassName('icon')[0];
+		for(var i = 0;i < lis.length;i++){
+			// 自定义属性
+			lis[i].index = i;
+			// 点击事件
+			lis[i].onclick = function(){
+				// 在点击的时候,先对所有的div隐藏
+				for(var j = 0;j < lis.length;j++){
+					lis[j].style.background = '';
+					divs[j].style.display = 'none';
+				}
+				this.style.background = 'red';
+				// 对当前点击按钮对应的div让他显示
+				divs[this.index].style.display = 'block';
+				icon.style.top = this.index * 86 + 33 + 'px';
+			}
+		}
+	</script>
+</body>
+</html>

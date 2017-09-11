@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style type="text/css">
+		.box{
+			width:100px;
+			height:100px;
+			margin:10px 0 0 300px;
+			background:#ccc;
+		}
+		span{
+			line-height:100px;
+			margin-left:45px;
+		}
+		p{
+			margin-left:350px;
+		}
+		.box1{
+			border-radius:20px;
+		}
+		.box2{
+			border-radius:50px;
+			margin:-100px 0 0 410px;
+		}
+		.box3{
+			border-radius:50px 0;
+			margin:-100px 0 0 520px;
+		}
+		.box4{
+			border-radius:50px 0 50px 50px;
+			margin:-100px 0 0 630px;
+		}
+		.box5{
+			border-radius:0px 0 0px 50px;
+			margin:-100px 0 0 740px;
+		}
+		.box6{
+			width:200px;
+			border-radius:50%;
+			margin:-100px 0 0 850px;
+		}
+		.box7{
+			border-radius:50px;
+			-webkit-transform:rotate(135deg)
+		}
+		.box9{
+			width:50px;
+			height:50px;
+			background:#fff;
+			margin:0;
+			border-radius:25px 0 0 0;
+		}
+		.box8{
+			background:rgba(255,255,255,0);
+			border-radius:50px;
+			margin:-100px 0 0 410px;
+			transform:rotate(45deg);
+		}
+		.box10{
+			width: 50px;
+			height: 50px;
+			background: red;
+			border-top-left-radius:50px;
+		}
+		.box11{
+			width: 50px;
+			height: 50px;
+			background:yellow;
+			margin-left:50px;
+			border-bottom-right-radius:50px;
+		}
+		.box12{
+			width: 0;
+			border:50px solid #ccc;
+			border-right:50px solid transparent;
+			border-radius:50px;
+			margin:10px 0 0 300px;
+		}
+		.box13{
+			width: 0;
+			border:50px solid transparent;
+			border-bottom:50px solid yellow;
+			border-top:50px solid red;
+			border-radius:50px;
+			margin:10px 0 0 300px;
+		}
+		.box14{
+			width: 0;
+			border:50px solid transparent;
+			border-bottom:50px solid yellow;
+			border-top:50px solid red;
+			border-right:50px solid pink;
+			border-left:50px solid blue;
+			border-radius:50px;
+			margin:10px 0 0 300px;
+			-webkit-animation:myfirst 5s linear 1s infinite;
+		}
+		@keyframes myfirst
+		{
+			0% {-webkit-transform:rotate(0deg);}
+			100% {-webkit-transform:rotate(360deg);}
+		}
+	</style>
+</head>
+<body>
+	<div class="box1 box"><span>A</span></div>
+	<div class="box2 box"><span>B</span></div>
+	<div class="box3 box"><span>C</span></div>
+	<div class="box4 box"><span>D</span></div>
+	<div class="box5 box"><span>E</span></div>
+	<div class="box6 box"><span>F</span></div>
+	<div class="box7 box">
+		<div class="box9 box"></div>
+	</div>
+	<div class="box8 box">
+		<div class="box10"></div>
+		<div class="box11"></div>
+	</div>
+	<P>我是2D转换写的</P>
+	<div class="box12"></div>
+	<div class="box13"></div>
+	<p>我是三角写的</p>
+	<div class="box14"></div>
+	<p>我会转动</p>
+</body>
+</html>

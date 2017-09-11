@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style type="text/css">
+		#box input{
+			display: none;
+		}
+		#box{
+			overflow: hidden;
+		}
+		#box label{
+			height: 16px;
+			font-size: 14px;
+			line-height: 16px;
+			padding-left:20px;
+			margin-right: 10px;
+			float: left;
+		}
+		.icon1{
+			background: url(img/radio1.png) no-repeat;
+		}
+		.icon2{
+			background: url(img/radio2.png) no-repeat;
+		}
+	</style>
+</head>
+<body>
+	<form>
+		<div id="box">
+			<label for="man" class="icon1">男</label>
+			<label for="woman" class="icon2">女</label>
+
+			<input type="radio" name="sex" id="man">
+			<input type="radio" name="sex" id="woman">
+		</div>
+	</form>
+</body>
+<script type="text/javascript">
+	var labels = document.getElementById('box').getElementsByTagName('label');
+	for(var i = 0,len = labels.length;i < len;i++){
+		labels[i].onclick = function(){
+			for(var j = 0,len = labels.length;j < len;j++){
+				labels[j].className = 'icon2';
+			}
+			this.className = 'icon1';
+		}
+	}
+</script>
+</html>

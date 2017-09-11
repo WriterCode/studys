@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+</head>
+
+<body>
+
+</body>
+<script>
+    function fn(n, o) {
+        console.log(o);
+        return {
+            method: function(m) {
+                return fn(m, n);
+            }
+        }
+    }
+    var f1 = fn(0); // undefined
+    f1.method(1); // 0
+    f1.method(2); // 0
+    f1.method(3); // 0
+
+    var f2 = fn(0).method(1).method(2).method(3);
+    // 结果undefined 0 1 2
+
+    var c = fn(0).method(1);
+    c.method(2);
+    c.method(3);
+    // 结果 undefined 0 1 1
+</script>
+
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>分页</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        #list_box {
+            width: 960px;
+            margin: 0 auto;
+            border: 1px solid #ccc;
+        }
+        
+        #list_wrap {
+            width: 960px;
+            list-style: none;
+            overflow: hidden;
+        }
+        
+        #list_wrap>li {
+            width: 220px;
+            height: 300px;
+            margin: 10px 10px;
+            border: 1px solid orange;
+            float: left;
+            box-sizing: border-box;
+        }
+        
+        #btns {
+            list-style: none;
+            width: 800px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        
+        #btns>li {
+            width: 30px;
+            height: 30px;
+            float: left;
+            font-size: 20px;
+            text-align: center;
+            line-height: 30px;
+            margin-right: 10px;
+            border: 1px solid yellow;
+        }
+        
+        #btns>li:hover {
+            background: skyblue;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="list_box">
+        <!-- 内容 -->
+        <ul id="list_wrap"></ul>
+        <ul id="btns"></ul>
+    </div>
+</body>
+<script>
+    var list_wrap = document.querySelector('#list_wrap');
+    var btns = document.querySelector('#btns');
+    var xhr = new XMLHttpRequest();
+    xhr.open('get', 'json/goods_list.json', true);
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            var data = JSON.parse(xhr.responseText);
+            handler(data);
+        }
+    }
+    xhr.send(null);
+
+    function handler(d) {
+        // 每页最多显示的条数
+        var n = 40;
+        // 总共有多少页
+        var page = Math.ceil(d.length / n);
+        // 分页按钮
+        for (var i = 0; i < page; i++) {
+            btns.innerHTML += '<li>' + (i + 1) + '</li>';
+        }
+        // 第一页
+        for (var i = 0; i < n; i++) {
+            if (d[i]) {
+                list_wrap.innerHTML += '<li>' + i + '</li>';
+            } else {
+                break;
+            }
+        }
+        // 事件代理 给每个按钮添加点击事件
+        btns.onclick = function(event) {
+            var e = event || window.event;
+            var ele = e.target || e.srcElement;
+            // 按钮内容减一为下表
+            var index = ele.innerHTML - 1;
+            if (ele.tagName.toLowerCase() == 'li') {
+                // 创建新页是清除旧的页面
+                list_wrap.innerHTML = '';
+                window.scrollTo(0, 0);
+                for (var k = 0; k < page; k++) {
+                    btns.children[k].style.background = '';
+                }
+                ele.style.background = '#ccc';
+                // 创建其他页
+                for (var j = n * index; j < n * (index + 1); j++) {
+                    // 判断数据是否存在
+                    if (d[j]) {
+                        list_wrap.innerHTML += '<li>' + j + '</li>';
+                    } else {
+                        break;
+                    }
+                }
+            }
+        }
+    }
+</script>
+
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>三级联动</title>
+    <style>
+        form {
+            width: 480px;
+            margin: 100px auto;
+        }
+        
+        select {
+            display: inline-block;
+            width: 140px;
+            height: 40px;
+            line-height: 40px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="">
+        <select name="pro" id="pro">
+            <option value="">请选择省份</option>
+        </select>
+        <select name="city" id="city">
+            <option value="">请选择城市</option>
+        </select>
+        <select name="area" id="area">
+            <option value="">请选择县区</option>
+        </select>
+    </form>
+</body>
+<script>
+    var pro = document.querySelector('#pro');
+    var citty = document.querySelector('#city');
+    var area = document.querySelector('#area');
+
+    var xhr = new XMLHttpRequest();
+    xhr.open('get', 'address.json', true);
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            var data = JSON.parse(xhr.responseText);
+            handle(data);
+        }
+    }
+    xhr.send(null);
+
+    function handle(d) {
+        // 初始化省份
+        d.forEach(function(item, index) {
+                pro.innerHTML += '<option value=' + index + '>' + item.Name + '</option>';
+            })
+            // 选择省份后,创建对应的城市
+        pro.onchange = function() {
+                city.innerHTML = '<option value="">请选择城市</option>';
+                area.innerHTML = '<option value="">请选择县区</option>';
+                if (this.value != '') {
+                    d[this.value].City.forEach(function(item, index) {
+                        city.innerHTML += '<option value=' + index + '>' + item.Name + '</option>';
+                    });
+                }
+            }
+            // 选择城市后,创建对应的县区
+        city.onchange = function() {
+            area.innerHTML = '<option value="">请选择县区</option>';
+            // 判断城市里是否有县区
+            if (this.value != '') {
+                if (d[pro.value].City[this.value].Region) {
+                    d[pro.value].City[this.value].Region.forEach(function(item, index) {
+                        area.innerHTML += '<option value=' + index + '>' + item.Name + '</option>';
+                    })
+                } else {
+                    area.innerHTML += '<option>' + d[pro.value].City[this.value].Name + '</option>';
+                }
+            }
+        }
+    }
+</script>
+
+</html>

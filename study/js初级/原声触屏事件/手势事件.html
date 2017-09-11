@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<style type="text/css">
+		#wrap{
+			width: 300px;
+			height: 300px;
+			background: orange;
+		}
+	</style>
+</head>
+<body>
+	<div id="wrap"></div>
+	<script type="text/javascript">
+		
+		var wrap = document.querySelector('#wrap');
+		var i = 0;
+		// wrap.addEventListener('touchstart',function(){
+		// 	i++;
+		// 	wrap.innerHTML = '开始触摸' + i;
+		// });
+
+		// wrap.addEventListener('touchmove',function(){
+		// 	i++;
+		// 	wrap.innerHTML = '触摸移动' + i;
+		// });
+
+		wrap.addEventListener('touchend',function(){
+	        i++;
+	        wrap.innerHTML = '手指离开' + i;
+	    });
+
+	    wrap.addEventListener('touchcancel',function(){
+	        wrap.style.background = 'red';
+	    });
+
+
+
+
+
+
+
+
+
+
+
+
+	</script>
+</body>
+</html>

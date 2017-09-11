@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style type="text/css">
+		.wrap2 div:nth-child(4){
+			width: 200px;
+			height: 200px;
+			background: orange;
+		}
+		.wrap2 div:nth-child(5){
+			width: 200px;
+			height: 200px;
+			background: pink;
+		}
+		.wrap2 div:nth-child(6){
+			width: 200px;
+			height: 200px;
+			background: skyblue;
+		}
+	</style>
+</head>
+<body>
+	<div class="wrap">
+		<button v-on:click="counter += 1">增加1</button>
+		<p>这个按钮被点击了{{counter}}次</p>
+	</div>
+	<div class="wrap1">
+		<button v-on:click="greet">greet</button>
+	</div>
+</body>
+<script type="text/javascript" src="vue.min.js"></script>
+<script type="text/javascript">
+// 事件监听可以使用 v-on 指令
+new Vue({
+	el:'.wrap',
+	data:{
+		counter:0,
+	}
+})
+
+// v-on 可以接收一个定义的方法来调用
+new Vue({
+	el:'.wrap1',
+	data:{
+		name:'按钮',
+	},
+	methods:{
+		greet:function(event){
+			alert('hello' + this.name + '!');
+			if(event){
+				alert(event.target.tagName);
+			}
+		}
+	}
+})
+
+
+</script>
+</html>

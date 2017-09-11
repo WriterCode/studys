@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<link rel="stylesheet" href="Contact.css">
+	<link rel="stylesheet" href="rendering1.css" media="(max-width:1300px)">
+	<link rel="stylesheet" href="rendering2.css" media="(max-width:1200px)">
+	<link rel="stylesheet" href="rendering3.css" media="(max-width:1100px)">
+</head>
+<body>
+	<header class="header">
+		<nav>
+			<img src="img/1.png">
+			<a href="Home.html" class="home">Home</a>
+			<a href="ABOUT.html">ABOUT</a>
+			<a href="rendering.html">Renderings</a>
+			<a href="3D Animate.html">3D Animate</a>
+			<a href="BIM.html">BIM</a>
+			<a href="Contact.html" class="about" style="color:#fff;">Contact</a>
+		</nav>
+		<div class="btn">
+			<p></p>
+			<p></p>
+			<p></p>
+		</div>
+		<div class="tk">
+			<p><a href="Home.html">Home</a></p>
+			<p><a href="ABOUT.html">ABOUT</a></p>
+			<p><a href="rendering.html">Renderings</a></p>
+			<p><a href="3D Animate.html">3D Animate</a></p>
+			<p><a href="BIM.html">BIM</a></p>
+			<p><a href="Contact.html">Contact</a></p>
+		</div>
+	</header>
+	<main class="main">
+		<main class="bgd">
+			<main class="main-top">
+				<p class="main-top-top">
+					<span style="font-size:20px; color:#000;">Contacts:</span>
+					<span style="font-size:18px; color:#595757;">Eric Wang</span>
+				</p>
+				<p class="main-top-top" style="width:300px; margin-top:25px;">
+					<img src="img/35.jpg">
+					<span style="font-size:20px; color:#000;">Email:</span>
+					<span style="font-size:18px; color:#595757;">eric@shining365.com</span>
+				</p>
+				<p class="main-top-top" style="width:700px; border:1px solid #ccc;"></p>
+				<main class="main-top-footer clearFix">
+					<main class="tel clearFix l">
+						<main class="tel-l l"></main>
+						<main class="tel-r l">
+							<p>+86 21 6598 6866-304</p>
+							<p>+86 21 6598 3188-304</p>
+						</main>
+					</main>
+					<main class="phone clearFix l">
+						<main class="phone-l l"></main>
+						<main class="phone-r l">
+							<p>+86 21 6598 6866-304</p>
+						</main>
+					</main>
+					<main class="add clearFix l">
+						<main class="add-l l"></main>
+						<main class="add-r l">
+							<p>1-5F.creative center building.No.2.1147 lane.Siping Road.Yangpu Distnict.Shanghai</p>
+						</main>
+					</main>
+				</main>
+			</main>
+		</main>
+		<main class="bgd1"></main>
+	</main>
+	<footer>
+		<header></header>
+		<main class="footer-main clearFix">
+			<main class="footer-main-1 l"></main>
+			<main class="footer-main-2 l"></main>
+			<main class="footer-main-3 l"></main>
+			<main class="footer-main-4 l"></main>
+		</main>
+		<footer class="footer">
+			<p>Copyinght @ 1998-2015 shining Group</p>
+		</footer>
+	</footer>
+	<script type="text/javascript">
+    	var btn = document.querySelector('.btn');
+    	var tk = document.querySelector('.tk');
+    	var btn1 = document.querySelector('.btn1');
+    	var bol = true;
+    	btn.onclick = function(){
+    		if(bol){
+    			tk.style.display = 'block';
+    			bol = !bol;
+    		}else{
+    			tk.style.display = 'none';
+    			bol = !bol;
+    		}
+    	}
+    	window.onresize = function(){
+    		if(document.documentElement.clientWidth > 1100){
+    			tk.style.display = 'none';
+    		}
+    	}
+    </script>
+</body>
+</html>

@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<link rel="stylesheet" href="css/swiper.min.css">
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.clearFix::after{
+			content: '';
+			display: block;
+			clear:both;
+		}
+		.swiper-wrapper img{
+			width: 100%;
+			height: 665px;
+			display: block;
+
+		}
+		.jian{
+			width: 50px;
+			height: 55px;
+			position: absolute;
+			bottom:5%;
+			left: 49%;
+			z-index: 10;
+		}
+		.header{
+			width: 100%;
+			background: #222222;
+			padding:1% 0;
+			position: relative;
+			z-index: 9999;
+		}
+		.nav a:hover{
+			color:#00bd70;
+		}
+		.nav{
+			width: 75%;
+			margin:0 auto;
+			position: relative;	
+		}
+		.nav a{
+			text-decoration: none;
+			color:#fff;
+			display: inline-block;
+			margin-top:20px;
+			margin-right: 20px;
+		}
+		.nav span{
+			color:#00bd70;
+			border:1px solid #00bd70;
+			border-radius: 5px;
+			padding:0.5% 1%;
+		}
+		.zw{
+			width: 100px;
+			background: #fff;
+			text-align: center;
+			border-radius: 5px;
+			border:1px solid #ccc;
+			position: absolute;
+			top:50px;
+			right:50px;
+			display: none;
+		}
+		.zw p{
+			font-size:20px;
+			color:#00bd70;
+			margin-top:5px;
+		}
+		.sousuo{
+			position: absolute;
+			top:12px;
+			right:0px;
+			display: none;
+		}
+		.sousuo input{
+			width: 150px;
+			height: 35px;
+			border-radius: 5px;
+			font-size: 18px;
+		}
+		.sousuo img{
+			position: absolute;
+			top:10px;
+			right:10px;
+		}
+		.video{
+			width: 80%;
+			margin:0 auto;
+			padding-top:150px;
+			border-bottom: 1px solid #ccc;
+			padding-bottom:80px;
+		}
+		.video-l{
+			width: 40%;
+			float:left;
+		}
+		.video-r{
+			width: 50%;
+			height:100%;
+			float:right;
+		}
+		.sp{
+			width: 100px;
+			background: #009c5c;
+			text-align:center;
+			margin-top:10px;
+			padding:10px 10px;
+			border-radius: 5px;
+		}
+		.sp a{
+			text-decoration: none;
+			font-size: 16px;
+			color:#fff;
+		}
+		.Company{
+			width: 80%;
+			margin:0 auto;
+			padding-top:50px;
+			border-bottom:1px solid #ccc;
+		}
+		.Company1-l,.Appl1-l{
+			font-size: 18px;
+    		color: #444444;
+    		float:left;
+		}
+		.Company1-r,.Appl1-r{
+			background: #009c5c;
+			padding:2px 5px;
+			border-radius: 5px;
+			float:right;
+		}
+		.Company2,.Appl2{
+			font-size: 30px;
+			color:#5a5a5a;
+			margin-top: 15px;
+		}
+		.Company3{
+			width: 90%;
+			font-size: 14px;
+			color: #5a5a5a;
+			margin-top: 10px;
+		}
+		.Company4{
+			margin:50px 0;
+		}
+		.Company4 a{
+			text-decoration: none;
+			color:#777777;
+			font-size: 14px;
+			margin-right:5%;
+		}
+		.Company4 img{
+			vertical-align: bottom;
+		}
+		.Appl{
+			width: 80%;
+			margin:0 auto;
+			padding-top:50px;
+			padding-bottom: 10px;
+		}
+		.footer{
+			width: 100%;
+			background: #535353;
+		}
+		.footer a{
+			text-decoration: none;
+			color:#fff;
+			margin-left:5%;
+		}
+		.footer1{
+			width: 80%;
+			margin:0 auto;
+			padding:5% 0 2% 0;
+			border-bottom:1px solid #ccc;
+		}
+		.l{
+			float:left;
+		}
+		.r{
+			float:right;
+			color:#00bd70;
+			border:1px solid #00bd70;
+			border-radius: 5px;
+			padding:0px 10px;
+		}
+		.footer-1,.footer-2,.footer-3,.footer-4{
+			width: 18%;
+		}
+		.footer-5{
+			width: 20%;
+			margin-left:8%;
+		}
+		.footer-5 p:nth-child(1){
+			margin-bottom:2%;
+		}
+		.footer-5 p:nth-child(2){
+			margin-bottom:4%;
+		}
+		.footer-5 p:nth-child(3){
+			width: 100px;
+			background: #00bd70;
+			border-radius: 5px;
+			padding:2% 5%;
+			margin-left:3%;
+			text-align: center;
+			
+		}
+		.footer-5 p:nth-child(4) img{
+			width: 60%;
+			margin-left:5%;
+			margin-top: 5%;
+		}
+		.footer2{
+			width: 80%;
+			margin:0 auto;
+			color:#fff;
+			padding:1% 0;
+		}
+		.News{
+			width: 80%;
+			margin:0 auto;
+			padding:50px 0 20px 0;
+		}
+		.swiper-container1{
+			width: 80%;
+			height: 320px;
+			margin: 0 auto;
+			padding-bottom: 80px;
+			overflow: hidden;
+		}
+		.swiper-container2{
+			width: 80%;
+			margin: 0 auto;
+			overflow: hidden;
+			padding-bottom: 10px;
+		}
+		.swiper-container2 .swiper-slide img{
+			height: 240px;
+		}
+		.swiper-container3{
+			width: 80%;
+			margin: 0 auto;
+			overflow: hidden;
+			border-bottom:1px solid #ccc;
+			padding-bottom: 30px;
+		}
+		.swiper-pagination1{
+			margin-left:49%;
+		}
+		.new1-l{
+			width: 50%;
+		}
+		.new1-l img{
+			height: 300px;
+		}
+		.new1-r{
+			width: 43%;
+			margin-left:5%;
+		}
+		.new1-r p:nth-child(1){
+			font-size: 30px;
+			margin: 40px 0 30px 0;
+			color:#333333;
+		}
+		.new1-r p:nth-child(2){
+			font-size: 14px;
+			margin-bottom: 20px;
+			color:#333333;
+		}
+		.new1-r p:nth-child(3){
+			font-size: 14px;
+			color:#333333;
+		}
+	</style>
+</head>
+<body>
+	<div class="swiper-container">
+		<div class="swiper-wrapper">
+			<div class="swiper-slide"><img src="img/1.png"></div>
+			<div class="swiper-slide"><img src="img/2.png"></div>
+			<div class="swiper-slide"><img src="img/3.png"></div>
+			<div class="swiper-slide"><img src="img/5.jpg"></div>
+			<div class="swiper-slide"><img src="img/6.png"></div>
+		</div>
+		<section class="jian" style="background: url(img/jian.png);"></section>
+	</div>
+	<div class="header">
+		<div class="nav">
+			<img src="img/7.png" style="margin-right:35%; vertical-align:top;">
+			<a href="公司简介.html">公司简介</a>
+			<a href="应用案例.html">应用案例</a>
+			<a href="新闻动态.html">新闻动态</a>
+			<a href="招聘信息.html">招聘信息</a>
+			<a href="联系我们.html">联系我们</a>
+			<span id="btn1">中　文<img src="img/9.png" style="margin-left:1%;"></span>
+			<img src="img/8.png" style="margin-top:20px; vertical-align:top; margin-left:20px;" id="btn2">
+			<div class="zw">
+				<p>中　文</p>
+				<p>English</p>
+			</div>
+			<div class="sousuo">
+				<input type="text" name="" placeholder="请输入内容">
+				<img src="img/8.png">
+			</div>
+		</div>
+	</div>
+	<div class="video clearFix">
+		<div class="video-l">
+			<p style="font-size:18px; color:#444;">video</p>
+			<p style="font-size:14px; color:#5a5a5a; margin-top:10px;">致象尔微电子（上海）有限公司</p>
+			<p style="font-size:30px; color:#333; margin-top:20px;">你看不见我，我却一直在你身边我，是致象尔微电子</p>
+			<p style="font-size:14px; color:#5a5a5a; margin-top:10px;">致象尔微电子（上海）有限公司成立于2014年，总部位于上海张江，在北京设有研发分部。创业团队来自于国际芯片产业巨头、曾获多项国际大奖的资深技术、战略管理人。</p>
+			<p class="sp"><a href="">更多视频...</a></p>
+		</div>
+		<div class="video-r">
+			<video controls="controls" src="League+of+Legends+Cinematic++A+Twist+of+Fate.webm" id="ckplayer_a1" width="100%" height="100%" preload="metadata" poster="img/video_1.jpg"></video>
+		</div>
+	</div>
+	<div class="Company">
+		<div class="Company1 clearFix">
+			<p class="Company1-l">公司简介 Company profilemore</p>
+			<p class="Company1-r">more</p>
+		</div>
+		<p  class="Company2">致象团队来自何方？</p>
+		<p  class="Company3">致象团队来自于国际芯片龙头企业在华研究机构的核心骨干，在过去五年成功地担纲了前瞻性智能平台原型的创立、设计和开发，在2014年全球消费电子大会（CES）上荣获四个奖项，被业界公认为智能手机后的最先进技术成就。因为该团队的开创性研发，该国际公司当前得以雄踞手机后智能平台的技术前沿。</p>
+		<p  class="Company4">
+			<img src="img/icon1.png">
+			<a href="">电话：+86(0)21-64093189</a>
+			<img src="img/icon2.png">
+			<a href="">邮 件：inquiry@tangramtek.com</a>
+			<img src="img/icon3.png">
+			<a href="">地 址：上海市浦东新区张东路1388号02-01栋-3F</a>
+		</p>
+	</div>
+	<div class="Appl">
+		<div class="Appl1 clearFix">
+			<p class="Appl1-l">应用案例 Applications</p>
+			<p class="Appl1-r">more</p>
+		</div>
+		<div class="Appl2">对谁有用？好处在哪里</div>	
+	</div>
+	<div class="swiper-container2">
+		<div class="swiper-wrapper">
+			<div class="swiper-slide"><img src="img/case1.jpg" alt=""></div>
+			<div class="swiper-slide"><img src="img/case2.jpg" alt=""></div>
+			<div class="swiper-slide"><img src="img/case3.jpg" alt=""></div>
+		</div>
+	</div>
+	<div class="swiper-container3">
+		<div class="swiper-wrapper">
+			<div class="swiper-slide">　创客／极客社区 致象科技提供的开发板具有业界最小尺寸和最低的功耗，便于开发，便于将众筹原型迅速转化为产品。</div>
+			<div class="swiper-slide">  致象平台集中解决了智能化家居产品的软硬件技术挑战，从而大大缩短智能家居新品开发周期，降低产品的市场风险。致象模块的可插拔特性，又解决了传统电器更新节奏和摩尔定律推动的智能组件更新节奏不匹配的问题。而灵活的平台应用和服务，使得厂商得以受惠于富有原创力的移动互联网生态系统，产品性能也能通过app扩展。</div>
+			<div class="swiper-slide">　　致象平台集中解决了智能化家居产品的软硬件技术挑战，从而大大缩短智能家居新品开发周期，降低产品的市场风险。致象模块的可插拔特性，又解决了传统电器更新节奏和摩尔定律推动的智能组件更新节奏不匹配的问题。而灵活的平台应用和服务，使得厂商得以受惠于富有原创力的移动互联网生态系统，产品性能也能通过app扩展。</div>
+		</div>
+	</div>
+	<div class="News">
+		<div class="news-1 clearFix">
+			<p class="Appl1-l">新闻动态 News</p>
+			<p class="Appl1-r">more</p>
+		</div>	
+	</div>
+	<div class="swiper-container1">
+		<div class="swiper-wrapper">
+			<div class="swiper-slide clearFix">
+				<div class="new1-l l"><img src="img/news3.jpg"></div>
+				<div class="new1-r l">
+					<p>初代Apple Watch长啥样?</p>
+					<p>谁说Apple Watch是苹果的第一款可穿戴设备，你知道苹果1995年就推出过腕带手表么?为了吸引更多用户升级MacOSSystem7.5，苹果也是蛮拼的，推出了这款手表。</p>
+					<p>国外童鞋Jonathan Morrison 制作了视屏，介绍了初代Apple Watch的来龙去脉以及人们第一次见到这块手表的反应。</p>
+				</div>
+			</div>
+			<div class="swiper-slide clearFix">
+				<div class="new1-l l"><img src="img/news2.jpg"></div>
+				<div class="new1-r l">
+					<p>初代Apple Watch长啥样?</p>
+					<p>谁说Apple Watch是苹果的第一款可穿戴设备，你知道苹果1995年就推出过腕带手表么?为了吸引更多用户升级MacOSSystem7.5，苹果也是蛮拼的，推出了这款手表。</p>
+					<p>国外童鞋Jonathan Morrison 制作了视屏，介绍了初代Apple Watch的来龙去脉以及人们第一次见到这块手表的反应。</p>
+				</div>
+			</div>
+			<div class="swiper-slide clearFix">
+				<div class="new1-l l"><img src="img/news1.jpg"></div>
+				<div class="new1-r l">
+					<p>初代Apple Watch长啥样?</p>
+					<p>谁说Apple Watch是苹果的第一款可穿戴设备，你知道苹果1995年就推出过腕带手表么?为了吸引更多用户升级MacOSSystem7.5，苹果也是蛮拼的，推出了这款手表。</p>
+					<p>国外童鞋Jonathan Morrison 制作了视屏，介绍了初代Apple Watch的来龙去脉以及人们第一次见到这块手表的反应。</p>
+				</div>
+			</div>
+		</div>
+		<div class="swiper-pagination1"></div>
+	</div>
+	<div class="footer">
+		<div class="footer1 clearFix">
+			<div class="footer-1 l">
+				<p><a href="">关于我们</a></p>
+				<p><a href="">视频介绍</a></p>
+				<p><a href="">公司简介</a></p>
+				<p><a href="">企业文化</a></p>
+				<p><a href="">公司愿景</a></p>
+			</div>
+			<div class="footer-2 l">
+				<p><a href="">新闻动态</a></p>
+				<p><a href="">公司动态</a></p>
+				<p><a href="">行业动态</a></p>
+			</div>
+			<div class="footer-3 l">
+				<p><a href="">联系我们</a></p>
+				<p><a href="">上海</a></p>
+				<p><a href="">北京</a></p>
+				<p><a href="">国内合作</a></p>
+				<p><a href="">国际业务</a></p>
+			</div>
+			<div class="footer-4 l">
+				<p><a href="">招聘中心</a></p>
+				<p><a href="">职位分类</a></p>
+				<p><a href="">简历投递</a></p>
+			</div>
+			<div class="footer-5 l">
+				<p><a href="">客服热线</a></p>
+				<p><a href="">400-8888-8888</a></p>
+				<p><a href="">在线客服</a></p>
+				<p><img src="img/company_name.png"></p>
+			</div>
+		</div>
+		<div class="footer2">
+			<div class="footer2-1 clearFix">
+				<p class="l" style="font-size:18px;">TANGRAM</p>
+				<p class="r">English></p>
+			</div>
+			<p class="footer2-2" style="font-size:12px;">2015©tangramtek.com</p>
+			<p class="footer2-3" style="font-size:14px;">沪ICP备15005621号</p>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="js/swiper.min.js"></script>
+
+	<script>        
+	  	var swiper = new Swiper ('.swiper-container', {
+	  		loop: true,
+	  	}) 
+
+	  	var header = document.querySelector('.header');
+	  	var jian = document.querySelector('.jian');
+	  	jian.onclick = function(){
+	  		document.documentElement.scrollTop = 665;
+        	document.body.scrollTop = 665;	
+	  	}
+	  	window.onscroll = function(){
+	  		if(document.documentElement.scrollTop){
+            	scrollTop = document.documentElement.scrollTop;
+        	}else{
+            	scrollTop = document.body.scrollTop;
+        	}
+		  	if(scrollTop < 665){
+	        		header.style.position = 'absolute';
+	        		header.style.top = 665 + 'px';
+	        		header.style.left = 0 + 'px';
+	        }else{
+	        		header.style.position = 'fixed';
+	        		header.style.top = 0 + 'px';
+	        		header.style.left = 0 + 'px';
+	        }
+    	}
+
+	  	var zw = document.querySelector('.zw');
+	  	var btn1 = document.querySelector('#btn1');
+	  	var bol = true;
+	  	btn1.onclick = function(){
+	  		if(bol){
+	  			zw.style.display = 'block';
+	  			bol = !bol;
+	  		}else{
+	  			zw.style.display = 'none';
+	  			bol = !bol;
+	  		}
+	  	}  
+
+	  	var sousuo = document.querySelector('.sousuo');
+	  	var btn2 = document.querySelector('#btn2');
+	  	btn2.onclick = function(){
+	  		sousuo.style.display = 'block';
+	  	} 
+	  	sousuo.onclick = function(){
+	  		sousuo.style.display = 'none';
+	  	}
+    </script>
+
+    <script type="text/javascript">
+    	var swiper1 = new Swiper ('.swiper-container1', {
+    		autoplay:1000,
+    		speed:2000,
+	  		loop: true,
+	  		pagination : '.swiper-pagination1',
+	  		paginationClickable :true,
+	  	})
+
+    </script>
+    <script> 
+		var mySwiper2 = new Swiper('.swiper-container2',{
+			autoplay:1000,
+			// speed:2000,
+			loop: true,
+			slidesPerView : 3,//'auto'
+			//slidesPerView : 3.7,
+			//如果设置为auto（例如制作全屏展示时的页脚部分），最后一个slide在键盘或鼠标滚动时可能会直接跳到倒数第三个slide，
+			//此时可以手动设置activeIndex解决，如下
+		  	onTransitionEnd: function(swiper){
+			  	if(swiper.progress==1){
+				  	swiper.activeIndex=swiper.slides.length-1
+			  	}
+		    }
+		})
+	</script>
+	<script type="text/javascript">
+    	var swiper3 = new Swiper ('.swiper-container3', {
+    		autoplay:1000,
+    		speed:2000,
+	  		loop: true,
+	  	})
+
+    </script>
+ 
+</body>
+</html>

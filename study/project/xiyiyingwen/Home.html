@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<link rel="stylesheet" href="Home.css">
+	<link rel="stylesheet" href="rendering1.css" media="(max-width:1300px)">
+	<link rel="stylesheet" href="rendering2.css" media="(max-width:1200px)">
+	<link rel="stylesheet" href="rendering3.css" media="(max-width:1100px)">
+</head>
+<body>
+	<header class="header">
+		<nav>
+			<img src="img/1.png">
+			<a href="Home.html" class="home">Home</a>
+			<a href="ABOUT.html">ABOUT</a>
+			<a href="rendering.html">Renderings</a>
+			<a href="3D Animate.html">3D Animate</a>
+			<a href="BIM.html">BIM</a>
+			<a href="Contact.html">Contact</a>
+		</nav>
+		<div class="btn">
+			<p></p>
+			<p></p>
+			<p></p>
+		</div>
+		<div class="tk">
+			<p><a href="Home.html">Home</a></p>
+			<p><a href="ABOUT.html">ABOUT</a></p>
+			<p><a href="rendering.html">Renderings</a></p>
+			<p><a href="3D Animate.html">3D Animate</a></p>
+			<p><a href="BIM.html">BIM</a></p>
+			<p><a href="Contact.html">Contact</a></p>
+		</div>
+	</header>
+	<main class="main">
+		<main class=" main-top clearFix">
+			<main class="main-top-l l"></main>
+			<main class="main-top-r l">
+				<h1>RENDERINGS</h1><br/>
+				<p>Masterplan、Public　Building、commercial</p>
+				<p>Building、Residentl　Building、Landscape</p>
+				<p>Design</p>
+			</main>
+		</main>
+		<main class="main-main clearFix">
+			<main class="main-main-r l">
+				<h1>BIM</h1><br/>
+				<p>Model Completion、Clash Detection、MEP</p>
+				<p>Integration、Curtain Wall Remedying、BIM</p>
+				<p style="margin-left:234px;">Consulting</p>
+			</main>
+			<main class="main-main-l l"></main>
+		</main>
+		<main  class="clearFix">
+			<main class="main-footer-l l"></main>
+			<main class="main-footer-r l">
+				<h1>3D ANIMATE</h1><br/>
+				<p>Real estate advertising animation</p>
+				<p>Design scheme Animation</p>
+				<p>Corporate promotiomal Animation</p>
+			</main>
+		</main>
+	</main>
+	<footer>
+		<header></header>
+		<main class="footer-main clearFix">
+			<main class="footer-main-1 l"></main>
+			<main class="footer-main-2 l"></main>
+			<main class="footer-main-3 l"></main>
+			<main class="footer-main-4 l"></main>
+		</main>
+		<footer class="footer">
+			<p>Copyinght @ 1998-2015 shining Group</p>
+		</footer>
+	</footer>
+	<script type="text/javascript">
+    	var btn = document.querySelector('.btn');
+    	var tk = document.querySelector('.tk');
+    	var bol = true;
+    	btn.onclick = function(){
+    		if(bol){
+    			tk.style.display = 'block';
+    			bol = !bol;
+    		}else{
+    			tk.style.display = 'none';
+    			bol = !bol;
+    		}
+    	}
+    	window.onresize = function(){
+    		if(document.documentElement.clientWidth > 1100){
+    			tk.style.display = 'none';
+    		}
+    	}
+    </script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style type="text/css">
+		*{padding: 0;margin: 0;}
+		#scrollBall{
+			list-style: none;
+			position: absolute;
+			left:0;
+			top: 0;
+		}
+		#scrollBall li{
+			width: 300px;
+			height: 40px;
+			line-height: 40px;
+			text-align: center;
+		}
+		#scrollBall li:nth-child(2n){
+			background: orange;
+		}
+		#scrollBall li:nth-child(2n+1){
+			background: skyblue;
+		}
+		.box{
+			width: 300px;
+			height: 160px;
+			overflow: hidden;
+			position: relative;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<ul id="scrollBall">
+			<li>张三1 183****1234</li>
+			<li>张三2 183****1234</li>
+			<li>张三3 183****1234</li>
+			<li>张三4 183****1234</li>
+			<li>张三5 183****1234</li>
+			<li>张三6 183****1234</li>
+			<li>张三7 183****1234</li>
+			<li>张三8 183****1234</li>
+		</ul>
+	</div>
+</body>
+<script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+	var box = document.querySelector('.box');
+	var scrollBall = document.querySelector('#scrollBall');
+	$('#scrollBall').html($('#scrollBall').html()+$('#scrollBall').html());
+
+	// 改变scrollTop值#scrollBall
+	setInterval(function() {
+		box.scrollTop += 1;
+		if(box.scrollTop >= 320){
+			box.scrollTop = 0;
+		}
+	}, 10);
+
+	// 定位改变top值
+	// var scrollBallT = scrollBall.offsetTop;
+	// setInterval(function(){
+	// 	scrollBallT --;
+	// 	if(scrollBallT <= -320){
+	// 		scrollBallT = 0;
+	// 	}
+	// 	scrollBall.style.top = scrollBallT + 'px';
+	// },50);
+
+	// 创建方式
+	// var bol = true;
+	// setInterval(function(){
+	// 	scrollBallT --;
+	// 	if(scrollBallT <= -160){
+			// scrollBallT = 0;
+	// 	}
+	// 	scrollBall.style.top = scrollBallT + 'px';
+	// },50);
+</script>
+</html>

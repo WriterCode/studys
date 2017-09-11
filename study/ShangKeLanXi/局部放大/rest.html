@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #imgBox {
+            width: 400px;
+            height: 225px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        #imgBox img {
+            width: 400px;
+            height: 225px;
+            display: block;
+            border: 0;
+        }
+        
+        #mb {
+            width: 400px;
+            height: 225px;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            z-index: 10;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="imgBox">
+        <img src="img/425942.png" alt="">
+        <div id="mb"></div>
+    </div>
+</body>
+<script>
+    var box = document.querySelector('#imgBox');
+    var img = document.querySelector('#imgBox img');
+    var scale = 100;
+    box.onmousemove = function(e) {
+        var ev = window.event || e;
+        var mouX = ev.offsetX || ev.layerX;
+        var mouY = ev.offsetY || ev.layerY;
+        document.onmousewheel = function(e) {
+            var ev = window.event || e;
+            if (ev.wheelDelta > 0) {
+                scale += 5;
+                if (scale >= 400) {
+                    scale = 400;
+                }
+                img.style.width = 400 * scale / 100 + 'px';
+                img.style.height = 225 * scale / 100 + 'px';
+                img.style.left = -mouX * (scale / 100 - 1) + 'px';
+                img.style.top = -mouY * (scale / 100 - 1) + 'px';
+            } else {
+                scale -= 5;
+                if (scale <= 100) {
+                    scale = 100;
+                }
+                img.style.width = 400 * scale / 100 + 'px';
+                img.style.height = 225 * scale / 100 + 'px';
+                img.style.left = -mouX * (scale / 100 - 1) + 'px';
+                img.style.top = -mouY * (scale / 100 - 1) + 'px';
+            }
+        }
+    }
+</script>
+
+</html>

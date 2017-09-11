@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="css/topbottom.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<style type="text/css">
+		.main{
+			width: 90%;
+			margin: 0 auto;
+			padding-top: 30px;
+		}
+		.main h1{
+			color:#5a5a5a;
+			padding-bottom:20px;
+		}
+		.border{
+			border-top:4px solid #00bd70;
+			padding-bottom:20px;
+		}
+		.main1{
+			width: 95%;
+			margin: 0 auto;
+		}
+		.box3{
+			height: 0;	
+		}
+		#box1{
+			overflow: hidden;
+			transition-duration: 0.5s;
+		}
+		.box3{
+			color:#5a5a5a;
+			font-size: 14px;
+		}
+		.box4{
+			height: 620px;
+		}
+		.main1 p{
+			margin-bottom:20px;
+		}
+		.main1 p span{
+			color:#5a5a5a;
+			font-weight: bold;
+		}
+		.main-main{
+			background:#f5f5f5;
+			margin-top:30px; 
+		}
+		.main-main-c{
+			width: 90%;
+			margin:0 auto;	
+			padding:30px 2%;
+		}
+		.main-main-c img{
+			vertical-align: top;
+		}
+		.main-main-c p{
+			color:#5a5a5a;
+			padding-top:20px;
+			font-size: 14px;
+		}
+		.bd{
+			background: #f5f5f5;
+			padding-top: 20px;
+			margin-top:30px;
+		}
+		.bd-1{
+			width: 90%;
+			margin:0 auto;
+			padding-bottom: 30px;
+		}
+		.bd-1 h1{
+			color:#5a5a5a;
+			font-weight: 500;
+			padding-bottom: 20px;
+			border-bottom:4px solid #00bd70;
+			margin-bottom:30px;
+		}
+		.bd-1 p{
+			width: 80%;
+			margin:0 auto;
+			color:#999;
+			font-size: 14px;
+			border-bottom:1px solid #ccc;
+			padding:10px 0;
+		}
+		.bd-1 input{
+			margin-left: 2%;
+			width: 200px;
+			height: 30px;
+			border-radius: 5px;
+			border:1px solid #fff;
+			background:#fff;
+		}
+		.main-bottom{
+			width: 90%;
+			margin: 0 auto;
+			padding-top: 50px;
+			padding-bottom:50px;
+		}
+		.main-bottom-l{
+			width: 30%;
+		}
+		.main-bottom-l img{
+			width: 100%;
+		}
+		.main-bottom-r{
+			width: 33%;
+			margin-left:5%;
+		}
+		.main-bottom-r p:nth-child(1){
+			color:#5a5a5a;
+			font-size: 24px;
+		}
+		.main-bottom-r p:nth-child(2){
+			color:#333;
+			font-size: 14px;
+			margin-top:10px;
+		}
+		.main-bottom-r p:nth-child(3){
+			width: 85px;			
+			font-size: 14px;
+			margin-top:20px;
+			border-bottom:1px solid #00bd70;
+			padding-bottom: 10px;
+		}
+		.main-bottom-r a{
+			text-decoration: none;
+			color:#00bd70;
+		}
+		textarea{
+			width: 75%;
+			height: 100px;
+			border-radius: 5px;
+			margin-left: 2%;
+			vertical-align: top;
+		}
+		.main1 p:hover{
+			cursor:pointer;
+		}
+		@media screen and (max-width: 900px) {
+			.main-bottom div{
+				width: 100%;
+			}
+			.main-bottom-r{
+				margin-left: 0;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="header">
+		<div class="nav">
+			<img src="img/7.png" class="logo">
+			<a href="应用案例.html">公司简介</a>
+			<a href="应用案例.html">应用案例</a>
+			<a href="应用案例.html">新闻动态</a>
+			<a href="应用案例.html">招聘信息</a>
+			<a href="应用案例.html">联系我们</a>
+			<span id="btn1">中　文<img src="img/9.png"></span>
+			<img src="img/8.png" id="btn2">
+			<div class="zw">
+				<p>中　文</p>
+				<p>English</p>
+			</div>
+			<div class="sousuo">
+				<input type="text" name="" placeholder="请输入内容">
+				<img src="img/8.png">
+			</div>
+		</div>
+		<div id="navBtn">
+			<p></p>
+			<p></p>
+			<p></p>
+		</div>
+	</div>
+	<div class="xl">
+		<div id="menu">
+			<p><a href="公司简介.html">公司简介</a></p>
+			<p><a href="应用案例.html">应用案例</a></p>
+			<p><a href="新闻动态.html">新闻动态</a></p>
+			<p><a href="招聘信息.html">招聘信息</a></p>
+			<p><a href="联系我们.html">联系我们</a></p>
+		</div>
+	</div>
+	<div style="background: #ccc;">
+		<div class="header-bottom clearFix" id="gd">
+			<div class="header-bottom-l l">
+				<p id="back"><</p>
+			</div>
+			<div class="header-bottom-r r">
+				<h1>招聘信息</h1>
+				<p>employment</p>
+			</div>
+		</div>
+	</div>
+	<div class="main">
+		<h1>致象尔微电子科技有限公司 ——职位详情</h1>
+		<div class="border"></div>
+		<div class="main1">
+			<p class="clearFix" id="btn3">
+				<span class="l">1.嵌入式系统软件开发工程师——北京</span>
+				<span  class="r">></span>
+			</p>
+			<div class="box3" id="box1">
+				<p>职位类型：全职 </p>
+				<p>工作经验：不要求 </p>
+				<p>学历要求：本科 </p>
+				<p>招聘人数：5名</p>
+				<p>发布时间：2015-03-03</p>
+				<p>职位描述 </p>
+				<p>1. 使用C/C++进行嵌入式系统软件开发 </p>
+				<p>2. 将会在如下方向之一工作：BSP/驱动程序开发，嵌入式应用开发，RTOS/Linux</p>
+				<p>招聘要求</p>
+				<p>1. 本科以上学历 </p>
+				<p>2. 计算机软件等相关专业毕业 </p>
+				<p>3. 熟练使用C/C++，底层开发人员能够看懂汇编 </p>
+				<p>4. 熟悉嵌入式软件开发流程，熟练使用软件模拟和硬件仿真器</p>
+				<p>5. 最好熟悉基于ARM 的开发 </p>
+				<p>6. 团结合作，爱思考，善交流，有独立分析和解决问题的能力</p>
+			</div>
+			<p class="clearFix" id="btn3">
+				<span class="l">2.硬件工程师——北京</span>
+				<span class="r">></span>
+			</p>
+			<div class="box3" id="box1">
+				<p>职位类型：全职 </p>
+				<p>工作经验：不要求 </p>
+				<p>学历要求：本科 </p>
+				<p>招聘人数：5名</p>
+				<p>发布时间：2015-03-03</p>
+				<p>职位描述 </p>
+				<p>1. 使用C/C++进行嵌入式系统软件开发 </p>
+				<p>2. 将会在如下方向之一工作：BSP/驱动程序开发，嵌入式应用开发，RTOS/Linux</p>
+				<p>招聘要求</p>
+				<p>1. 本科以上学历 </p>
+				<p>2. 计算机软件等相关专业毕业 </p>
+				<p>3. 熟练使用C/C++，底层开发人员能够看懂汇编 </p>
+				<p>4. 熟悉嵌入式软件开发流程，熟练使用软件模拟和硬件仿真器</p>
+				<p>5. 最好熟悉基于ARM 的开发 </p>
+				<p>6. 团结合作，爱思考，善交流，有独立分析和解决问题的能力</p>
+			</div>
+			<p class="clearFix"  id="btn3">
+				<span class="l">3.芯片设计工程师——北京</span>
+				<span class="r">></span>
+			</p>
+			<div class="box3" id="box1">
+				<p>职位类型：全职 </p>
+				<p>工作经验：不要求 </p>
+				<p>学历要求：本科 </p>
+				<p>招聘人数：5名</p>
+				<p>发布时间：2015-03-03</p>
+				<p>职位描述 </p>
+				<p>1. 使用C/C++进行嵌入式系统软件开发 </p>
+				<p>2. 将会在如下方向之一工作：BSP/驱动程序开发，嵌入式应用开发，RTOS/Linux</p>
+				<p>招聘要求</p>
+				<p>1. 本科以上学历 </p>
+				<p>2. 计算机软件等相关专业毕业 </p>
+				<p>3. 熟练使用C/C++，底层开发人员能够看懂汇编 </p>
+				<p>4. 熟悉嵌入式软件开发流程，熟练使用软件模拟和硬件仿真器</p>
+				<p>5. 最好熟悉基于ARM 的开发 </p>
+				<p>6. 团结合作，爱思考，善交流，有独立分析和解决问题的能力</p>
+			</div>
+			<p class="clearFix"  id="btn3">
+				<span class="l">4.ASIC Low Power Engineer——北京</span>
+				<span class="r">></span>
+			</p>
+			<div class="box3" id="box1">
+				<p>职位类型：全职 </p>
+				<p>工作经验：不要求 </p>
+				<p>学历要求：本科 </p>
+				<p>招聘人数：5名</p>
+				<p>发布时间：2015-03-03</p>
+				<p>职位描述 </p>
+				<p>1. 使用C/C++进行嵌入式系统软件开发 </p>
+				<p>2. 将会在如下方向之一工作：BSP/驱动程序开发，嵌入式应用开发，RTOS/Linux</p>
+				<p>招聘要求</p>
+				<p>1. 本科以上学历 </p>
+				<p>2. 计算机软件等相关专业毕业 </p>
+				<p>3. 熟练使用C/C++，底层开发人员能够看懂汇编 </p>
+				<p>4. 熟悉嵌入式软件开发流程，熟练使用软件模拟和硬件仿真器</p>
+				<p>5. 最好熟悉基于ARM 的开发 </p>
+				<p>6. 团结合作，爱思考，善交流，有独立分析和解决问题的能力</p>
+			</div>
+			<p class="clearFix" id="btn3">
+				<span class="l">5.智能硬件应用开发工程师——北京</span>
+				<span class="r">></span>
+			</p>
+			<div class="box3" id="box1">
+				<p>职位类型：全职 </p>
+				<p>工作经验：不要求 </p>
+				<p>学历要求：本科 </p>
+				<p>招聘人数：5名</p>
+				<p>发布时间：2015-03-03</p>
+				<p>职位描述 </p>
+				<p>1. 使用C/C++进行嵌入式系统软件开发 </p>
+				<p>2. 将会在如下方向之一工作：BSP/驱动程序开发，嵌入式应用开发，RTOS/Linux</p>
+				<p>招聘要求</p>
+				<p>1. 本科以上学历 </p>
+				<p>2. 计算机软件等相关专业毕业 </p>
+				<p>3. 熟练使用C/C++，底层开发人员能够看懂汇编 </p>
+				<p>4. 熟悉嵌入式软件开发流程，熟练使用软件模拟和硬件仿真器</p>
+				<p>5. 最好熟悉基于ARM 的开发 </p>
+				<p>6. 团结合作，爱思考，善交流，有独立分析和解决问题的能力</p>
+			</div>
+			<p class="clearFix" id="btn3">
+				<span class="l">6.物联网软件开发工程师——北京</span>
+				<span class="r">></span>
+			</p>
+			<div class="box3" id="box1">
+				<p>职位类型：全职 </p>
+				<p>工作经验：不要求 </p>
+				<p>学历要求：本科 </p>
+				<p>招聘人数：5名</p>
+				<p>发布时间：2015-03-03</p>
+				<p>职位描述 </p>
+				<p>1. 使用C/C++进行嵌入式系统软件开发 </p>
+				<p>2. 将会在如下方向之一工作：BSP/驱动程序开发，嵌入式应用开发，RTOS/Linux</p>
+				<p>招聘要求</p>
+				<p>1. 本科以上学历 </p>
+				<p>2. 计算机软件等相关专业毕业 </p>
+				<p>3. 熟练使用C/C++，底层开发人员能够看懂汇编 </p>
+				<p>4. 熟悉嵌入式软件开发流程，熟练使用软件模拟和硬件仿真器</p>
+				<p>5. 最好熟悉基于ARM 的开发 </p>
+				<p>6. 团结合作，爱思考，善交流，有独立分析和解决问题的能力</p>
+			</div>
+			<p class="clearFix" id="btn3">
+				<span class="l">7.Wifi/Bluetooth开发工程师——北京</span>
+				<span class="r">></span>
+			</p>
+			<div class="box3" id="box1">
+				<p>职位类型：全职 </p>
+				<p>工作经验：不要求 </p>
+				<p>学历要求：本科 </p>
+				<p>招聘人数：5名</p>
+				<p>发布时间：2015-03-03</p>
+				<p>职位描述 </p>
+				<p>1. 使用C/C++进行嵌入式系统软件开发 </p>
+				<p>2. 将会在如下方向之一工作：BSP/驱动程序开发，嵌入式应用开发，RTOS/Linux</p>
+				<p>招聘要求</p>
+				<p>1. 本科以上学历 </p>
+				<p>2. 计算机软件等相关专业毕业 </p>
+				<p>3. 熟练使用C/C++，底层开发人员能够看懂汇编 </p>
+				<p>4. 熟悉嵌入式软件开发流程，熟练使用软件模拟和硬件仿真器</p>
+				<p>5. 最好熟悉基于ARM 的开发 </p>
+				<p>6. 团结合作，爱思考，善交流，有独立分析和解决问题的能力</p>
+			</div>
+		</div>
+	</div>
+	<div class="main-main">
+		<div class="main-main-c">
+			<p>
+				<img src="img/icon3.png">
+				<span>联 系 人 ：Helen Wu</span>
+			</p>
+			<p>
+				<img src="img/icon1.png">
+				<span>联系电话 ：021-61093189</span>
+			</p>
+			<p>
+				<img src="img/icon2.png">
+				<span>邮 箱：inquiry@tangramtek.com</span>
+			</p>
+		</div>
+	</div>
+	<div class="bd">
+		<div class="bd-1">
+			<h1>应聘申请</h1>
+			<p>
+				<span>姓　　名</span>
+				<input type="" name="">
+			</p>
+			<p>
+				<span>性　　别</span>
+				<input type="" name="">
+			</p>
+			<p>
+				<span>毕业院校</span>
+				<input type="" name="">
+			</p>
+			<p>
+				<span>联系电话</span>
+				<input type="" name="">
+			</p>
+			<p>
+				<span>电子邮箱</span>
+				<input type="" name="">
+			</p>
+			<p>
+				<span>专业特长</span>
+				<input type="" name="">
+			</p>
+			<p>
+				<span>工作经历</span>
+				<textarea></textarea>
+			</p>
+			<p><input type="submit" name="" style="width:100px; background:#00bd70; color:#fff; font-size:18px; margin-left: 10%;"></p>
+		</div>
+	</div>
+	<div class="main-bottom clearFix">
+		<div class="main-bottom-l l">
+			<img src="img/app_about.jpg" alt="">
+		</div>
+		<div class="main-bottom-r l">
+			<p>Join the Form Factor Revolution! Join the Ease of Use Zeitgeist!</p>
+			<p>智能硬件DIY不应该复杂－智能的整合过程本身也应该“智能化”： 加入我们，推动 小、易、快 的应用模式革命！</p>
+			<p><a href="">了解公司简介</a></p>
+		</div>
+	</div>
+	<div class="footer">
+		<div class="footer1 clearFix">
+			<div class="footer-1 l">
+				<p><a href="">关于我们</a></p>
+				<p><a href="">视频介绍</a></p>
+				<p><a href="">公司简介</a></p>
+				<p><a href="">企业文化</a></p>
+				<p><a href="">公司愿景</a></p>
+			</div>
+			<div class="footer-2 l">
+				<p><a href="">新闻动态</a></p>
+				<p><a href="">公司动态</a></p>
+				<p><a href="">行业动态</a></p>
+			</div>
+			<div class="footer-3 l">
+				<p><a href="">联系我们</a></p>
+				<p><a href="">上海</a></p>
+				<p><a href="">北京</a></p>
+				<p><a href="">国内合作</a></p>
+				<p><a href="">国际业务</a></p>
+			</div>
+			<div class="footer-4 l">
+				<p><a href="">招聘中心</a></p>
+				<p><a href="">职位分类</a></p>
+				<p><a href="">简历投递</a></p>
+			</div>
+			<div class="footer-5 l">
+				<p><a href="">客服热线</a></p>
+				<p><a href="">400-8888-8888</a></p>
+				<p><a href="">在线客服</a></p>
+				<p><img src="img/company_name.png"></p>
+			</div>
+		</div>
+		<div class="footer2">
+			<div class="footer2-1 clearFix">
+				<p class="l" style="font-size:18px;">TANGRAM</p>
+				<p class="r English">English></p>
+			</div>
+			<p class="footer2-2" style="font-size:12px;">2015©tangramtek.com</p>
+			<p class="footer2-3" style="font-size:14px;">沪ICP备15005621号</p>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="js/topbottom.js">
+	</script>
+	<script type="text/javascript">
+		var btn3 = document.querySelectorAll('#btn3');
+		var divs = document.querySelectorAll('.box3');
+		for(var i = 0;i < btn3.length;i++){
+			btn3[i].onclick = function(){
+				var bol = (this.nextElementSibling.className == 'box4')
+				for(var j = 0;j < divs.length;j++){
+					divs[j].className = 'box3';
+				}
+				if(bol){
+					this.nextElementSibling.className = 'box3'
+				}else{
+					this.nextElementSibling.className = 'box4';
+				}
+			}
+		}
+		
+	</script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>继承3</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    var o1 = {
+        age: '123',
+        getName: function() {
+            console.log(this.age);
+        }
+    }
+
+    // 计时器失效
+    setTimeout(o1.getName.call(o1), 1000);
+    // 计时器有效
+    setTimeout(o1.getName.bind(o1), 1000);
+    // call和bind:两者都有改变this指针的能力.区别在于call会直接调用继承过来的函数,而bind只是改变this指针,不会调用该方法
+
+    var o2 = {
+        class: '三年一班',
+        fn: function(name) {
+            console.log(name + '是' + this.class + '的学生');
+        }
+    }
+    var arr = ['小明', '小红', '小刚'];
+    // 映射
+    arr.map(o2.fn.bind(o2));
+
+    // 数组中的最大值
+    var arr1 = [1, 2, 3, 4, 5, 6, 7];
+    var n2 = Math.max.apply(null, arr1);
+    console.log(n2);
+
+    // 合并数组
+    var arr2 = ['a', 'b', 'c'];
+    var arr3 = ['d', 'e', 'f'];
+    var arr4 = arr2.concat(arr3);
+    console.log(arr4)
+    Array.prototype.push.apply(arr2, arr3);
+    console.log(arr2);
+
+    // 数组排序
+    var arr5 = [1, 55, 77, 33, 23, 43, 11, 20, 50];
+    Array.prototype.bubblor = function(bol) {
+        for (var i = 0; i < this.length; i++) {
+            for (var j = 0; j < this.length - 1; j++) {
+                if (bol) {
+                    if (this[j + 1] > this[j]) {
+                        var k = this[j];
+                        this[j] = this[j + 1];
+                        this[j + 1] = k;
+                    }
+                } else {
+                    if (this[j + 1] < this[j]) {
+                        var k = this[j];
+                        this[j] = this[j + 1];
+                        this[j + 1] = k;
+                    }
+                }
+            }
+        }
+    }
+    arr5.bubblor();
+    console.log(arr5)
+</script>
+
+</html>

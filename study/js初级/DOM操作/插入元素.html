@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	<ul id="uls">
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+	</ul>
+	<script type="text/javascript">
+		// insertBefore(新节点,目标节点)
+		// 在你指定的已有子节点之前插入新的子节点
+
+		// 需求:在第二个li之前添加一个新的li
+		var uls = document.querySelector('#uls');
+
+		var li2 = document.querySelector('li:nth-child(2)');
+		var li = document.createElement('li');
+		li.innerHTML = '新加的li';
+
+		uls.insertBefore(li,li2);
+
+
+		// replaceChild(新节点,目标节点)
+		var div = document.createElement('div');
+		div.innerHTML = '我是div'
+		var li2 = document.querySelector('li:nth-child(2)');
+		uls.replaceChild(div,li2);
+
+
+
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<link rel="stylesheet" href="css/swiper.min.css">
+	<link rel="stylesheet" type="text/css" href="css/animate.min.css">
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.swiper-container{
+			width: 100%;
+			height: 736px;
+			overflow: hidden;
+		}
+		.swiper-wrapper div:nth-child(1){
+			background:url(imgs/bg1.jpg) no-repeat;
+			background-size: 100% 100%;
+		}
+		.swiper-wrapper div:nth-child(2){
+			background:url(imgs/bg2.jpg) no-repeat;
+			background-size: 100% 100%;
+		}
+		.swiper-wrapper div:nth-child(3){
+			background:url(imgs/bg3.jpg) no-repeat;
+			background-size: 100% 100%;
+		}
+		.swiper-wrapper div:nth-child(4){
+			background:url(imgs/bg4.jpg) no-repeat;
+			background-size: 100% 100%;
+		}
+		.swiper-wrapper div:nth-child(5){
+			background:url(imgs/bg5.png) no-repeat;
+			background-size: 100% 100%; 
+		}
+		.logo{
+			width: 90%;
+			height: 40px;
+			margin:0 auto;
+			background: url(imgs/logo.png);
+			background-size: 100% 100%;
+			position: fixed;
+			top:30px;
+			left:15px;
+			z-index: 999;
+		}
+		.car{
+			width: 100%;
+			height: 280px;
+			background: url(imgs/car.png);
+			background-size: 100% 100%;
+			position: absolute;
+			bottom:0;
+			left:0;
+			z-index: 10;
+		}
+		.car-1{
+			width: 78px;
+			height: 78px;
+			background: url(imgs/lun.png);
+			background-size: 100% 100%;
+			position: absolute;
+			bottom:121px;
+			left:205px;
+			z-index: 12;
+			/*animation:my 2s 2.3 cubic-bezier(0, 0, 0, 0);*/
+		}
+		.rotate{
+			-webkit-animation-name:rotate;
+			-webkit-transform-origin:center;
+			-webkit-transform-origin: center;
+		}
+		@keyframes rotate{
+			form {
+				-webkit-transform: rotateZ(0deg);
+			}
+			to {
+				-webkit-transform: rotateZ(1080deg);
+			}
+		}
+		.car-2{
+			width: 90%;
+			height: 240px;
+			background: url(imgs/car2.png);
+			background-size: 100% 100%;
+			position: absolute;
+			bottom:20px;
+			right:0px;
+			z-index: 12;
+		}
+		.car-3{
+			width: 50%;
+			height: 240px;
+			background: url(imgs/fa.png);
+			background-size: 100% 100%;
+			position: absolute;
+			bottom:20px;
+			left:0px;
+			z-index: 12;
+		}
+		.car-4{
+			width: 100%;
+			height: 325px;
+			background: url(imgs/nei.png);
+			background-size: 100% 100%;
+			position: absolute;
+			bottom:0;
+			left:0px;
+			z-index: 12;
+		}
+		.car-5{
+			width: 60%;
+			height: 50px;
+			background: url(imgs/button.png);
+			background-size: 100% 100%;
+			position: absolute;
+			bottom:430px;
+			right:0px;
+			z-index: 12;
+		}
+	</style>
+</head>
+<body>
+	<div class="swiper-container">
+		<div class="swiper-wrapper">
+			<div class="swiper-slide">
+				<section class="ani car" swiper-animate-effect="slideInLeft" swiper-animate-duration="1s" swiper-animate-delay="0.3s">
+				<section class="car-1 ani" swiper-animate-effect="rotate" swiper-animate-duration="1s" swiper-animate-delay="0.3s"></section>
+				</section>
+			</div>
+			<div class="swiper-slide">
+				<section class="ani car-2" swiper-animate-effect="slideInRight" swiper-animate-duration="1s" swiper-animate-delay="0.3s"></section>
+			</div>
+			<div class="swiper-slide">
+				<section class="ani car-3" swiper-animate-effect="slideInLeft" swiper-animate-duration="1s" swiper-animate-delay="0.3s"></section>
+			</div>
+			<div class="swiper-slide">
+				<section class="ani car-4" swiper-animate-effect="slideInUp" swiper-animate-duration="1s" swiper-animate-delay="0.3s"></section>
+			</div>
+			<div class="swiper-slide">
+				<section class="ani car-5" swiper-animate-effect="slideInRight" swiper-animate-duration="1s" swiper-animate-delay="0.3s"></section>
+			</div>
+		</div>
+		<div class="logo"></div>
+	</div>
+	<script type="text/javascript" src="js/swiper.min.js"></script>
+	<script type="text/javascript" src="js/swiper.animate1.0.2.min.js"></script>
+	<script>        
+	  	var swiper = new Swiper ('.swiper-container', {
+	  		direction: "vertical",
+	  	onInit: function(swiper){ //Swiper2.x的初始化是onFirstInit
+	    	swiperAnimateCache(swiper); //隐藏动画元素 
+	    	swiperAnimate(swiper); //初始化完成开始动画
+	  	}, 
+	  	onSlideChangeEnd: function(swiper){ 
+	    	swiperAnimate(swiper); //每个slide切换结束时也运行当前slide动画
+	 	} 
+	  })        
+    </script>
+</body>
+</html>

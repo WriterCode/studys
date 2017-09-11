@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		div{
+			height: 3000px;
+			background: #ccc;
+		}
+		#scrollTo{
+			position: fixed;
+			top:100px;
+			left:100px;
+			padding: 20px;
+			background: pink;
+		}
+		#scrollby{
+			position: fixed;
+			top:100px;
+			left:300px;
+			padding: 20px;
+			background: orange;
+		}
+		p{
+			width: 100%;
+			position: absolute;
+			top:200px;
+			border-top:1px solid red;
+			z-index: 12;
+		}
+
+	</style>
+</head>
+<body>
+	<div>
+		<p></p>
+		<button id="scrollTo">scrollTo</button>
+		<button id="scrollby">scrollby</button>
+	</div>
+</body>
+<script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+// scrollTo(x,y)将页面滚动到某一位置
+$('#scrollTo').click(function(){
+	window.scrollTo(0,200);
+})
+
+// scrollTo(x,y)将页面滚动若干像素
+$('#scrollby').click(function(){
+	window.scrollBy(0,-200);
+})
+
+
+// screen屏幕大小 包含任务栏和不包含任务栏
+console.log(screen.availWidth);
+console.log(screen.availHeight);
+console.log(screen.width);
+console.log(screen.height);
+
+
+
+
+</script>
+</html>

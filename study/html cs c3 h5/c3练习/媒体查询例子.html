@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="媒体查询例子.css" media="(max-width:1000px)">
+	<style type="text/css">
+		.clearFix::after{
+			content:'';
+			display: block;
+			clear:both;
+		}
+		.wrap{
+			width: 80%;
+			margin:0 auto;
+			border:1px dashed #ccc;
+		}
+		.wrap section[class^='box']{
+			width: 23%;
+			margin: 1%;
+			height: 200px;
+			background: #ccc;
+			float:left;
+		}
+		.wrap section:nth-child(2n){
+			background: yellow;
+		}
+		/*@media screen and (max-width:800px) {
+			.wrap section[class^='box']{
+			width: 48%;
+			height: 200px;
+			background:yellow;
+		}
+			.wrap section:nth-child(2n-1){
+			background: blue;
+		}
+			
+		}*/
+	</style>
+</head>
+<body>
+	<section class="wrap clearFix">
+		<section class="box1"></section>
+		<section class="box2"></section>
+		<section class="box3"></section>
+		<section class="box4"></section>
+	</section>
+</body>
+</html>

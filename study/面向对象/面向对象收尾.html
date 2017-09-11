@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>面向对象收尾</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    function fn() {
+        this.age = 18;
+    }
+    fn.prototype.getAge = function() {
+        console.log(this.age);
+    }
+    var o1 = new fn();
+    console.log(o1);
+    // hasOwnProperty():只能检测写在构造函数上的属性，而不能检测到原型上的
+    var b1 = o1.hasOwnProperty('age'); // true
+    var b2 = o1.hasOwnProperty('getAge'); // false
+    console.log(b2);
+
+    // isPrototypeOf():用于指示对象是否存在于另一个对象的原型链中,返回布尔值
+    var o2 = {
+        name: 'yy',
+        age: 18,
+        job: 'html'
+    };
+    var arr = [1, 2, 3];
+    var b3 = fn.prototype.isPrototypeOf(o1); // true
+    console.log(b3);
+    var b4 = fn.prototype.isPrototypeOf(o2); // false
+    var b5 = Object.prototype.isPrototypeOf(o2); // true
+    console.log(b4);
+    var b6 = Array.prototype.isPrototypeOf(arr); //true
+    console.log(b6);
+
+    // Object.getOwnPropretyNames(obj):获取对象的属性名称,返回一个名称集合
+    var a1 = Object.getOwnPropertyNames(o2);
+    var a2 = Object.getOwnPropertyNames(o1.__proto__);
+    console.log(a2);
+
+    // instanceof:判断对象是否属于某个构造函数的实例化,返回布尔值
+    var arr2 = [1, 2, 3];
+    var str = 'hello';
+    var o3 = {};
+    console.log(typeof arr2); // object
+    console.log(arr2 instanceof Array); // true
+</script>
+
+</html>

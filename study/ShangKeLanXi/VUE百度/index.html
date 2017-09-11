@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        #wrap ul {
+            width: 500px;
+            list-style: none;
+            margin-left: auto;
+            overflow: hidden;
+        }
+        
+        #wrap ul li {
+            float: left;
+            margin: 10px 10px;
+        }
+        
+        #wrap ul li a {
+            color: black;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        
+        #wrap ul li a:hover {
+            color: blue;
+        }
+        
+        #wrap #meau {
+            background: #0080ff;
+            padding: 0 5px;
+        }
+        
+        #wrap #meau a {
+            text-decoration: none;
+            color: #fff;
+        }
+        
+        .logo {
+            width: 300px;
+            margin: 0 auto;
+        }
+        
+        .logo img {
+            display: block;
+            width: 300px;
+            margin: 30px 0;
+        }
+        
+        .inp {
+            width: 650px;
+            height: 40px;
+            position: relative;
+            margin: 0 auto;
+        }
+        
+        .inp input {
+            width: 500px;
+            height: 40px;
+            outline: 0;
+            font-size: 16px;
+            vertical-align: top;
+        }
+        
+        .inp button {
+            width: 150px;
+            height: 44px;
+            background: #0080ff;
+            outline: 0;
+            border: none;
+            font-size: 16px;
+            vertical-align: top;
+            color: #ffffff;
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+        
+        #bot {
+            margin-top: 300px;
+        }
+        
+        #bot div {
+            width: 60px;
+            margin: 0 auto;
+        }
+        
+        #bot p:nth-child(2) {
+            width: 100%;
+            font-size: 14px;
+            color: #666666;
+            text-align: center;
+        }
+        
+        #bot p:nth-child(3) {
+            width: 375px;
+            padding-top: 20px;
+            margin: 0 auto;
+        }
+        
+        #bot p:nth-child(3) a {
+            font-size: 14px;
+            color: #666666;
+            margin: 0 10px;
+        }
+        
+        #bot p:nth-child(4) {
+            width: 575px;
+            padding-top: 10px;
+            margin: 0 auto;
+        }
+        
+        #bot p:nth-child(4) a {
+            color: #666666;
+            font-size: 14px;
+        }
+        
+        #bot p:nth-child(4) span {
+            color: #666666;
+            font-size: 14px;
+        }
+        
+        #dl {
+            width: 400px;
+            height: 500px;
+            background: #ffffff;
+            position: fixed;
+            border: 1px solid #cccccc;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        #dl p {
+            width: 400px;
+            height: 30px;
+            background: yellow;
+            cursor: move;
+        }
+        
+        #mb {
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap">
+        <ul>
+            <li v-for="(nav,index) in navs" v-on:click="dj(index)"><a href="javascript:;">{{nav}}</a></li>
+            <li id="meau">
+                <a href="javascript:;" v-html="cp"></a>
+            </li>
+        </ul>
+        <div class="logo"><img src="img/bd_logo1.png" alt=""></div>
+        <div class="inp">
+            <input type="text">
+            <button v-on:mousedown="btn" @mouseup="btn1" v-html="btns"></button>
+        </div>
+        <div id="bot">
+            <div><img src="img/zbios_efde696.png" alt=""></div>
+            <p v-html="phone"></p>
+            <p>
+                <a href="javascript:;" v-for="seit in seits">{{seit}}</a>
+            </p>
+            <p>
+                <span>{{but1}}</span>
+                <a href="javascript:;">{{but2}}</a>
+                <a href="javascript:;">{{but3}}</a>
+                <span>{{but4}}</span>
+                <a href="javascript:;">{{but5}}</a>
+            </p>
+        </div>
+        <div id="mb" v-if="mb">
+            <div id="dl">
+                <p @mousedown="move"></p>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="vue.min.js"></script>
+<script>
+    new Vue({
+        el: '#wrap',
+        data: {
+            navs: ['新闻', 'hao123', '地图', '视频', '贴吧', '学术', '登录', '设置'],
+            cp: '更多产品',
+            phone: '手机百度',
+            seits: ['把百度设为主页', '关于百度', 'About  Baidu', '百度推广'],
+            btns: '百度一下',
+            but1: '©2017 Baidu',
+            but2: '使用百度前必读',
+            but3: '意见反馈',
+            but4: '京ICP证030173号',
+            but5: '京公网安备11000002000001号',
+            mb: false,
+        },
+        methods: {
+            btn: function() {
+                var el = event.target;
+                el.style.background = '#0080c0';
+            },
+            btn1: function() {
+                var el = event.target;
+                el.style.background = '';
+            },
+            dj: function(index) {
+                if (index == 6) {
+                    if (this.mb == false) {
+                        this.mb = true;
+                    } else {
+                        this.mb = false;
+                    }
+                }
+            },
+            move: function(e) {
+                var el = event.target;
+                var ev = window.event || e;
+                var l = ev.offsetX;
+                var t = ev.offsetY;
+                document.onmousemove = function(e) {
+                    var ev = window.event || e;
+                    ev.preventDefault();
+                    var oDiv = el.parentNode;
+                    var x = ev.clientX + oDiv.offsetWidth / 2 - l;
+                    var y = ev.clientY + oDiv.offsetHeight / 2 - t;
+                    if (x <= 200) {
+                        x = 200;
+                    } else if (x > oDiv.parentNode.offsetWidth - oDiv.offsetWidth + oDiv.offsetWidth / 2) {
+                        x = oDiv.parentNode.offsetWidth - oDiv.offsetWidth + oDiv.offsetWidth / 2;
+                    }
+                    if (y <= 250) {
+                        y = 250;
+                    } else if (y > oDiv.parentNode.offsetHeight - oDiv.offsetHeight + oDiv.offsetHeight / 2) {
+                        y = oDiv.parentNode.offsetHeight - oDiv.offsetHeight + oDiv.offsetHeight / 2;
+                    }
+                    oDiv.style.left = x + 'px';
+                    oDiv.style.top = y + 'px';
+                    console.log(x + ',' + y)
+                }
+                document.onmouseup = function() {
+                    document.onmousemove = null;
+                }
+            }
+        }
+    })
+</script>
+
+</html>

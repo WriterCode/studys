@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <style>
+        #box {
+            width: 50px;
+            height: 50px;
+            background: pink;
+            border-radius: 50%;
+            position: fixed;
+            left: 200px;
+            top: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box"></div>
+</body>
+<script>
+    var box = document.querySelector('#box');
+
+    // 圆周运动
+    // var deg = 0;
+    // var timer = setInterval(function() {
+    //     deg++;
+    //     var x = 100 * Math.cos(Math.PI / 180 * deg)
+    //     var y = 100 * Math.sin(Math.PI / 180 * deg)
+    //     box.style.left = x + 175 + 'px';
+    //     box.style.top = y + 175 + 'px';
+    // }, 10)
+
+    // s型运动
+    var x = 0;
+    var timer = setInterval(function() {
+        x++;
+        var y = 100 * Math.sin(x * Math.PI / 180);
+        box.style.left = x + 200 + 'px';
+        box.style.top = y + 200 + 'px';
+    }, 10)
+</script>
+
+</html>

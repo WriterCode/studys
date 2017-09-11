@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style type="text/css">
+		.name{
+			width:985px;
+			margin:0 auto;
+		}
+		span{
+			font-size:20px;
+			background:skyblue;
+			border:3px solid orange;
+			display: inline-block;
+			border-radius:10px;
+			padding:10px 20px;
+			margin-top:30px;
+			margin-left:30px;
+			transform: scale(1);
+		}
+		#btn1,#btn2{
+			width: 200px;
+			height: 100px;
+			border-radius:20px;
+			/*position: absolute;
+			top:320px;
+			left:335px;*/
+			background: green;
+			font-size:40px;
+			color:#fff;
+		}
+		#btn2{
+			left:770px;
+			background: red;
+			margin-left:200px;
+		}
+		.box{
+			width: 200px;
+			height: 300px;
+			background: rgba(231,60,115,0.3);
+			position: absolute;
+			top:340px;
+			left:50%;
+			transform:translateX(-50%);
+			border-radius: 20px;
+			display: none;
+		}
+		.btn{
+			width: 985px;
+			margin:0 auto;
+			padding-top:80px;
+			text-align: center;
+		}
+		.box p{
+			font-size:30px;
+			color:red;
+			text-align: center;
+			margin-top:70px;
+		}
+		.qx{
+			width: 50px;
+			height: 50px;
+			background: rgba(0,0,0,0.3);
+			font-size:20px;
+			text-align: center;
+			line-height: 50px;
+			border-radius: 50%;
+			position: absolute;
+			top:-70px;
+			right:0px;
+		}
+		.qx:hover{
+			cursor: pointer;
+		}
+		.mz{
+			width: 300px;
+			height: 100px;
+			background: red;
+			position: absolute;
+			right:230px;
+			top:270px;
+			background: yellow;
+			border-radius: 20px;
+			border:5px solid orange;
+			line-height: 100px;
+			font-size: 40px;
+			text-align: center;
+			color:blue;
+		}
+	</style>
+</head>
+<body>
+	<div class="name">
+		<span>费华枝</span>
+		<span>贾福玲</span>
+		<span>石　威</span>
+		<span>卢楷锐</span>
+		<span>杨丹妮</span>
+		<span>赵玉博</span>
+		<span>牛少康</span>
+		<span>周　丹</span>
+		<span>朱创伟</span>
+		<span>杨雄师</span>
+		<span>冯文月</span>
+		<span>常达衢</span>
+		<span>王凯文</span>
+		<span>赵　栋</span>
+		<span>孙凯旋</span>
+		<span>张浩楠</span>
+		<span>贾雨林</span>
+		<span>白隐杰</span>
+		<span>万俊良</span>
+		<span>陆贞妮</span>
+		<span>薛玉梅</span>
+		<span>李世杰</span>
+		<span>宿　帅</span>
+		<span>李　元</span>
+		<span>刘瑞霞</span>
+	</div>
+	<div class="btn">
+		<button id="btn1">开始</button>
+		<button id="btn2">结束</button>
+	</div>
+	<div class="box">
+		<p class="qx">X</p>
+		<p class="gx">恭喜你!</p>
+		<p>中奖啦!</p>
+	</div>
+	<div class="mz">恭喜</div>
+	<script type="text/javascript">
+		var spans = document.getElementsByTagName('span');
+		var btn1 = document.getElementById('btn1');
+		var btn2 = document.getElementById('btn2');
+		var box = document.getElementsByClassName('box')[0];
+		var gx = document.getElementsByClassName('gx')[0];
+		var qx = document.getElementsByClassName('qx')[0];
+		var mz = document.getElementsByClassName('mz')[0];
+		var index = 0;
+		var timer = null;
+		var k = 0;
+		var r = 0;
+		var bol = true;
+		// var time = 100;
+		// var cor = 0;
+		// var allbtn = null;
+		
+		btn1.onclick = function(){
+			if(bol){
+				bol = false;
+				timer = setInterval(function(){
+					for(var i = 0;i < spans.length;i++){
+						spans[i].style.background = '';
+						spans[i].style.transform = 'scale(1)'
+					}
+					r = randomFn (24,0);
+					spans[r].style.background = 'rgb('+ randomFn (255,0) + ',' + randomFn (255,0) +',' + randomFn (255,0) + ')';
+					spans[r].style.transform = 'scale(1.5)'
+					mz.innerHTML = spans[r].innerHTML;
+					index++;
+					if(index >= spans.length){
+						index = 0;
+					}
+					k++;
+					if(k > randomFn(50,35)){
+						clearInterval(timer);
+						bol = true;
+						box.style.display = 'block';
+						gx.innerHTML = '恭喜' + spans[r].innerHTML + '!';
+						index = 0;
+						timer = null;
+						k = 0;
+						r = 0;
+					}	
+			},100)
+			}
+		}
+
+		btn2.onclick = function(){
+			clearInterval(timer);
+			bol = true;
+			box.style.display = 'block';
+			gx.innerHTML = '恭喜' + spans[r].innerHTML + '!';
+		}
+
+		qx.onclick = function(){
+			box.style.display = 'none';
+			mz.innerHTML = '恭喜!';
+			spans[r].style.transform = 'scale(1)'
+		}
+
+
+		function randomFn (max,min) {
+			var rand = Math.random() * (max - min + 1) + min;
+			return parseInt(rand);
+		}
+
+		// function stop () {
+		// 		for(var j = 0;j <= 80;j++){
+		// 			if(j <= 10){
+		// 				time = 1000;
+		// 			}else if(10 < j <= 70){
+		// 				time = 100;
+		// 			}else if(70 < j <= 75){
+		// 				time = 2000;
+		// 			}else if(j > 75){
+		// 				time = 5000;
+		// 			}
+		// 		}
+		// 	}
+
+
+	</script>
+</body>
+</html>

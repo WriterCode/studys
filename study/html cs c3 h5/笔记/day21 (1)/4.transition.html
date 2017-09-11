@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        /*
+            transition:过渡
+        */
+        .box{
+            width: 300px;
+            height: 300px;
+            background-color: #ccc;
+            margin: 0 auto;
+
+            /*
+                过渡哪些属性
+            */
+            /*transition-property: width,height,left,top;*/
+            /*
+                只能过渡带数值的属性
+            */
+            transition-property: all;
+            /*
+                过渡时间
+            */
+            transition-duration: 3s;
+
+            /*
+                过渡效果的方式
+            */
+            transition-timing-function: cubic-bezier(0.42, 0, 0.07, 0.96);
+            /*
+                过渡延时执行
+            */
+
+            transition-delay: 3s;
+
+            /*
+                tansition复合属性
+            */
+            /*transition: all 2s ease-in-out 2s;*/
+            transition: all 2s ease-in-out;
+            -webkit-transition: all 2s ease-in-out;
+            -moz-transition: all 2s ease-in-out;
+            -o-transition: all 2s ease-in-out;
+            -ms-transition: all 2s ease-in-out;
+        }
+        .box:hover{
+            width: 400px;
+            height: 400px;
+            background-color: #01bf8e;
+        }
+
+        .ball{
+            width: 100px;
+            height: 100px;
+            background: red;
+            border-radius: 50%;
+            position: absolute;
+            left:0px;
+            top: 0px;
+            transition-duration: 3s;
+            transition-timing-function: cubic-bezier(0.42, 0, 0.07, 0.96);
+        }
+
+    </style>
+</head>
+<body>
+    <section class="box"></section>
+    <button>开始运动</button>
+    <section class="ball"></section>
+</body>
+<script type="text/javascript">
+    var btn = document.querySelector('button');
+    var ball = document.querySelector('.ball');
+    btn.onclick = function(){
+        ball.style.left = 1000+'px';
+    }
+</script>
+</html>
+
+
+
+
+
+
+
+
+
+

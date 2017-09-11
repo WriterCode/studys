@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        .btn {
+            width: 50px;
+            height: 30px;
+            background: yellow;
+            float: left;
+            border: 2px solid orange;
+        }
+        
+        .clear {
+            clear: both;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="btn">btn1</div>
+        <div class="btn">btn2</div>
+        <div class="btn">btn3</div>
+        <div class="clear"></div>
+        <p>内容1</p>
+        <p>内容2</p>
+        <p>内容3</p>
+    </div>
+</body>
+<script type="text/javascript" src="../jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        // 给标签添加class名:addClass()
+        // 移除class名:remove()
+        $('.wrap .btn').click(function() {
+            $(this).siblings('p').css('display', 'none');
+            var index = $(this).index('.btn');
+            $(this).siblings('p').eq(index).css('display', 'block');
+        })
+    })
+</script>
+
+</html>

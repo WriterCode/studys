@@ -1,0 +1,24 @@
+用c3可以创建圆角边框,添加阴影框
+ 1,border-radius圆角
+    写法 border-radius:0 0 0 0;
+    1)四种写法
+      1:四个值:左上 右上 右下 左下
+        三个值:左上 右上左下 右下
+        两个值:左上右下 右上左下
+        一个值:四角一样
+    2)椭圆边框
+      八个值 border-radius:15px/20px;
+      长方形 border-radius:50%;
+ 2,box-shadow阴影框
+    写法 box-shadow:10px 10px 5px red;
+     四个值分别是:右边框 下边框 阴影度 颜色
+     前两个值可以是负值:
+           当为负值是阴影边框会出现在相反的方向
+ 3,border-image边界图片
+    两个属性值
+      1)round
+         写法 border-image:url(1.png) 20 30 round
+	 图像平铺(重复)来填充该区域
+      2)stretch
+	 写法 border-image:url(1.png) 20 30 stretch
+	 图像拉伸来填充该区域

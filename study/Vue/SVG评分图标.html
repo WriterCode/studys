@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	<div id="wrap">
+		<p v-for="(arr,index) in arrs">{{arr}}</p>
+	</div>
+</body>
+<script type="text/javascript" src="vue.min.js"></script>
+<script type="text/javascript">
+	new Vue({
+		el:'#wrap',
+		data:{
+			arrs:[1,2,3,4,5,6,7],
+		}
+	})
+</script>
+</html>

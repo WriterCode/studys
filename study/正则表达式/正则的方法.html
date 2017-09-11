@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        // 正则的写法
+        // var reg = new RegExp();
+
+        var reg = /hello/;
+        var str = 'hello dongshi';
+
+        // test():
+        // 1,false代表匹配失败  true代表匹配成功
+        // 参数:将要匹配的文本
+        reg.test(str);
+
+        // var reg1 = /\s/;
+
+        // 检索字符串中的值 返回检索到的字符 确定其位置
+        console.log(reg.exec(str));
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        div {
+            width: 200px;
+            height: 200px;
+            /*position:absolute;*/
+            display: none;
+        }
+        
+        input {
+            width: 50px;
+            height: 30px;
+        }
+        
+        #inp1 {
+            background: gold;
+        }
+        
+        #inp2 {
+            /*background: green;*/
+        }
+        
+        #inp3 {
+            /*background: red;*/
+        }
+        
+        .box1 {
+            background: yellow;
+            display: block;
+        }
+        
+        .box2 {
+            background: pink;
+        }
+        
+        .box3 {
+            background: orange;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="button" id="inp1" value="按钮1">
+    <input type="button" id="inp2" value="按钮2">
+    <input type="button" id="inp3" value="按钮3">
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+</body>
+<script type="text/javascript" src="../jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('input').click(function() {
+            $(this).siblings('div').hide();
+            $(this).siblings('input').css('background', 'rgb(221, 221, 221)');
+            $('div').eq($(this).index()).show();
+            if ($(this).index() == 0) {
+                $(this).css('background', 'gold');
+            } else if ($(this).index() == 1) {
+                $(this).css('background', 'green');
+            } else {
+                $(this).css('background', 'red');
+            }
+            // console.log($(this).index())
+        })
+    });
+</script>
+
+</html>

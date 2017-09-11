@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	<button id="btn">按钮</button>
+	<ul id="uls"></ul>
+	<script type="text/javascript">
+		var btns = document.querySelector('#btn');
+		var uls = document.querySelector('#uls');
+		var i = 0;
+		btns.onclick = function () {
+			i++;
+			var li = document.createElement('li');
+			li.innerHTML = '我是li' + i;
+
+
+			uls.insertBefore(li,uls.children[0]);
+		}
+	</script>
+</body>
+</html>

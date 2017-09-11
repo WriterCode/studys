@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style type="text/css">
+		h1{
+			font-size:96px;
+			color:blue;
+			text-align:center;
+			animation-name:flash;
+			animation-duration:1s;
+		}
+		@keyframes flash{
+			0%{
+				transform-origin:top;
+				transform:rotateZ(0deg);
+			}
+			25%{
+				transform-origin:top;
+				transform:rotateZ(20deg);
+			}
+			50%{
+				transform-origin:top;
+				transform:rotateZ(0deg);
+			}
+			75%{
+				transform-origin:top;
+				transform:rotateZ(-20deg);
+			}
+			100%{
+				transform-origin:top;
+				transform:rotateZ(0deg);
+			}
+		}
+	</style>
+</head>
+<body>
+	<h1>Animate.css</h1>
+</body>
+</html>

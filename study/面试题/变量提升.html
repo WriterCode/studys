@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>变量提升</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    var a = 0;
+
+    function fn1() {
+        console.log(a); // undefind
+        var a = 1;
+        console.log(a); // 1
+    }
+    fn1();
+    console.log(a);
+
+
+
+    // function x() {
+    //     console.log(1);
+    // }
+    // var x = function() {
+    //     console.log(2);
+    // }
+    // x(); // 2
+
+
+    // function x() {
+    //     console.log(1);
+    // }
+    // var x = function() {
+    //     alert(2);
+    // }
+    // x = 1;
+    // x(); // 报错
+
+    function foo() {
+        getName = function() {
+            console.log(1);
+        };
+        return this;
+    }
+    foo.getName = function() {
+        this.age = 1;
+        console.log(2);
+    }
+    foo.prototype.getName = function() {
+        console.log(3);
+    }
+    var getName = function() {
+        console.log(4);
+    }
+
+    function getName() {
+        console.log(5);
+    }
+    // 一般在声明函数时,如果这个函数是作为构造函数来使用时,函数名首字母大写,用来区分普通函数
+    foo.getName(); // 2         // 调用foo.getName函数
+    getName(); // 4             // 调用全局函数getName,涉及到变量声明提前
+    foo().getName(); // 1       // 将全局函数getName重新赋值
+    getName(); // 1             // 调用赋值后的全局函数getName
+    new foo.getName(); // 2     // 实例化foo.getName构造函数,且调用foo.getName函数
+    new foo().getName(); // 3   // 实例化foo构造函数,后调用实例化之后的对象的getName方法
+    var f = new foo();
+    f.getName(); // 3
+</script>
+
+</html>

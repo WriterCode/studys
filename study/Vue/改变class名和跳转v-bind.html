@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style type="text/css">
+		.class1{
+			background: #444;
+			color:#eee;
+		}
+		.class{
+			background: orange;
+			color:#fff;
+		}
+	</style>
+</head>
+<body>
+	<div class="wrap">
+		<input type="checkbox" name="" v-model="class1">
+		<div v-bind:class="{'class1':class1}">directiva v-bind:class</div>
+	</div>
+	<div class="main">
+		<p><a href="" v-bind:href="url1">百度</a></p>
+		<p><a href="" v-bind:href="url2">百度</a></p>
+	</div>
+</body>
+<script type="text/javascript" src="vue.min.js"></script>
+<script type="text/javascript">
+// 判断 class1 的值，如果为 true 使用 class1 类的样式，否则不使用该类
+new Vue({
+	el:'.wrap',
+	data:{
+		class1:true
+	}
+})
+// href 是参数，告知 v-bind 指令将该元素的 href 属性与表达式 url 的值绑定
+new Vue({
+	el:'.main',
+	data:{
+		url1:'vue1.html',
+		url2:'判断v-if.html'
+	}
+})
+
+</script>
+</html>

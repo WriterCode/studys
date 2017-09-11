@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ajax发送数据</title>
+</head>
+
+<body>
+    <span>天气查询</span>
+    <input type="text" name="" id="c_name">
+</body>
+<script>
+    var c_name = document.querySelector('#c_name');
+    c_name.onkeydown = function(event) {
+        var e = event || window.event;
+        // e.preventDefault();
+        if (e.keyCode == 13) {
+            if (this.value != '') {
+                var cityname = this.value;
+                // ajax不能跨域
+                var xhr = new XMLHttpRequest();
+                xhr.open('get', 'php/do.php?cityname=' + cityname, true);
+                xhr.onreadystatechange = function() {
+                    if (xhr.readyState == 4 && xhr.status == 200) {
+                        // var data = JSON.parse(xhr.responseText);
+                        console.log(xhr.responseText);
+                    }
+                }
+                xhr.send(null);
+            }
+        }
+    }
+</script>
+
+</html>

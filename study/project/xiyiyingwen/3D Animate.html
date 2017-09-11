@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<link rel="stylesheet" href="3D Animate.css">
+	<link rel="stylesheet" href="rendering1.css" media="(max-width:1300px)">
+	<link rel="stylesheet" href="rendering2.css" media="(max-width:1200px)">
+	<link rel="stylesheet" href="rendering3.css" media="(max-width:1100px)">
+</head>
+<body>
+	<header class="header">
+		<nav>
+			<img src="img/1.png">
+			<a href="Home.html" class="home">Home</a>
+			<a href="ABOUT.html">ABOUT</a>
+			<a href="rendering.html">Renderings</a>
+			<a href="3D Animate.html" id="Animate">3D Animate</a>
+			<a href="BIM.html">BIM</a>
+			<a href="Contact.html">Contact</a>
+		</nav>
+		<div class="btn">
+			<p></p>
+			<p></p>
+			<p></p>
+		</div>
+		<div class="tk">
+			<p><a href="Home.html">Home</a></p>
+			<p><a href="ABOUT.html">ABOUT</a></p>
+			<p><a href="rendering.html">Renderings</a></p>
+			<p><a href="3D Animate.html">3D Animate</a></p>
+			<p><a href="BIM.html">BIM</a></p>
+			<p><a href="Contact.html">Contact</a></p>
+		</div>
+	</header>
+	<main class="viodus">
+		<img src="img/7.jpg">
+		<img src="img/8.png" class="play">
+		<p>3D ANIMATE</p>
+	</main>
+	<main class="main-main">
+		<main class="main-main-top clearFix">
+			<ul>
+				<li><a href=""><img src="img/9.jpg"></a></li>
+				<li><a href="">Sichuan Province-Commercial</a></li>
+			</ul>
+			<ul>
+				<li><a href=""><img src="img/10.jpg"></a></li>
+				<li><a href="">Qiandao Lake Real Estate</a></li>
+			</ul>
+			<ul>
+				<li><a href=""><img src="img/11.jpg"></a></li>
+				<li><a href="">Huzhou City Commercial Estate</a></li>
+			</ul>
+		</main>
+		<main class="main-main-main clearFix">
+			<ul>
+				<li><a href=""><img src="img/12.jpg"></a></li>
+				<li><a href="">Sichuan Province-Commercial</a></li>
+			</ul>
+			<ul>
+				<li><a href=""><img src="img/13.jpg"></a></li>
+				<li><a href="">Qiandao Lake Real Estate</a></li>
+			</ul>
+			<ul>
+				<li><a href=""><img src="img/14.jpg"></a></li>
+				<li><a href="">Huzhou City Commercial Estate</a></li>
+			</ul>
+		</main>
+		<main class="main-main-footer clearFix">
+			<ul>
+				<li><a href=""><img src="img/15.jpg"></a></li>
+				<li><a href="">Sichuan Province-Commercial</a></li>
+			</ul>
+			<ul>
+				<li><a href=""><img src="img/16.jpg"></a></li>
+				<li><a href="">Qiandao Lake Real Estate</a></li>
+			</ul>
+			<ul>
+				<li><a href=""><img src="img/17.jpg"></a></li>
+				<li><a href="">Huzhou City Commercial Estate</a></li>
+			</ul>
+		</main>
+		<main class="play1 movie"></main>
+		<main class="play2 movie"></main>
+		<main class="play3 movie"></main>
+		<main class="play4 movie"></main>
+		<main class="play5 movie"></main>
+		<main class="play6 movie"></main>
+		<main class="play7 movie"></main>
+		<main class="play8 movie"></main>
+		<main class="play9 movie"></main>
+	</main>
+	<footer>
+		<header></header>
+		<main class="footer-main clearFix">
+			<main class="footer-main-1 l"></main>
+			<main class="footer-main-2 l"></main>
+			<main class="footer-main-3 l"></main>
+			<main class="footer-main-4 l"></main>
+		</main>
+		<footer class="footer">
+			<p>Copyinght @ 1998-2015 shining Group</p>
+		</footer>
+	</footer>
+	<script type="text/javascript">
+    	var btn = document.querySelector('.btn');
+    	var tk = document.querySelector('.tk');
+    	var btn1 = document.querySelector('.btn1');
+    	var bol = true;
+    	btn.onclick = function(){
+    		if(bol){
+    			tk.style.display = 'block';
+    			bol = !bol;
+    		}else{
+    			tk.style.display = 'none';
+    			bol = !bol;
+    		}
+    	}
+    	window.onresize = function(){
+    		if(document.documentElement.clientWidth > 1100){
+    			tk.style.display = 'none';
+    		}
+    	}
+    </script>
+</body>
+</html>
+
+		

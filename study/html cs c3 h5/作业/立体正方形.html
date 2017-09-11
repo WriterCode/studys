@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style type="text/css">
+		.box1,.box2,.box3,.box4,.box5,.box6{
+			width: 200px;
+			height: 200px;
+			border:1px solid #ccc;
+			position: absolute;
+			top:300px;
+			left:600px;
+		}
+		.box1{
+			background:rgba(255,0,0,0.5);
+			transform: translateY(100px) rotateX(90deg);
+		}
+		.box2{
+			background:rgba(0,0,255,0.5);
+			transform:translateX(-100px) rotateY(90deg);
+		}
+		.box3{
+			background: pink;
+			  transform: translateX(100px) 
+			  rotateY(90deg);
+		}
+		.box4{
+			background: black;
+			 transform: translateY(-100px)rotateX(90deg);
+		}
+		.box5{
+			background: orange;
+			transform: translateZ(-100px);
+		}
+		.box6{
+			background: skyblue;
+			  transform: translateZ(100px);
+		}
+		.box{
+			position: relative;
+			transform-style: preserve-3d;
+            transform: rotateX(30deg) rotateY(60deg);
+		}
+		.box:hover{
+			animation:my 5s linear 1s infinite;
+		}
+		@keyframes my{
+			0% {
+				-webkit-transform:rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+			}
+			50% {
+				-webkit-transform: rotateZ(240deg) rotateX(120deg) rotateY(-120deg);
+			}
+			100% {
+				-webkit-transform:rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+			}
+		}
+	</style>
+</head>
+<body>
+<section class="box">
+	<section class="box1"></section>
+	<section class="box2"></section>
+	<section class="box3"></section>
+	<section class="box4"></section>
+	<section class="box5"></section>
+	<section class="box6"></section>
+</section>
+</body>
+</html>

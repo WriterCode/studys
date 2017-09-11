@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        .box{
+            height: 200px;
+            background-color: red;
+        }
+        .box::after{
+            content: '';
+            display: block;
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+        }
+        .box2::after{
+            content: '';
+            display: block;
+            width: 100px;
+            height: 200px;
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <!--
+        在css属性中有没有见过content属性,他是在哪个里面体现到的,他的作用又是什么?
+            content在伪元素里面体现,作用是将伪元素变成一个事实存在的元素
+     -->
+
+    <div class="box"></div>
+
+
+    <p class="box2">213423</p>
+
+</body>
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .wrap {
+            width: 300px;
+            height: 400px;
+            border: 1px solid #cccccc;
+            overflow: hidden;
+            position: relative;
+            top: 100px;
+            left: 300px;
+        }
+        
+        .center {
+            width: 280px;
+            box-sizing: border-box;
+            float: left;
+            position: relative;
+        }
+        
+        .scrollBall {
+            width: 20px;
+            height: 400px;
+            border-left: 1px solid #cccccc;
+            box-sizing: border-box;
+            float: right;
+        }
+        
+        .scroll {
+            width: 20px;
+            height: 80px;
+            background: orange;
+            border-radius: 10px;
+            box-sizing: border-box;
+            position: absolute;
+        }
+        
+        p {
+            height: 30px;
+            margin: 10px 0 0 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="center">
+            <p>我是p1</p>
+            <p>我是p2</p>
+            <p>我是p3</p>
+            <p>我是p4</p>
+            <p>我是p5</p>
+            <p>我是p6</p>
+            <p>我是p7</p>
+            <p>我是p8</p>
+            <p>我是p9</p>
+            <p>我是p10</p>
+            <p>我是p11</p>
+            <p>我是p12</p>
+            <p>我是p13</p>
+            <p>我是p14</p>
+            <p>我是p15</p>
+            <p>我是p16</p>
+            <p>我是p17</p>
+            <p>我是p18</p>
+            <p>我是p19</p>
+            <p>我是p20</p>
+            <p>我是p21</p>
+            <p>我是p22</p>
+            <p>我是p23</p>
+            <p>我是p24</p>
+            <p>我是p25</p>
+            <p>我是p26</p>
+            <p>我是p27</p>
+            <p>我是p28</p>
+            <p>我是p29</p>
+            <p>我是p30</p>
+            <p>我是p31</p>
+            <p>我是p32</p>
+            <p>我是p33</p>
+            <p>我是p34</p>
+            <p>我是p35</p>
+            <p>我是p36</p>
+            <p>我是p37</p>
+            <p>我是p38</p>
+            <p>我是p39</p>
+            <p>我是p40</p>
+            <p>我是p41</p>
+            <p>我是p42</p>
+            <p>我是p43</p>
+            <p>我是p44</p>
+            <p>我是p45</p>
+            <p>我是p46</p>
+            <p>我是p47</p>
+            <p>我是p48</p>
+            <p>我是p49</p>
+            <p>我是p50</p>
+        </div>
+        <div class="scrollBall">
+            <div class="scroll"></div>
+        </div>
+    </div>
+</body>
+<script>
+    var wrap = document.querySelector('.wrap');
+    var center = document.querySelector('.center');
+    var scrollBall = document.querySelector('.scrollBall');
+    var scroll = document.querySelector('.scroll');
+    var scale = (wrap.offsetHeight - center.offsetHeight) / (scrollBall.offsetHeight - scroll.offsetHeight);
+    document.onmousewheel = function(e) {
+        var ev = window.event || e;
+        if (ev.wheelDelta < 0) {
+            var t = scroll.offsetTop + 10;
+            if (t >= scrollBall.offsetHeight - scroll.offsetHeight) {
+                t = scrollBall.offsetHeight - scroll.offsetHeight;
+            }
+            scroll.style.top = t + 'px';
+            center.style.top = t * scale + 'px';
+        } else {
+            var t = scroll.offsetTop - 10;
+            if (t <= 0) {
+                t = 0;
+            }
+            scroll.style.top = t + 'px';
+            center.style.top = t * scale + 'px';
+        }
+    }
+    scroll.onmousedown = function(e) {
+        var ev = window.event || e;
+        ev.preventDefault();
+        var y = ev.offsetY;
+        document.onmousemove = function(e) {
+            var ev = window.event || e;
+            var y1 = ev.clientY - y - wrap.offsetTop;
+            if (y1 <= 0) {
+                y1 = 0;
+            } else if (y1 >= scrollBall.offsetHeight - scroll.offsetHeight) {
+                y1 = scrollBall.offsetHeight - scroll.offsetHeight;
+            }
+            scroll.style.top = y1 + 'px';
+            center.style.top = y1 * scale + 'px';
+        }
+        document.onmouseup = function() {
+            document.onmousemove = null;
+        }
+    }
+    scrollBall.onclick = function(e) {
+        var ev = window.event || e;
+        ev.preventDefault();
+        if (ev.clientY < (scroll.offsetTop + wrap.offsetTop)) {
+            var t = scroll.offsetTop - 30
+            scroll.style.top = t + 'px';
+            center.style.top = t * scale + 'px';
+        } else {
+            var t = scroll.offsetTop + 30
+            scroll.style.top = t + 'px';
+            center.style.top = t * scale + 'px';
+        }
+    }
+    scroll.onclick = function(e) {
+        var ev = window.event || e;
+        ev.stopPropagation();
+        document.onmousemove = null;
+    }
+</script>
+
+</html>

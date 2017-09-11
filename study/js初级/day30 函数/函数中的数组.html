@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+		
+		// arguments,每个函数都有一个arguments,他是用来存放参数的一个数组
+
+
+		// 求和的函数
+		function fn(){
+			var num = 0;
+			for(var i = 0;i < arguments.length;i++){
+				num += arguments[i];
+			}
+			return num;
+		}
+		var sum = fn(1,2,3,4578,111,666);
+		document.write(sum);
+
+
+
+
+	</script>
+</body>
+</html>
