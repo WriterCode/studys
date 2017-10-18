@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>继承1</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // 构造函数一
+    function fa(n, a, j) {
+        this.name = n;
+        this.age = a;
+        this.job = j;
+    }
+    fa.prototype.say = function() {
+        console.log(this.name);
+    }
+    console.log(fa.prototype.constructor); // 指向构造函数fa
+    var f = new fa('yy', 15, 'sss');
+    console.log(f.constructor); // 指向构造函数fa
+
+    // 构造函数二
+    function son() {};
+
+    // 1,原型继承
+    son.prototype = f;
+    son.prototype.constructor = son;
+    console.log(son.prototype.constructor); // 指向构造函数son
+    var s = new son();
+    console.log(s.constructor); // 指向构造函数son
+
+    // 构造函数三
+    function so(n, a, j) {
+        this.name = n;
+        this.age = a;
+        this.job = j;
+    };
+
+    // so.prototype = fa.prototype; // 只继承fa的say方法
+    // console.log(so.prototype.constructor); // 指向fa
+    // so.prototype.constructor = so;
+    // console.log(so.prototype.constructor); // so
+    // console.log(fa.prototype.constructor); // so
+
+    function F() {};
+    F.prototype = fa.prototype;
+    so.prototype = new F();
+    so.prototype.constructor = so;
+    var s2 = new so('xx', 12, 'aa');
+    s2.say(); // xx
+</script>
+
+</html>

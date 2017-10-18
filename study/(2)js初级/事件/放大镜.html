@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #minDiv{
+            width: 300px;
+            height: 300px;
+            border:1px solid #ccc;
+            position: relative;
+        }
+        #minDiv img{
+            width: 100%;
+        }
+        #maxDiv{
+            width: 400px;
+            height: 400px;
+            border:1px solid #ccc;
+            position: absolute;
+            top:0px;
+            left:400px;
+            overflow: hidden;
+            display: none;
+        }
+        #maxDiv img{
+            position: absolute;
+            top:0px;
+            left: 0px;
+        }
+        #slider{
+            width: 50px;
+            height: 50px;
+            background: yellow;
+            opacity: 0.6;
+            position: absolute;
+            top:0px;
+            left: 0px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="minDiv">
+        <img src="max.jpg" id="minImg">
+        <div id="slider"></div>
+    </div>
+    <div id="maxDiv">
+        <img src="max.jpg" id="maxImg">
+    </div>
+    <script type="text/javascript">
+        var minDiv = document.querySelector('#minDiv');
+        var minImg = document.querySelector('#minImg');
+        var slider = document.querySelector('#slider');
+        var maxDiv = document.querySelector('#maxDiv');
+        var maxImg = document.querySelector('#maxImg');
+
+        // 当鼠标在minDiv上移动的时候,slider和maxDiv显示
+        minDiv.addEventListener('mousemove',function(e){
+            var ev = window.event || e;
+            slider.style.display = 'block';
+            maxDiv.style.display = 'block';
+            var x = ev.clientX - slider.offsetWidth / 2;
+            var y = ev.clientY - slider.offsetHeight / 2;
+            // 让小黄块跟着鼠标移动
+            if(x <= 0){
+                x = 0;
+            }else if(x >= minDiv.offsetWidth - slider.offsetWidth){
+                x = minDiv.offsetWidth - slider.offsetWidth;
+            }
+            if(y <= 0){
+                y = 0;
+            }else if(y >= minDiv.offsetHeight - slider.offsetHeight){
+                y = minDiv.offsetHeight - slider.offsetHeight;
+            }
+            var scaleX = maxImg.offsetWidth / minDiv.offsetWidth;
+            var scaleY = maxDiv.offsetHeight / minDiv.offsetHeight;
+            slider.style.left = x + 'px';
+            slider.style.top = y + 'px';
+            maxImg.style.left = -x * scaleX + 'px';
+            maxImg.style.top = -y * scaleY + 'px';
+        });
+
+        // 当鼠标在minDiv上移出时,slider和maxDiv隐藏
+        minDiv.addEventListener('mouseleave',function(){
+            slider.style.display = 'none';
+            maxDiv.style.display = 'none';
+        });
+
+
+
+    </script>
+</body>
+</html>

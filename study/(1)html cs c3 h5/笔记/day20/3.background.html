@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        .box{
+            /*width: 300px;
+            height: 300px;
+            border: 1px solid red;
+            background-image: url('https://www.baidu.com/img/baidu_jgylogo3.gif');
+            background-repeat: no-repeat;
+            background-size: 100px 40px;*/
+            height: 1800px;
+            /*
+            background-repeat：
+                背景图重复repeat
+                X轴重复repeat-x
+                Y轴重复repeat-y
+                禁止背景图重复no-repeat
+            background-size：
+                第一个值：宽
+                第二个值：高
+                content
+            */
+            background-image: url(3.png);
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            border:100px solid transparent;
+            /*
+                背景排版原点
+                    content-box(默认)
+                    border-box
+            */
+            background-origin:content-box;
+            /*
+                background-attachment:背景是否跟着滚动;
+                scorll(默认)滚动
+                fixed(固定)
+            */
+            background-attachment: fixed;
+        }
+    </style>
+</head>
+<body>
+    <section class="box">
+        <p>卡萨链接打开拉数据的卡萨链接打开拉数据库的卡萨链接打开拉数据库的</p>
+    </section>
+</body>
+</html>

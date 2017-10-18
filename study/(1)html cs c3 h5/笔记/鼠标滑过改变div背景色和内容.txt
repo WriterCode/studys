@@ -1,0 +1,27 @@
+<style type="text/css">
+.bg1 {
+    display: block;
+    height: 200px;
+    width: 400px;
+    background-color: #CCC;
+}
+.t:hover .bg1 {
+    background-color: #0FF;
+}
+.t:hover .wz1 {
+    color: #F00;
+}
+.t:hover .wz2 {
+    color: #FF0;
+}
+</style>
+
+<div class="t">
+<div class="bg1">
+<p class="wz1">文字变色1</p>
+<p class="wz2">文字变色2</p>
+</div>
+</div>
+
+   分别对div和div里面的内容写hover(滑过状态的样式)
+  

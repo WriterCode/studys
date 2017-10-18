@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style type="text/css">
+		.war{
+			position: relative;
+			transform: rotateX(-10deg);
+			transform-style: preserve-3d;
+			perspective:6000px;
+			-webkit-animation:myfirst 5s linear 1s infinite;
+		}
+		@keyframes myfirst{
+			0% {-webkit-transform:rotateY(0deg);}
+			100% {
+				-webkit-transform:rotateY(360deg);
+			}
+		}
+		.a,.b,.c,.d,.e,.f,.g,.h,.i,.j,.k,.l,.m{
+			width: 121px;
+			height: 161px;
+			position: absolute;
+			top:300px;
+			left:600px;
+		}
+		.a{
+			background: url(img/1.jpg);
+			transform: translateZ(275px);
+		}
+		.b{
+			background: url(img/2.jpg);
+			transform: translateZ(-210px);
+		}
+		.c{
+			background: url(img/3.jpg);
+			transform: translateX(121px) translateZ(244px) rotateY(30deg);
+		}
+		.d{
+			background: url(img/4.jpg);
+			transform: translateX(209px) translateZ(158px) rotateY(60deg);
+		}
+		.e{
+			background: url(img/5.jpg);
+			transform: translateX(245px) translateZ(43px) rotateY(90deg);
+		}
+		.f{
+			background: url(img/6.jpg);
+			transform: translateX(209px) translateZ(-74px) rotateY(120deg);
+
+		}
+		.g{
+			background: url(img/7.jpg);
+			transform: translateX(121px) translateZ(-173px) rotateY(150deg);
+		}
+		.h{
+			background: url(img/8.jpg);
+			transform: translateX(-121px) translateZ(-173px) rotateY(210deg);
+		}
+		.i{
+			background: url(img/9.jpg);
+			transform: translateX(-209px) translateZ(-74px) rotateY(240deg);
+		}
+		.j{
+			background: url(img/10.jpg);
+			transform: translateX(-245px) translateZ(43px) rotateY(270deg);
+		}
+		.k{
+			background: url(img/11.jpg);
+			transform: translateX(-209px) translateZ(158px) rotateY(300deg);
+		}
+		.l{
+			background: url(img/12.jpg);
+			transform: translateX(-121px) translateZ(244px) rotateY(330deg);
+		}
+		.m{
+			background: url(img/13.jpg);
+			transform:translateZ(40px);
+		}
+	</style>
+</head>
+<body>
+	<section class="war">
+		<section class="a"></section>
+		<section class="b"></section>
+		<section class="c"></section>
+		<section class="d"></section>
+		<section class="e"></section>
+		<section class="f"></section>
+		<section class="g"></section>
+		<section class="h"></section>
+		<section class="i"></section>
+		<section class="j"></section>
+		<section class="k"></section>
+		<section class="l"></section>
+		<section class="m"></section>
+	</section>
+</body>
+</html>

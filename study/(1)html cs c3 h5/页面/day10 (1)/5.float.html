@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>float-浮动</title>
+    <style type="text/css">
+        .box1{
+            width: 300px;
+            height: 300px;
+            background-color: red;
+            float: left;
+        }
+        .box2{
+            height: 500px;
+            background-color: blue;
+        }
+        .nav{
+            width: 300px;
+            background-color: red;
+            float: right;
+        }
+        .header{
+            background-color: yellow;
+        }
+        .container{
+            height: 400px;
+            background-color: pink;
+        }
+        .clearFix{
+            clear: both;
+        }
+    </style>
+
+</head>
+<body>
+    <!--
+        清除谁的浮动,就在谁的里面最下端写一个空的div,然后再对空div设置clear:both样式
+     -->
+    <div class="header">
+        <div class="nav">
+            <a href="#">a1</a>
+            <a href="#">a2</a>
+            <a href="#">a3</a>
+            <a href="#">a4</a>
+            <a href="#">a5</a>
+        </div>
+        <div class="clearFix"></div>
+    </div>
+    <div class="container">
+
+    </div>
+
+</body>
+</html>
+
+

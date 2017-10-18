@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        #scroll {
+            width: 50px;
+            height: 30px;
+            background-color: red;
+            position: fixed;
+            right: 30px;
+            bottom: 100px;
+            display: none;
+        }
+        
+        #h {
+            height: 10000px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="scroll">top</div>
+    <div id="h"></div>
+    <script type="text/javascript">
+        var scroll = document.querySelector('#scroll');
+        scroll.onclick = function() {
+                document.documentElement.scrollTop = 0;
+                document.body.scrollTop = 0;
+            }
+            // onscroll:当滚动条发生改变时(滚动条向上或者向下移动)触发该事件
+
+        // document.documentElement.scrollTop
+
+        // 兼容写法
+        // var scrollTop = document.documentElement.scrollTop + document.body.scrollTop;
+
+        var scrollTop = 0;
+        // if(document.documentElement.scrollTop){
+        // 		scrollTop = document.documentElement.scrollTop;
+        // }else{
+        //    	scrollTop = document.body.scrollTop;
+        // }
+
+
+        // 滚动条事件
+        window.onscroll = function() {
+            if (document.documentElement.scrollTop) {
+                scrollTop = document.documentElement.scrollTop;
+            } else {
+                scrollTop = document.body.scrollTop;
+            }
+            if (scrollTop >= 3000) {
+                scroll.style.display = 'block';
+            } else {
+                scroll.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+
+</html>

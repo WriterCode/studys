@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>2D转换</title>
+	<style type="text/css">
+		/*
+			transform-origin:20% 20%;
+				改变变换原点:x y;
+			transform:变换;
+				位移:translate;
+				缩放:scale;
+				旋转:rotate;
+				倾斜:skew;
+		*/
+		.box{
+			width: 300px;
+			height: 200px;
+			border:1px solid #ccc;
+			text-align: center;
+			margin:0 auto;
+			color:red;
+		}
+		.box:hover{
+			/*transform:translateX(100px);*/
+			/*transform:translateY(100px);*/
+			/*transform:translate(100px,100px);*/
+			/*
+				scale:缩放,单位是数值
+			     	scaleX()只缩放x轴
+			     	scaleY()只缩放y轴
+			     	scale:复合属性,XY都缩放
+			*/
+			/*transform: scale(2);*/
+			/*
+				rotateX()沿x轴旋转
+				rotateY()沿y轴旋转
+			*/
+			/*transform: rotateX(45deg);*/
+			/*
+				skewX()
+				skewY()
+			*/
+			transform:skewX(45deg);
+	        
+		}
+	</style>
+</head>
+<body>
+	<section class="box">位移</section>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        body{
+            transform-style: preserve-3d;
+            perspective: 1500px;
+        }
+        .wrap{
+            width: 300px;
+            height: 200px;
+            background-image: url('http://img5.imgtn.bdimg.com/it/u=158390074,315862021&fm=26&gp=0.jpg');
+            margin: 100px auto;
+            transform: translateZ(2000px);
+            transition-duration: 4s;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="wrap"></div>
+</body>
+
+
+<script type="text/javascript">
+    var box = document.querySelector('.wrap');
+    document.onclick = function(){
+        box.style.transform = 'translateZ(200px)';
+    }
+
+
+
+
+
+
+
+
+
+
+</script>
+</html>

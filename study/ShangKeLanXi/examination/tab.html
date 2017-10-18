@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        .wrap div:nth-child(1) {
+            width: 200px;
+            height: 200px;
+            background: orange;
+        }
+        
+        .wrap div:nth-child(2) {
+            width: 200px;
+            height: 200px;
+            background: pink;
+            display: none;
+        }
+        
+        .wrap div:nth-child(3) {
+            width: 200px;
+            height: 200px;
+            background: yellow;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="button" name="" value="按钮1" class="btn1" style="background: yellow;">
+    <input type="button" name="" value="按钮2" class="btn1">
+    <input type="button" name="" value="按钮3" class="btn1">
+    <section class="wrap">
+        <div>A</div>
+        <div>B</div>
+        <div>C</div>
+    </section>
+    <script type="text/javascript">
+        var btns = document.getElementsByClassName('btn1');
+        var divs = document.getElementsByTagName('div');
+
+        for (var i = 0; i < 3; i++) {
+            btns[i].intex = i;
+            btns[i].onclick = function() {
+                for (var j = 0; j < 3; j++) {
+                    btns[j].style.background = '';
+                    divs[j].style.display = 'none';
+                }
+                this.style.background = 'yellow';
+                divs[this.intex].style.display = 'block';
+            }
+        }
+    </script>
+</body>
+
+</html>

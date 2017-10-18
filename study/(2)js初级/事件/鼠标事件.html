@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style type="text/css">
+		#box{
+			width: 200px;
+			height: 200px;
+			background: red;
+		}
+	</style>
+</head>
+<body>
+	<div id="box"></div>
+	<script type="text/javascript">
+		// mouseover与mouseenter
+
+		// 不论鼠标指针穿过被选元素或其子元素，都会触发 mouseover 事件。
+		// 只有在鼠标指针穿过被选元素时，才会触发 mouseenter 事件。
+
+		// mouseout与mouseleave
+
+		// 不论鼠标指针离开被选元素还是任何子元素，都会触发 mouseout 事件。
+		// 只有在鼠标指针离开被选元素时，才会触发 mouseleave 事件
+		
+		// 鼠标移入(onmouseover)
+		// 鼠标移出(onmouseout)
+		// 鼠标按下(onmousedown)
+		// 鼠标抬起(onmouseup)
+		// 鼠标双击ondblclick:连续点击两次鼠标左键,则会触发鼠标双击事件
+		// 鼠标右键(oncontextmenu)
+		// 鼠标移动(onmousemove)
+
+
+		// document.onmousedown = function () {
+		// 	console.log('鼠标按下');
+		// }
+
+		// document.onmouseup = function () {
+		// 	console.log('鼠标抬起');
+		// }
+
+		// document.ondblclick = function () {
+		// 	console.log('鼠标双击');
+		// }
+
+		// document.oncontextmenu = function () {
+		// 	console.log('鼠标右键');
+		// }
+
+		var box = document.querySelector('#box');
+		// box.onclick = function(){
+		// 	box.style.background = 'yellow';
+		// }
+		// box.ondblclick = function () {
+		// 	box.style.width = 400 + 'px';
+		// 	box.style.height = 400 + 'px';
+		// }
+
+		// div跟着鼠标移动
+		// document.onmousemove = function(e){
+		// 	// e是兼容火狐浏览器用到的
+				
+		// 	// 获取事件对象
+		// 	var ev = e || window.event;
+
+		// 	// clientX clientY获取鼠标x/y轴的坐标
+		// 	// console.log(ev.clientY);
+		// 	box.style.position = 'absolute';
+		// 	box.style.top = ev.clientY + 'px';
+		// 	box.style.left = ev.clientX + 'px';
+		// }
+
+		// 让鼠标位于div中心
+		// document.onmousemove = function(e){
+		// 	// e是兼容火狐浏览器用到的
+				
+		// 	// 获取事件对象
+		// 	var ev = e || window.event;
+
+		// 	// clientX clientY获取鼠标x/y轴的坐标
+		// 	// console.log(ev.clientY);
+		// 	box.style.position = 'absolute';
+		// 	box.style.top = ev.clientY - box.clientHeight/2 + 'px';
+		// 	box.style.left = ev.clientX - box.clientWidth/2 + 'px';
+		// }
+
+
+		// 鼠标拖拽
+		box.onmousedown = function(){
+			document.onmousemove = function(e){
+				// e是兼容火狐浏览器用到的
+					
+				// 获取事件对象
+				var ev = e || window.event;
+
+				// clientX clientY获取鼠标x/y轴的坐标
+				// console.log(ev.clientY);
+				box.style.position = 'absolute';
+				box.style.top = ev.clientY - box.clientHeight/2 + 'px';
+				box.style.left = ev.clientX - box.clientWidth/2 + 'px';
+			}
+		}
+		box.onmouseup = function(){
+			document.onmousemove = null;
+		}
+
+		
+
+
+
+	</script>
+</body>
+</html>

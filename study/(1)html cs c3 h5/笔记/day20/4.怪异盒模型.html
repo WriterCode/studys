@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+       /* .box{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            padding: 50px;
+            border: 10px solid blue;
+            box-sizing: border-box;
+        }*/
+        .wrap{
+            background: #ccc;
+            height: 150px;
+        }
+        .box1,.box2,.box3,.box4{
+            width: 25%;
+            height: 150px;
+            float: left;
+            border-radius: 10px;
+            border: 1px solid black;
+            box-sizing: border-box;
+        }
+        .box1{
+            background: red;
+        }
+        .box2{
+            background: yellow;
+        }
+        .box3{
+            background: pink;
+        }
+        .box4{
+            background: skyblue;
+        }
+    </style>
+</head>
+<body>
+    <!--
+        标准盒模型:
+            padding
+            border
+            content(width/height)
+        怪异盒模型:
+            content(width/height)
+     -->
+    <!-- <section class="box"></section> -->
+    <section class="wrap">
+        <section class="box1"></section>
+        <section class="box2"></section>
+        <section class="box3"></section>
+        <section class="box4"></section>
+    </section>
+</body>
+</html>

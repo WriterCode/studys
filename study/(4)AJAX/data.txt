@@ -1,0 +1,3 @@
+AJAX(Asynchronous JavaScript and XML)异步的js和xml
+异步(多线程):同一时间点,同时有多个程序在执行,互不影响
+.....

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+     .box1{
+        position:relative;
+        top:260px;
+        left:200px;
+        height:200px;
+        background:red;
+        z-index:-1;
+     }
+     .box2{
+        width:500px;
+        height:300px;
+        background:blue;
+     }
+    </style>
+<body>
+    <!--  position里面的值:
+           1,relative:
+              1,相对定位(相对于自身来定位)
+              2,不会脱离文档流
+           2,absolute:
+              1,绝对定位(相对于父级有定位属性的元素进行定位,如果父级没有定位属性,则相对于父父级右定位属性的元素定位,如果上层都没有定位属性,则相对于文档定位)如果父级和父父级都有定位属性,则相对于最近的有定位属性的元素定位
+              2,脱离文档流
+           3,fixed:
+              相对于窗口固定定位
+           4,static(默认值)
+     配合position的属性:
+           top:向上
+           left:向左
+           z-index:堆叠顺序(默认值为0) -->
+    <div class="box1"></div>
+	<div class="box2"></div>
+	<div class="box3"></div>
+</body>

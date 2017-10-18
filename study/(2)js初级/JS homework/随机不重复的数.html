@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+		var arr = [];
+		for(var i = 0;i < 10;i++){
+			var num = randomFn(20,55);
+			// push()在数组末尾添加元素
+			arr.push(num);
+		}
+		arr.sort(function(a,b){
+			return a > b;
+		});
+		document.write(arr);
+
+		function randomFn (min,max) {
+			var rand = Math.random() * (max - min + 1) + min;
+			return parseInt(rand);
+		}
+
+
+		// var arr = [2,23,25,21,16,18,2222,33,58]
+		// // 对数组进行排序,即可从小到大也可以从大到小排序
+		// arr.sort(function(a,b){
+		// 	// 从小到大排序
+		// 	// return a > b;
+		// 	// 从大到小排序
+		// 	return a < b;
+		// });
+		// document.write(arr);
+
+
+
+	</script>
+</body>
+</html>

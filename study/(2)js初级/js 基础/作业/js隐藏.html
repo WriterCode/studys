@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style type="text/css">
+		#box{
+			width: 200px;
+			height: 200px;
+			background: pink;
+			position: absolute;
+			top:50%;
+			left:50%;
+			transform: translate(-50%,-50%);
+		}
+	</style>
+</head>
+<body>
+	<input type="button" name="" value="点击" id="btn">
+	<section id="box"></section>
+
+	<script type="text/javascript">
+		var box = document.getElementById('box');
+		var btn = document.getElementById('btn');
+		var bol = true;
+		// btn.onclick = function(){
+		// 	if(box.style.display == 'none'){
+		// 		box.style.display = ('block');	
+		// 	}else{
+		// 		box.style.display = ('none');
+		// 	}
+		// }
+		btn.onclick = function(){
+			
+			if(bol){
+				bol = !bol;
+				box.style.display = ('none');
+				
+			}else{
+				bol = !bol;
+				box.style.display = ('block');
+					
+			}
+			
+		}
+		// btn.onclick = function(){
+		// 	if(bol){
+		// 		box.style.display = ('none');
+		// 		bol = false;	
+		// 	}else{
+		// 		box.style.display = ('block');
+		// 		bol = true;
+		// 	}
+		// }
+	</script>
+</body>
+</html>

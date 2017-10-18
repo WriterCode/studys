@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        // 在函数内部声明的变量(局部变量),在函数外部不能访问
+
+
+        // 在函数外声明的变量(全局变量),在函数内部可以访问
+
+
+        //所有变量都存在与一个执行环境(作用域)中,这个执行环境决定了变量的生命周期,以及哪一部分代码可以访问其中的变量
+
+        //变量分为全局变量和局部变量
+        var a = 100;
+
+        function fn() {
+            var a = 200;
+
+            function foo() {
+                var a = 300;
+                document.write(a);
+            }
+            foo();
+            document.write(a);
+        }
+        fn();
+        document.write(a);
+
+        // 作用域从内向外找,找到停止
+    </script>
+</body>
+
+</html>

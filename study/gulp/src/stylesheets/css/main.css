@@ -1,0 +1,70 @@
+@charset "UTF-8";
+/* @import 'stylesheets'; */
+/* @import 'main.css'; */
+#box {
+  width: 500px;
+  height: 400px;
+  background: blue;
+  color: #fff; }
+  #box ul:nth-child(1) {
+    width: 50px; }
+    #box ul:nth-child(1) li {
+      width: 25px;
+      margin-left: 10px;
+      margin-top: 20px; }
+      #box ul:nth-child(1) li h1,
+      #box ul:nth-child(1) li h2,
+      #box ul:nth-child(1) li h3 {
+        font-size: 20px; }
+  #box:hover {
+    color: red; }
+
+.clearFix:after {
+  content: '';
+  display: none;
+  clear: both; }
+
+/*多行注释:会被编译到css文件中*/
+.trans {
+  -webkit-transform: rotate(60deg) translateX(100px);
+  -moz-transform: rotate(60deg) translateX(100px);
+  -o-transform: rotate(60deg) translateX(100px);
+  transform: rotate(60deg) translateX(100px); }
+
+div {
+  -webkit-transform: rotate(90deg) translateX(100px);
+  -moz-transform: rotate(90deg) translateX(100px);
+  -o-transform: rotate(90deg) translateX(100px);
+  transform: rotate(90deg) translateX(100px); }
+
+/* @for to  变量递增包括shart不包括end(变量必须为整数) */
+.item-1 {
+  width: 200px;
+  margin-left: 200px; }
+
+.item-2 {
+  width: 400px;
+  margin-left: 200px; }
+
+.item-3 {
+  width: 600px;
+  margin-left: 200px; }
+
+/* @for through  变量递增包括shart包括end(变量必须为整数) */
+.item-1 {
+  width: 200px;
+  margin-left: 200px; }
+
+.item-2 {
+  width: 400px;
+  margin-left: 200px; }
+
+.item-3 {
+  width: 600px;
+  margin-left: 200px; }
+
+.item-4 {
+  width: 800px;
+  margin-left: 200px; }
+
+/* @each in  遍历多值变量 */

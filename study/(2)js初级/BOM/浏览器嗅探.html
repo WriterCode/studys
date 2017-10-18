@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+		
+
+		if(navigator.userAgent.indexOf("Chrome")!=-1){
+			console.log('谷歌浏览器');
+		}else if(navigator.userAgent.indexOf("Firefox")!=-1){
+			console.log('火狐浏览器');
+		}else{
+			console.log('其他浏览器');
+		}
+
+		// 检测是否为手机端打开的
+		var userInfo = navigator.userAgent;
+		console.log(userInfo);
+		var arr = ['iphone','Linux','ipad']
+		for(var i = 0;i < arr.length;i++){
+			if(userInfo.indexOf(arr[i]) != -1){
+				alert('在手机端打开的');
+			}
+		}
+
+
+	</script>
+</body>
+</html>

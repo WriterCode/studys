@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // JSON.parse() : 可以将json格式的字符串,转化为json对象
+        var o_str = '{"name":"yy","age":23}'; // 可转化
+        var o_str1 = "{'name':'yy','age':23}"; // 不可转化
+        console.log(o_str);
+        console.log(JSON.parse(o_str));
+
+        // 数组也可以转化
+        var a_str = '[1,2,3]';
+        console.log(JSON.parse(a_str));
+
+        var json = '[{"name":"yy","age":21},{"name":"qq","age":11}]';
+        console.log(JSON.parse(json))
+
+        // JSON.stringify()
+        var o1 = {
+            name: "yy",
+            age: 23
+        }
+        console.log(o1.toString());
+        console.log(JSON.stringify(o1));
+
+        var arr = ['a', 'b', 'c'];
+        console.log(arr.toString());
+        console.log(JSON.stringify(arr));
+
+        // eval()函数
+        // 可以将所有的json格式的字符串转化为json对象
+        var o2 = eval("(" + o_str1 + ")");
+        console.log(o2);
+
+        // 将js代码类型的字符串,转化为可执行的js代码
+        var str = 'function(){alert(1)}';
+        var code = eval("(" + str + ")")
+        code();
+    </script>
+</body>
+
+</html>

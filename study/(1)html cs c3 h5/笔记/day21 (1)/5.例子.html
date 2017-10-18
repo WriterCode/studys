@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        .box{
+            width: 300px;
+            height: 300px;
+            border:1px solid #ccc;
+            margin: 100px auto;
+            position: relative;
+            overflow: hidden;
+            background: #ccc;
+        }
+        .a{
+            width: 10px;
+            height: 10px;
+            background: rgba(0,0,0,0);
+            position: absolute;
+            top: 0px;
+            left: 50%;
+            border-radius: 50%;
+            transition-duration: 0.5s;
+        }
+        .box:hover .a{
+            width: 450px;
+            height: 450px;
+            background: rgba(0,0,0,0.8);
+            top: -70px;
+            left: -70px;
+        }
+        h1{
+            position: absolute;
+            color: white;
+            left: 135px;
+            top: 135px;
+            opacity: 0;
+            transition-duration: 5s;
+        }
+        .box:hover h1{
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <section class="box">
+        <div class="a"></div>
+        <h1>文字</h1>
+    </section>
+</body>
+</html>

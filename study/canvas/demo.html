@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0
+        }
+        
+        ul {
+            width: 1230px;
+            margin: 50px auto;
+            list-style: none;
+            overflow: hidden;
+        }
+        
+        li {
+            border: 1px solid #d2d2d2;
+            float: left;
+            margin: 10px 0 0 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>
+            <canvas class="canvas1" width="400" height="300"></canvas>
+        </li>
+        <li>
+            <canvas class="canvas2" width="400" height="300"></canvas>
+        </li>
+        <li>
+            <canvas class="canvas3" width="400" height="300"></canvas>
+        </li>
+        <li>
+            <canvas class="canvas4" width="400" height="300"></canvas>
+        </li>
+        <li>
+            <canvas class="canvas5" width="400" height="300"></canvas>
+        </li>
+        <li>
+            <canvas class="canvas6" width="400" height="300"></canvas>
+        </li>
+    </ul>
+</body>
+<script>
+    var canvas1 = document.querySelector('.canvas1');
+    var ctx1 = canvas1.getContext('2d');
+
+    ctx1.beginPath();
+    ctx1.fillStyle = 'gray';
+    ctx1.fillStyle = (0, 0, 400, 300);
+    ctx1.closePath();
+
+    ctx1.beginPath();
+    ctx1.strokeStyle = '#f40a33';
+    ctx1.lineWidth = 5;
+    ctx1.strokeRect(50, 50, 50, 50);
+    ctx1.closePath();
+
+    /*******画圆*****/
+    var ctx2 = document.querySelector('.canvas2').getContext('2d');
+    ctx2.beginPath();
+    ctx2.strokeStyle = 'red';
+    ctx2.lineWidth = 5;
+    ctx2.arc(100, 100, 25, 0, -Math.PI * 0.5, true);
+    ctx2.stroke(); // 画笔当前路径
+    ctx2.closePath();
+
+    ctx2.beginPath();
+    ctx2.fillStyle = 'skyblue';
+    ctx2.arc(100, 50, 25, 0, Math.PI * 2, true);
+    ctx2.fill();
+    ctx2.closePath();
+
+    /******画线******/
+    var ctx3 = document.querySelector('.canvas3').getContext('2d');
+    ctx3.beginPath();
+    ctx3.strokeStyle = 'orange';
+    ctx3.fillStyle = 'skyblue';
+    ctx3.lineWidth = 4;
+    ctx3.lineJoin = 'round'; // 相交线边角类型round(圆角) bevel(斜角)
+    ctx3.moveTo(20, 20);
+    ctx3.lineTo(100, 20);
+    ctx3.lineTo(20, 120);
+    ctx3.lineTo(20, 18);
+    ctx3.fill();
+    ctx3.stroke();
+    ctx3.closePath();
+
+    ctx3.beginPath();
+    ctx3.strokeStyle = 'yellow';
+    ctx3.fillStyle = 'red';
+    ctx3.arc(200, 100, 30, 0, Math.PI * 2, true);
+    ctx3.fill();
+    ctx3.stroke();
+    ctx3.closePath();
+
+    ctx3.beginPath();
+    ctx3.strokeStyle = 'orange';
+    ctx3.lineCap = 'round'; // 线两端的类型 round(圆形) square()
+    ctx3.lineWidth = 10;
+    ctx3.moveTo(20, 200);
+    ctx3.lineTo(100, 200);
+    ctx3.stroke();
+    ctx3.closePath();
+
+    ctx3.beginPath();
+    ctx3.strokeStyle = 'orange';
+    ctx3.lineCap = 'square';
+    ctx3.lineWidth = 15;
+    ctx3.moveTo(20, 250);
+    ctx3.lineTo(100, 250);
+    ctx3.stroke();
+    ctx3.closePath();
+
+    /*********文字**********/
+    var ctx4 = document.querySelector('.canvas4').getContext('2d');
+    ctx4.beginPath();
+    ctx4.fillStyle = '#adadad'
+    ctx4.fillRect(0, 0, 400, 300);
+    ctx4.closePath();
+
+    ctx4.beginPath();
+    ctx4.fillStyle = '#3d345f'
+    ctx4.font = '30px 黑体';
+    ctx4.fillText('hello world', 100, 100);
+    ctx4.closePath();
+
+    ctx4.beginPath();
+    ctx4.strokeStyle = '#3d345f'
+    ctx4.font = '40px 黑体';
+    ctx4.strokeText('hello world', 100, 200);
+    ctx4.closePath();
+
+    /********渐变*******/
+    var ctx5 = document.querySelector('.canvas5').getContext('2d');
+    ctx5.beginPath();
+    ctx5.fillStyle = '#adadad';
+    ctx5.fillRect(0, 0, 400, 300);
+    ctx5.closePath();
+
+    var gra = ctx5.createLinearGradient(0, 0, 100, 100);
+    gra.addColorStop(0, 'blue');
+    gra.addColorStop(0.5, 'pink');
+    gra.addColorStop(1, 'yellow');
+    ctx5.beginPath();
+    ctx5.fillStyle = gra;
+    ctx5.fillRect(0, 0, 100, 100);
+    ctx5.closePath();
+</script>
+
+
+</html>

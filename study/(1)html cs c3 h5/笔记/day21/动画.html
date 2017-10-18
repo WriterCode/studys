@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>动画</title>
+	<style>
+		/*
+			animation:动画;
+
+		*/
+
+		.box{
+			width: 300px;
+			height: 300px;
+			background: pink;
+			border-radius: 50%;
+			position: absolute;
+				/*动画名字*/
+			animation-name:move;
+				/*动画持续时间*/
+			animation-duration: 3s;
+				/*
+					动画重复次数
+						无线播放:infinite
+				*/
+			/*animation-iteration-count:2;*/
+			animation-iteration-count:infinite;
+				/*
+					动画方向播放方向
+						reverse:反向;
+						alternate:方向轮流播放;
+				*/
+			animation-direction:alternate;
+				/*动画运动方式*/
+			animation-timing-function:ease-out;
+				/*动画延迟*/
+			animation-delay: 2s;
+				/*动画结束后的状态*/
+			animation-fill-mode:forwards;
+		}
+		/*keyframes:关键帧*/
+		@keyframes move{
+			from{
+				left:0px;
+				top:0px;
+			}
+			to{
+				left:800px;
+				top:200px;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="box"></div>
+</body>
+</html>

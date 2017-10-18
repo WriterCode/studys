@@ -1,0 +1,50 @@
+css
+1,cascading style sheets
+ 美化页面
+2css语法
+样式：值;
+例如：<h1 style="color:red;">样式</h1>
+                 颜色：红；
+      <p style="font-weight:bold；">今天天气不错</p>
+                 字体形态   ：   加粗；
+      <p style="font-size:30px;">今天天气不错</p>
+                 字体型号：30px；
+      <div style="background:none;">背景色</div>
+      边框  border：1px solid #f00；
+      
+3直接在标签里加style style="样式：值；" 
+       ul li 清除样式 list-style：none
+3，选择器
+   1，类选择器 class对应是个.
+    样式用<style></style> 写在头部  .dianqi{样式：值；}
+   2, id选择器  id对应是个#
+    样式用<style></style> 写在头部  #dianqi{样式：值；}
+    例如    <style>
+            .dianqi{color:#fff;}
+	    #dianqi{color:red;}
+	    </style>
+   3， 元素选择器
+       ul li
+    例如：  <style>
+	    ul li{list-style:none;}
+	    div{background:#6e6568;}
+	    </style>
+     直接写标签元素：<div></div>     div
+                      <img src=""/>  img
+                     <ul><li></li></ul>  ul li
+优先级：标签内的大于id选择器大于类选择器大于元素选择器
+4，<a href=""></a> 链接
+   <img src=""/>   图片
+  1）默认状态        a：link
+  2）鼠标滑过的状态  a：hover
+  3）鼠标点击状态    a：active
+  4）访问后的状态    a: visit
+
+拓展：cursor：pointer；（鼠标滑过变小手）
+a{text-decoration：none； color：#fff} 去掉a标签的下划线还有更改字的颜色
+在空白页打开链接 <a href="" target="_balnk">
+在本身页打开链接 <a href="" target="_self">
+
+回顶部和底部 <a name="top"></a>
+              <pre>内容<pre> 保持原文样式
+             <a href="#top">回到顶部</a>

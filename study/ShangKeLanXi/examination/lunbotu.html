@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .warp {
+            width: 960px;
+            height: 600px;
+            border: 1px solid #ccc;
+            margin: 50px auto;
+            position: relative;
+        }
+        
+        ul {
+            list-style: none;
+        }
+        
+        ul li img {
+            width: 960px;
+            height: 600px;
+        }
+        
+        .leftBtn {
+            width: 30px;
+            height: 60px;
+            background: rgba(0, 0, 0, 0.2);
+            position: absolute;
+            top: 50%;
+            margin-top: -30px;
+            z-index: 999;
+            font-size: 20px;
+            color: #fff;
+            /*取消斜体*/
+            font-style: normal;
+            text-align: center;
+            line-height: 60px;
+            display: none;
+        }
+        
+        .rightBtn {
+            width: 30px;
+            height: 60px;
+            background: rgba(0, 0, 0, 0.2);
+            position: absolute;
+            top: 50%;
+            right: 0;
+            margin-top: -30px;
+            z-index: 999;
+            font-size: 20px;
+            color: #fff;
+            /*取消斜体*/
+            font-style: normal;
+            text-align: center;
+            line-height: 60px;
+            display: none;
+        }
+        
+        .leftBtn:hover,
+        .rightBtn:hover {
+            background: rgba(0, 0, 0, 0.6);
+            cursor: pointer;
+        }
+        
+        ul li {
+            opacity: 1;
+            transition: 2s all;
+            position: absolute;
+        }
+        
+        .box {
+            width: 260px;
+            height: 30px;
+            background: #ccc;
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 222;
+            border-radius: 10px;
+        }
+        
+        .box1 {
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: #fff;
+            float: left;
+            margin-top: 8px;
+            margin-left: 31px;
+            transition: 2s all;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="warp">
+        <ul>
+            <li style="z-index:5;"><img src="images/1.jpg" alt=""></li>
+            <li style="z-index:4;"><img src="images/2.jpg" alt=""></li>
+            <li style="z-index:3;"><img src="images/3.jpg" alt=""></li>
+            <li style="z-index:2;"><img src="images/4.jpg" alt=""></li>
+            <li style="z-index:1;"><img src="images/5.jpg" alt=""></li>
+        </ul>
+        <i class="leftBtn"><</i>
+        <i class="rightBtn">></i>
+        <div class="box">
+            <div class="box1" style="background:red;"></div>
+            <div class="box1"></div>
+            <div class="box1"></div>
+            <div class="box1"></div>
+            <div class="box1"></div>
+        </div>
+    </section>
+    <script src="animate,js"></script>
+    <script type="text/javascript">
+        var leftBtn = document.getElementsByClassName('leftBtn')[0];
+        var rightBtn = document.getElementsByClassName('rightBtn')[0];
+        var warp = document.getElementsByClassName('warp')[0];
+        var lis = document.getElementsByTagName('li');
+        var box1 = document.getElementsByClassName('box1');
+        var index = 0;
+        var timer = null;
+
+        autoPlay();
+
+        warp.onmouseenter = function() {
+            leftBtn.style.display = 'block';
+            rightBtn.style.display = 'block';
+            clearInterval(timer);
+        }
+        warp.onmouseleave = function() {
+            leftBtn.style.display = 'none';
+            rightBtn.style.display = 'none';
+            autoPlay();
+        }
+
+        rightBtn.onclick = function() {
+            index++;
+            if (index >= 5) {
+                index = 0;
+            }
+            for (var i = 0; i < lis.length; i++) {
+                lis[i].style.opacity = '0';
+                box1[i].style.background = '';
+            }
+            lis[index].style.opacity = '1';
+            box1[index].style.background = 'red';
+        }
+        leftBtn.onclick = function() {
+            index--;
+            if (index < 0) {
+                index = 4;
+            }
+            for (var i = 0; i < lis.length; i++) {
+                lis[i].style.opacity = '0';
+                box1[i].style.background = '';
+            }
+            lis[index].style.opacity = '1';
+            box1[index].style.background = 'red';
+        }
+
+        for (var i = 0; i < box1.length; i++) {
+            box1[i].index = i;
+            box1[i].onclick = function() {
+
+                for (var j = 0; j < box1.length; j++) {
+                    box1[j].style.background = '';
+                    lis[j].style.opacity = '0';
+                }
+                this.style.background = 'red';
+                lis[this.index].style.opacity = '1';
+                index = this.index;
+            }
+        }
+
+        // 自动轮播函数
+        function autoPlay() {
+            // 定时器
+            timer = setInterval(function() {
+                index++;
+                if (index >= 5) {
+                    index = 0;
+                }
+                for (var i = 0; i < lis.length; i++) {
+                    lis[i].style.opacity = '0';
+                    box1[i].style.background = '';
+                }
+                lis[index].style.opacity = '1';
+                box1[index].style.background = 'red';
+            }, 2000)
+        }
+    </script>
+</body>
+
+</html>

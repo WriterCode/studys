@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+
+<body>
+    <input type="button" name="" value="按钮" id="btn">
+    <script type="text/javascript">
+        // 有参无返回值
+        // 函数声明的时候,参数为形参
+        // function fn(name,age,gender){
+        // 	alert(name);
+        // 	alert(age);
+        // }
+
+        // // 函数调用,参数为实参
+        // fn('费华枝',24,'男');
+
+        // 声明一个有多个参数,无返回值得函数,函数名字alertInfo,参数有name等,点击按钮时弹出name等的值
+        function alertInfo(name, age, gender, hobby) {
+            document.write('我的名字:' + name + '<br/>', '我的年龄:' + age + '<br/>', '我的性别:' + gender + '<br/>', '我的爱好:' + hobby);
+        }
+        var btn = document.getElementById('btn');
+        btn.onclick = function() {
+            alertInfo('费华枝', 24, '男', '篮球');
+        }
+    </script>
+</body>
+
+</html>

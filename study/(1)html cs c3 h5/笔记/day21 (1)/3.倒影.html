@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+    /*
+        box-reflect:倒影;
+        方向:
+            none
+                无倒影
+            left
+                指定倒影在对象的左边
+            below
+                指定倒影在对象的下边
+            right
+                指定倒影在对象的右边
+            above
+                指定倒影在对象的上边
+
+        倒影与元素的距离:
+            用长度值来定义倒影与对象之间的间隔。可以为负值
+            用百分比来定义倒影与对象之间的间隔。可以为负值
+    */
+        img{
+            width: 200px;
+            display: block;
+            margin: 200px auto;
+            box-reflect:left;
+            -webkit-box-reflect:left;
+            -moz-box-reflect:left;
+            -o-box-reflect:left;
+            -ms-box-reflect:left;
+        }
+    </style>
+</head>
+<body>
+    <img src="1.png">
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>原始模式</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // 原始模式(简单模式)
+    var person = {
+        name: 'yy',
+        age: 18,
+        job: 'teacher',
+        say: function() {
+            console.log(this.name);
+        }
+    }
+    var person1 = {
+            name: 'yy',
+            age: 18,
+            job: 'teacher',
+            say: function() {
+                console.log(this.name);
+            }
+        }
+        // 优点:简单明了,可以清晰的看到对象的属性和方法
+        // 缺点:复用率较低,容易造成冗余代码
+</script>
+
+</html>

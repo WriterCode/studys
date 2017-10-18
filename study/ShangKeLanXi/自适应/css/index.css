@@ -1,0 +1,80 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.wrap {
+    background: rgb(238, 238, 238);
+}
+
+.header img {
+    width: 10rem;
+    height: 4.2rem;
+    display: block;
+}
+
+.main {
+    background: #fff;
+    margin-top: 0.2rem;
+}
+
+.mainhed {
+    width: 9.36rem;
+    margin: 0 auto;
+}
+
+.mainhed .title {
+    height: 0.64rem;
+    padding-top: 0.266666667rem;
+    text-align: center;
+    font-size: 0.4rem;
+    color: rgb(40, 40, 40);
+}
+
+.mainhed>div {
+    margin-top: 0.266666667rem;
+    overflow: hidden;
+}
+
+.mainleft {
+    width: 4.53333333rem;
+    height: 2.106666667rem;
+    background: rgb(238, 238, 238);
+    border-radius: 0.133333333rem;
+    float: left;
+    overflow: hidden;
+}
+
+.mainright {
+    width: 4.53333333rem;
+    height: 2.106666667rem;
+    background: rgb(238, 238, 238);
+    border-radius: 0.133333333rem;
+    float: right;
+    overflow: hidden;
+}
+
+.ledleft {
+    padding-top: 0.6533333333rem;
+    float: left;
+}
+
+.ledleft img {
+    display: block;
+    width: 1rem;
+    height: 0.8rem;
+}
+
+.ledright {
+    width: 3.2rem;
+    float: right;
+    margin-right: 0.13333333333rem;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.ledright p {
+    /* padding-top: 0.2rem; */
+    /* line-height: 0.4rem; */
+    font-size: 0.1866666667rem;
+}

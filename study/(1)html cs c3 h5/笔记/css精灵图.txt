@@ -1,0 +1,8 @@
+精灵图 ,雪碧图 ,css sprite
+
+
+css sprite:讲图片放在一张图片中,减少服务器压力
+用background-position实现
+
+
+

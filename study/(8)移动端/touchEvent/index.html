@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>touch事件</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html,body{
+            width: 100%;
+            height: 100%;
+        }
+        #box{
+            width: 100%;
+            height: 2000px;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+</body>
+<script>
+    var box = document.getElementById('box');
+    //touchstart , touchmove , touchend
+    var startDate;
+    //手指触摸到该元素时
+    box.addEventListener('touchstart',handlerStart,false);
+    function handlerStart(e){
+        var touchX = e.touches[0].pageX;
+        var touchY = e.touches[0].pageY;
+        startDate = new Date();
+        //console.log(touchX+ ',' + touchY);
+    }
+    //手指在该元素上滑动时
+    box.addEventListener('touchmove',handlerMove,false);
+    function handlerMove(e){
+        var touchX = e.touches[0].pageX;
+        var touchY = e.touches[0].pageY;
+        
+        //console.log(touchX+ ',' + touchY);
+    }
+    //手指离开该元素时
+    box.addEventListener('touchend',handlerEnd,false);
+    function handlerEnd(e){
+        console.log("手指离开");
+        var sjx = new Date() - startDate;
+    }
+</script>
+</html>

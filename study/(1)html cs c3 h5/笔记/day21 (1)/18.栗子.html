@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        .wrap{
+            height: 500px;
+            border: 1px dashed #ccc;
+        }
+        .wrap div,h1{
+            float: left;
+        }
+        .wrap div{
+            position: absolute;
+            left: -500px;
+            transition-duration: 1s;
+            transition-timing-function: cubic-bezier(0.81, 0.51, 0, 0.9);
+        }
+        h1{
+            position: absolute;
+            right: -500px;
+            transition-duration: 1s;
+            transition-timing-function: cubic-bezier(0.81, 0.51, 0, 0.9);
+        }
+        .wrap:hover .box{
+            left: 0px;
+        }
+        .wrap:hover h1{
+            right: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="box"><img src="img/11.jpg"></div>
+        <h1>按时打算打算打算</h1>
+    </div>
+</body>
+</html>

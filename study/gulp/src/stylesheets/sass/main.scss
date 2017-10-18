@@ -1,0 +1,84 @@
+/* @import 'stylesheets'; */ // 引入另一个scss文件
+
+/* @import 'main.css'; */ // 引入一个css文件
+$n:100px !default;
+$bg:blue;
+$c:#fff;
+#box {
+    width: 500px;
+    height: $n*4;
+    background: $bg;
+    color: $c;
+    // 嵌套选择器
+    ul:nth-child(1) {
+        width: $n/2;
+        li {
+            width: $n/4;
+            margin: {
+                left: 10px;
+                top: 20px;
+            }
+            h1,
+            h2,
+            h3 {
+                font-size: 20px;
+            }
+        }
+    }
+    // 伪类
+    &:hover {
+        color: red;
+    }
+}
+
+.clearFix {
+    &:after {
+        content: '';
+        display: none;
+        clear: both;
+    }
+}
+
+// 单行注释:不会被编译到css文件中
+
+/*多行注释:会被编译到css文件中*/
+
+//混合
+@mixin tranform_1($deg:60deg, $l:100px) {
+    -webkit-transform: rotate($deg) translateX($l);
+    -moz-transform: rotate($deg) translateX($l);
+    -o-transform: rotate($deg) translateX($l);
+    transform: rotate($deg) translateX($l);
+}
+
+.trans {
+    @include tranform_1;
+}
+
+div {
+    @include tranform_1(90deg);
+}
+
+
+/* @for to  变量递增包括shart不包括end(变量必须为整数) */
+
+$d:left;
+@for $i from 1 to 4 {
+    .item-#{$i} {
+        width: 200px*$i;
+        margin-#{$d}: 200px;
+    }
+}
+
+
+/* @for through  变量递增包括shart包括end(变量必须为整数) */
+
+@for $j from 1 through 4 {
+    .item-#{$j} {
+        width: 200px*$j;
+        margin-#{$d}: 200px;
+    }
+}
+
+
+/* @each in  遍历多值变量 */

@@ -1,8 +1,0 @@
-背景图
-  1,背景图重复 background-repeat:repeat;
-  2,x轴重复    background-repeat:repeat-x;
-  3,y轴重复    background-repeat:repeat-y;
-  4,禁止背景图重复 background-repeat:no-repeat;
-background-size:10px 10px;
-  第一个值是:宽
-  第二个值是:高

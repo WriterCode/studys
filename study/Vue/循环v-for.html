@@ -1,78 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title></title>
-	<style type="text/css">
-		p{
 
-		}
-	</style>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+
+    </style>
 </head>
+
 <body>
 
-	<!-- v-for固定格式 site in sites -->
-	<div class="wrap">
-		<p v-for="site in sites" v-html="site.name"></p>
-	</div>
-	<div class="wrap1">
-		<p v-for="value in object" v-html="value"></p>
-	</div>
-	<div class="wrap2">
-		<p v-for="(value1,key) in object1">
-			{{key}} : {{value1}}
-		</p>
-	</div>
-	<div class="wrap3">
-		<p v-for="n in 10" v-html="n"></p>
-	</div>
+    <!-- v-for固定格式 site in sites -->
+    <div class="wrap">
+        <p v-for="site in sites" v-html="site.name"></p>
+    </div>
+    <div class="wrap1">
+        <p v-for="value in object" v-html="value"></p>
+    </div>
+    <div class="wrap2">
+        <p v-for="(value1,key) in object1">
+            {{key}} : {{value1}}
+        </p>
+    </div>
+    <div class="wrap3">
+        <p v-for="n in 10" v-html="n"></p>
+    </div>
 
 </body>
 <script type="text/javascript" src="vue.min.js"></script>
 <script type="text/javascript">
-// v-for 指令需要以 site in sites 形式的特殊语法， sites 是源数据数组并且 site 是数组元素迭代的别名
-new Vue({
-	el:'.wrap',
-	data:{
-		sites:[
-			{ name:'hello'},
-			{ name:'dongshi'},
-			{ name:'school'}
-		]
-	}
-})
+    // v-for 指令需要以 site in sites 形式的特殊语法， sites 是源数据数组并且 site 是数组元素迭代的别名
+    new Vue({
+        el: '.wrap',
+        data: {
+            sites: [{
+                name: 'hello'
+            }, {
+                name: 'dongshi'
+            }, {
+                name: 'school'
+            }]
+        }
+    })
 
-// v-for 可以通过一个对象的属性来迭代数据
-new Vue({
-	el:'.wrap1',
-	data:{
-		object:{
-			name:'东时教育',
-			url:'http//www.dongshi.com',
-			slohan:'大神教学,包教包会!',
-			banji:'1704',
-			zuozhe:'费华枝',
-		}
-	}
-})
+    // v-for 可以通过一个对象的属性来迭代数据
+    new Vue({
+        el: '.wrap1',
+        data: {
+            object: {
+                name: '东时教育',
+                url: 'http//www.dongshi.com',
+                slohan: '大神教学,包教包会!',
+                banji: '1704',
+                zuozhe: '费华枝',
+            }
+        }
+    })
 
-// 也可以提供第二个的参数为键名
-new Vue({
-	el:'.wrap2',
-	data:{
-		object1:{
-			学校:'东时教育',
-			官网:'http//www.dongshi.com',
-			宣言:'大神教学,包教包会!',
-			班级:'1704',
-			姓名:'费华枝',
-		}
-	}
-})
+    // 也可以提供第二个的参数为键名
+    new Vue({
+        el: '.wrap2',
+        data: {
+            object1: {
+                学校: '东时教育',
+                官网: 'http//www.dongshi.com',
+                宣言: '大神教学,包教包会!',
+                班级: '1704',
+                姓名: '费华枝',
+            }
+        }
+    })
 
-// v-for 也可以循环整数
-new Vue({
-	el:'.wrap3',
-})
+    // v-for 也可以循环整数
+    new Vue({
+        el: '.wrap3',
+    })
 </script>
+
 </html>

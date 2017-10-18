@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style type="text/css">
+		.wrap div:nth-child(1){
+			width: 200px;
+			height: 200px;
+			background: orange;
+		}
+		.wrap div:nth-child(2){
+			width: 200px;
+			height: 200px;
+			background: pink;
+			display: none;
+		}
+		.wrap div:nth-child(3){
+			width: 200px;
+			height: 200px;
+			background: yellow;
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<input type="button" name="" value="按钮1" class="btn1" style="background: yellow;">
+	<input type="button" name="" value="按钮2" class="btn1">
+	<input type="button" name="" value="按钮3" class="btn1">
+	<section class="wrap"> 
+		<div>A</div>
+		<div>B</div>
+		<div>C</div>
+	</section>
+	<script type="text/javascript">
+		var btns = document.getElementsByClassName('btn1');
+		// var btn2 = document.getElementsByClassName('btn1')[1];
+		// var btn3 = document.getElementsByClassName('btn1')[2];
+		var divs = document.getElementsByTagName('div');
+		// var div2 = document.getElementsByTagName('div')[2];
+		// var div3 = document.getElementsByTagName('div')[3];
+
+		for(var i = 0;i < 3;i++){
+			// btn[i].index = i --> 自定义名字
+			btns[i].intex = i;
+			btns[i].onclick = function(){
+				for (var j = 0;j < 3;j++){
+					btns[j].style.background = '';
+					divs[j].style.display = 'none';
+				}
+				this.style.background = 'yellow';
+				// divs[this.intex]:代表的点谁就是谁的下标
+				divs[this.intex].style.display = 'block';
+			}
+		}
+		
+			// div1.style.display = 'block';
+			// div2.style.display = 'none';
+			// div3.style.display = 'none';
+			// btn1.style.background = 'yellow';
+			// btn2.style.background = '';
+			// btn3.style.background = '';
+		
+		// btn2.onclick = function(){
+		// 	div1.style.display = 'none';
+		// 	div2.style.display = 'block';
+		// 	div3.style.display = 'none';
+		// 	div2.style.width = '400px';
+		// 	div2.style.height = '400px';
+		// 	btn1.style.background = '';
+		// 	btn2.style.background = 'yellow';
+		// 	btn3.style.background = '';
+		// }
+		// btn3.onclick = function(){
+		// 	div1.style.display = 'none';
+		// 	div2.style.display = 'none';
+		// 	div3.style.display = 'block';
+		// 	btn1.style.background = '';
+		// 	btn2.style.background = '';
+		// 	btn3.style.background = 'yellow';
+		// }
+
+
+	</script>
+</body>
+</html>

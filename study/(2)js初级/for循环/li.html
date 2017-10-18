@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style type="text/css">
+		*{
+			margin:0;
+			padding: 0;
+		}
+		ul{
+			background: #ccc;
+		}
+		li{
+			list-style: none;
+			border:1px solid yellow;
+		}
+	</style>
+</head>
+<body>
+	<ul>
+		<li>我是li1</li>
+		<li>我是li2</li>
+		<li>我是li3</li>
+		<li>我是li4</li>
+		<li>我是li5</li>
+		<li>我是li6</li>
+		<li>我是li7</li>
+		<li>我是li8</li>
+		<li>我是li9</li>
+		<li>我是li10</li>
+		<li>我是li11</li>
+		<li>我是li12</li>
+		<li>我是li13</li>
+		<li>我是li14</li>
+		<li>我是li15</li>
+		<li>我是li16</li>
+		<li>我是li17</li>
+		<li>我是li18</li>
+		<li>我是li19</li>
+		<li>我是li20</li>
+		<li>我是li21</li>
+		<li>我是li22</li>
+		<li>我是li23</li>
+		<li>我是li24</li>
+		<li>我是li25</li>
+		<li>我是li26</li>
+		<li>我是li27</li>
+		<li>我是li28</li>
+		<li>我是li29</li>
+		<li>我是li30</li>
+	</ul>
+	<script type="text/javascript">
+		var list = document.getElementsByTagName('li');
+		var btn = null;
+		for(var i = 0;i < 30;i++){
+			list[i].onclick = function(){
+				if(btn != null){
+				btn.style.background = '';
+			}
+			btn = this;
+			this.style.background = 'orange'
+			}
+
+		}
+		// for(var i = 0;i < 30;i++){
+		// 	list[i].onclick = function(){
+		// 		for(var j = 0;j != i;j++){
+		// 			list[j].style.background = '';
+		// 		}
+		// 		this.style.background = 'orange';
+		// 	}
+		// }
+	</script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style type="text/css">
+		video{
+			width: 500px;
+		}
+		button{
+			width: 500px;
+			height: 50px;
+			background: green;
+			margin-bottom:20px;
+		}
+	</style>
+</head>
+<body>
+	<button>点我获取视频总时长和实时时长</button>
+	<br/>
+	<video src="League+of+Legends+Cinematic++A+Twist+of+Fate.webm" poster="img/64e4e5e97af343c8a016cb04d0cd863b.jpg"></video>
+</body>
+<script type="text/javascript">
+
+	// video.volume
+	
+	// 视频从新加载 video.load();
+
+	// 开始播放视频 video.play();
+
+	// 暂停视频 video.pause();
+
+	// 返回视屏总长度 video.duration;
+	
+	// 返回视频及时进度 video.currentTime;
+
+	// 视频自动结束事件
+	// video.onended = function(){
+		
+	// }
+
+	var video = document.querySelector('video');
+	var btn = document.querySelector('button');
+	btn.onclick = function(){
+		video.play();
+		console.log(video.duration);
+		console.log(video.currentTime);
+	}
+
+	// 自动播放设置 autoplay; 
+	// 视频播放前的图片 poster;
+			
+		
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</html>

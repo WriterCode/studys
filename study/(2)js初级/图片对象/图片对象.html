@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	<div id="wrap"></div>
+	<script type="text/javascript">
+		
+		// 图片对象
+		// var img = document.createElement('img');
+		var img = new Image();
+		img.src = '8.png';
+
+		// 图片加载完毕后执行的函数
+		img.onload = function(){
+			alert(img.clientHeight);
+		}
+
+
+		var wrap = document.querySelector('#wrap');
+		wrap.appendChild(img);
+
+
+
+
+
+
+
+	</script>
+</body>
+</html>

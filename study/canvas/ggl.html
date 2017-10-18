@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>刮刮乐</title>
+    <style>
+        #box {
+            width: 800px;
+            height: 600px;
+            position: relative;
+        }
+        
+        #box>img {
+            width: 800px;
+            height: 600px;
+        }
+        
+        #canvas {
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <img src="02.jpg" alt="">
+        <canvas id="canvas" width="800" height="600"></canvas>
+    </div>
+</body>
+<script>
+    var ctx = document.querySelector('#canvas').getContext('2d');
+    var box = document.querySelector('#box');
+
+    function load() {
+        ctx.clearRect(0, 0, 800, 600);
+        // 背景
+        ctx.beginPath();
+        ctx.fillStyle = 'gray';
+        ctx.rect(0, 0, 800, 600);
+        ctx.fill();
+        ctx.closePath();
+        // 文本
+        ctx.beginPath();
+        ctx.fillStyle = '#000';
+        ctx.font = '120px 宋体';
+        ctx.textAlign = 'center';
+        ctx.fillText('刮刮乐', 400, 330);
+        ctx.closePath();
+    }
+    load();
+
+    function clear(x, y, r) {
+        ctx.globalCompositeOperation = 'destination-out';
+        ctx.beginPath();
+        ctx.arc(x, y, r, 0, Math.PI * 2, true);
+        ctx.fill();
+        ctx.closePath();
+        ctx.globalCompositeOperation = 'source-over';
+    }
+    box.onmousemove = function(e) {
+        var x = e.offsetX;
+        var y = e.offsetY;
+        load();
+        clear(x, y, 50);
+    }
+</script>
+
+</html>

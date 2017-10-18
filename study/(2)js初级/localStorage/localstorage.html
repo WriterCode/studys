@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        // Cookies自然是大家都知道,问题主要就是太小,大概也就5KB的样子,而且IE6 只支持每个域名20个cookies,太少了。优势就是大家都支持,而且支持得还蛮好。很早以前那些禁用cookies的用户也都慢慢的不存在了,就好像以前禁用javascript的用户 不存在了一样。到H5时代,localStorage称为本地存储的新宠,他可以存储5M的资源。
+
+        // 要使用localStorage,首先自然是检测浏览器是否支持本地存储。在HTML5中,本地存 储是一个window的属性,包括localStorage和sessionStorage,从名字应该可以很清楚 的辨认二者的区别,前者是一直存在本地的,后者只是伴随着session,窗口一旦关闭 就没了。二者用法完全相同,这里以localStorage为例.
+
+        // 存储方式
+        localStorage.name = 'feihuazhi';
+        localStorage.age = 18;
+        localStorage['sex'] = 'man';
+        localStorage.setItem('hobby', 'ssss');
+
+
+        //获取方式
+        // localStorage.name
+        // console.log(localStorage.name);
+        // console.log(localStorage.age);
+        // localStorage['sex']
+        // localStorage.getItem('sex')
+
+        // 获取键名
+        var storage = window.localStorage
+        for (var key in storage) {
+            console.log(key);
+        }
+        // window.localStorage.key()
+        for (var i = 0; i < storage.length; i++) {
+            console.log(storage.key(i));
+        }
+
+        // 删除
+        //删除一条
+        // localStorage.removeItem('sex')
+        // 删除所有的
+        // localStorage.clear();
+
+
+        // 兼容
+        if (window.localStorage) {
+
+        }
+    </script>
+</body>
+
+</html>

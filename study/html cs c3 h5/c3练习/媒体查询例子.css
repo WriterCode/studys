@@ -1,8 +1,0 @@
-.wrap section[class^='box']{
-	width: 31%;
-	height: 200px;
-	background:pink;
-}
-.wrap section:nth-child(2n-1){
-	background: yellow;
-}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	<button class="btn1">红</button>
+	<button class="btn2">黄</button>
+	<button class="btn3">蓝</button>
+	<button class="btn4">绿</button>
+	<button class="btn5">黑</button>
+	<script type="text/javascript">
+		var textArr = ['红','黄','蓝','绿','黑'];
+		var colorArr = ['red','yellow','blue','green','black'];
+		var btns = document.getElementsByTagName('button');
+		var randArr = numArr();
+		var c =numArr();
+		for(var i = 0;i < btns.length;i++){
+			btns[i].style.color = colorArr[randArr[i]];
+			btns[i].innerHTML = textArr[c[i]];
+		}
+
+
+		function numArr(){
+			var arr = [];
+			while(arr.length < 5){
+				var bol = true;
+				var num = randomFn(0,4);
+				for(var i = 0;i < arr.length;i++){
+					if(arr[i] == num){
+						bol = false;
+					}
+				}
+				if(bol){
+					arr.push(num);
+				}
+			}
+			return arr;
+		}
+
+
+
+
+
+		function randomFn (min,max) {
+			return parseInt(Math.random() * (max - min + 1) + min);
+		}
+
+
+
+
+
+	</script>
+</body>
+</html>

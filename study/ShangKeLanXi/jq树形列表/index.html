@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <style>
+        #tree_box {
+            width: 180px;
+            border: 1px solid #ccc;
+        }
+        
+        .school>dt {
+            background: skyblue;
+        }
+        
+        .school>dd {
+            display: none;
+        }
+        
+        .grades>dd {
+            display: none;
+            background: yellow;
+        }
+        
+        .grades>dt {
+            background: orange;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="tree_box"></div>
+</body>
+<script src="jquery-1.11.2.min.js"></script>
+<script>
+    $(function() {
+        var json_data = [{
+            name: "北京一中",
+            grade: [{
+                name: "高一",
+                classlist: ['1001', '1002', '1003', '1004', '1005']
+            }, {
+                name: "高二",
+                classlist: ['1021', '1022', '1023', '1024', '1025']
+            }, {
+                name: "高三",
+                classlist: ['1031', '1032', '1033', '1034', '1035']
+            }]
+        }, {
+            name: "北京二中",
+            grade: [{
+                name: "高一",
+                classlist: ['1001', '1002', '1003', '1004', '1005']
+            }, {
+                name: "高二",
+                classlist: ['1021', '1022', '1023', '1024', '1025']
+            }, {
+                name: "高三",
+                classlist: ['1031', '1032', '1033', '1034', '1035']
+            }]
+        }, {
+            name: "北京三中",
+            grade: [{
+                name: "高一",
+                classlist: ['1001', '1002', '1003', '1004', '1005']
+            }, {
+                name: "高二",
+                classlist: ['1021', '1022', '1023', '1024', '1025']
+            }, {
+                name: "高三",
+                classlist: ['1031', '1032', '1033', '1034', '1035']
+            }]
+        }]
+
+        var $tree_box = $('#tree_box');
+        $.each(json_data, function(index, item) {
+            // 创建学校
+            var $school = $('<dl class="school"></dl>').append('<dt>' + item.name + '</dt>');
+            // 创建年级
+            $.each(item.grade, function(index, item) {
+                var $grade = $('<dd></dd>');
+                var $grade_dl = $('<dl class="grades"></dl>').append('<dt>' + item.name + '</dt>')
+                    // 创建班级
+                $.each(item.classlist, function(index, item) {
+                    $grade_dl.append('<dd>' + item + '</dd>');
+                })
+                $grade.append($grade_dl);
+                $school.append($grade);
+            })
+            $tree_box.append($school);
+        })
+        $('.school,.grades').children('dt').click(function() {
+            $(this).siblings('dd').slideToggle();
+        })
+    })
+</script>
+
+</html>

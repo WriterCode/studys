@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+</head>
+
+<body>
+
+</body>
+<script>
+    for (var i = 0; i < 5; i++) {
+        setTimeout(function() {
+            console.log(i);
+        }, 0)
+    }
+    // 结果是五个5
+    // 循环中添加计时器,无论计时器的延迟事件为多少,始终是循环先执行完,之后才执行计时器
+
+    for (var i = 0; i < 5; i++) {
+        (function(n) {
+            setTimeout(function() {
+                console.log(n);
+            }, 0)
+        }(i))
+    }
+    // 结果为0,1,2,3,4
+</script>
+
+</html>

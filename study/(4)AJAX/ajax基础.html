@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>AJAX</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // AJAX(Asynchronous JavaScript and XML)异步的js和xml
+    // 异步(多线程):同一时间点,同时有多个程序在执行,互不影响
+    // 同步(单线程):同一时间点,只有一个程序在执行,其他程序都在排队等候
+
+    // 创建请求对象
+    //IE6以下版本 var xhr = new ActiveXObject('Microsoft.XMLHTTP');
+    var xhr = new XMLHttpRequest();
+    // 拨号
+    // GET(获取方式)
+    // URL(请求的数据的路径)
+    // true(异步) false(同步)
+    xhr.open("GET", "json/data.json", true);
+    // 等待响应
+    xhr.onreadystatechange = function() {
+            //等待状态完成
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                // 获取响应结果
+                var result = xhr.responseText;
+                // document.write(result);
+                var o_result = JSON.parse(result);
+                console.log(result);
+                console.log(o_result)
+            }
+        }
+        //POST请求发送数据的位置
+    xhr.send(null);
+</script>
+
+</html>
