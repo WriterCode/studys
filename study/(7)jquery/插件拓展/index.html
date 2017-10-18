@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+</head>
+
+<body>
+    <div id="box">aaaaaaa</div>
+    <div id="box1" style="background:blue;">bbbbbbb</div>
+</body>
+<script src="../jquery-1.11.2.min.js"></script>
+<script>
+    // 方法拓展(对jquery核心函数拓展)
+    $.extend({
+        minNumber: function(a, b) {
+            return a > b ? b : a;
+        },
+        maxNumber: function(a, b) {
+            return a > b ? a : b;
+        }
+    })
+    var n1 = $.minNumber(2, 3);
+    var n2 = $.maxNumber(2, 3);
+    console.log(n1);
+    console.log(n2);
+
+    /*********拓展jq dom对象集合上的方法*********/
+    // $.fn.extend({
+    //     plugin1: function() {
+    //         this.css('background', 'blue');
+    //         this.css('font-size', '20px');
+    //         // 谁调用this指向谁
+    //         return this;
+    //     },
+    //     plugin2: function() {
+    //         this.css('background', 'pink');
+    //         return this;
+    //     }
+    // })
+    /****一次只能写一个插件****/
+    // $.fn.plugin1 = function() {
+    //     this.css('background', 'blue');
+    //     this.css('font-size', '20px');
+    //     // 谁调用this指向谁
+    //     return this;
+    // }
+    // $('#box').plugin1().addClass('aa');
+    // $('#box1').plugin2();
+
+    /*******保证在自执行函数内部$代表的是jquery******/
+    (function($) {
+        $.fn.extend({
+            plugin1: function(opts) {
+                // 设置默认值
+                var settings = {
+                        w: 200,
+                        h: 200
+                    }
+                    // 合并自定义参数和默认值
+                $.extend(settings, opts);
+                this.css({
+                        width: settings.w,
+                        height: settings.h,
+                        background: settings.bg
+                    })
+                    // 返回当前调用此方法的jq dom对象集合
+                return this;
+            }
+        })
+    })(jQuery);
+    $('#box1').plugin1({
+        w: 100,
+        h: 200,
+        bg: 'yellow'
+    });
+</script>
+
+</html>

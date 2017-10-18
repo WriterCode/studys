@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>动画</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        #block {
+            width: 200px;
+            height: 200px;
+            background: yellow;
+            /* display: none; */
+            /* opacity: 0.1; */
+        }
+    </style>
+</head>
+
+<body>
+    <div id="block"></div>
+</body>
+<script src="../jquery-1.11.2.min.js"></script>
+<script>
+    $(function() {
+        var bol = true;
+        $('#block').hide(1000);
+        $(document).on('click', function() {
+            // 显示隐藏
+            // $('#block').hide();
+            // $('#block').show(1000, function() {
+            //     $(this).css('background', 'skyblue');
+            // });
+            // 显隐切换
+            // $('#block').toggle(1000, function() {
+            //     $(this).css('background', 'skyblue');
+            // });
+
+            // 向上收起
+            // $('#block').slideUp();
+            // 向下展开
+            // $('#block').slideDown();
+            // 上下切换
+            // $('#block').slideToggle();
+
+            // 淡入
+            // $('#block').fadeIn();
+            // 淡出
+            // $('#block').fadeOut();
+            // 淡入淡出切换
+            // $('#block').fadeToggle();
+            // 淡入把所有匹配元素的不透明度以渐进方式调整到指定的不透明度
+            // $('#block').fadeTo();
+
+            // animate():自定义动画,智能改变带数值得属性
+            // $('#block').animate({
+            //     width: 100,
+            //     height: 100,
+            //     opcaity: 0.5
+            // }, 1000, function() {
+            //     console.log('完成');
+            // })
+
+            /***********延迟************/
+            // delay():延迟动画执行开始时间
+            // $('#block').delay(5000).slideUp();
+
+            /*****stop():*****/
+            // 当不写参数或只写一个true时,表示立即停止当前动画,开始下一个动画
+            // 当填写两个true时,表示立即完成当前动画,开始下一个动画
+            // if (bol) {
+            //     $('#block').stop().hide(1000);
+            //     bol = !bol;
+            // } else {
+            //     $('#block').stop().show(1000);
+            //     bol = !bol;
+            // }
+
+            /*******finish()********/
+            // 立即完成所有动画
+            // $('#block').finish();
+
+        })
+    })
+</script>
+
+</html>

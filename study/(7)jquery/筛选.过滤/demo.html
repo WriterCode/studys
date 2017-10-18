@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>筛选/过滤</title>
+</head>
+
+<body>
+    <ul id="uls">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li class="lis">5</li>
+        <li>6</li>
+        <li>
+            <p>7-1</p>
+            <p>7-1</p>
+        </li>
+        <li>8</li>
+        <li>9</li>
+        <li class="lis">0</li>
+    </ul>
+</body>
+<script src="../jquery-1.11.2.min.js"></script>
+<script>
+    $(function() {
+        // eq(index || -index)通过下表过滤出具体某一个元素
+        $('#uls>li').eq(3).css('background', 'red');
+
+        $('#uls>li').first().css('background', 'red'); // 第一个
+        $('#uls>li').last().css('background', 'red'); // 最后一个
+
+        // 检测元素有没有某个类名,返回布尔值
+        console.log($('#uls>li').last().hasClass('lis'));
+
+        // filter()过滤
+        $('#uls>li').filter('.lis').css('color', 'orange');
+        $('#uls>li').filter(function() {
+            return $('p', this).size() == 2;
+        }).css('color', 'skyblue');
+
+        // not()非
+        $('#uls>li').not('.lis').css('font-size', '20px');
+        $('#uls>li').not(function() {
+            return $('p', this).size() == 2;
+        }).css('height', '40px');
+
+        // slice(start,end):end可写可不写/截取
+        $('#uls>li').slice(2, 4).css('border', '1px solid #ccc');
+    })
+</script>
+
+</html>

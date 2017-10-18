@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>工具函数</title>
+</head>
+
+<body>
+
+</body>
+<script src="../jquery-1.11.2.min.js"></script>
+<script>
+    $(function() {
+        // $.each(arr,function(index,val){}):遍历数组和对象
+        var arr = [3, 4, 6, 9, 33, 7, 11];
+        $.each(arr, function(index, val) {
+            console.log(val);
+        })
+
+        var obj = {
+            name: '123',
+            job: 'html'
+        }
+        $.each(obj, function(key, val) {
+            console.log(val);
+        })
+
+        // extend():将一个或者多个对象的属性合并到一个对象里面
+        var empty = {};
+        var o1 = {
+            name: 'yy',
+            age: 18
+        };
+        var o2 = {
+            name: 'xx',
+            job: 'html'
+        }
+        var o3 = {
+            age: 19,
+            class: '1704'
+        }
+        var n_o1 = $.extend(empty, o1, o2, o3);
+        console.log(n_o1);
+
+        // $.grep(arr,fn,bol):过滤数组
+        // 第三个参数默认为false,返回回调函数返回为true的元素
+        // 第三个参数为true,返回回调函数返回为false的元素
+        var arr1 = [1, 2, 3, 4, 5, 6];
+        var n_arr = $.grep(arr1, function(n) {
+            return n > 1;
+        }, true)
+        console.log(n_arr);
+
+        // $.map(arr,fn):数组转换
+        var arr2 = [1, 2, 3];
+        var n_arr1 = $.map(arr2, function(n) {
+            return n * 2;
+        })
+        console.log(n_arr1);
+        var n_arr2 = $.map(arr2, function(n) {
+            return [n, n + 1];
+        })
+        console.log(n_arr2);
+
+        // $.inArray():查找元素在数组中的位置返回下表
+        var arr3 = [1, 2, 3, 3, 4, 5, 6, 6];
+        console.log($.inArray(2, arr3))
+
+        // $.mergr():合并两个数组,返回新的数组,且改变第一个数组
+        var arr_1 = [1, 2, 3];
+        var arr_2 = ['a', 'b', 'c'];
+        var n_arrs = $.merge(arr_1, arr_2);
+        console.log(n_arrs);
+
+        // $.unique():数组去重
+        var a = [1, 2, 3, 4, 3, 2, 1];
+        var a1 = $.unique(a);
+        console.log(a1);
+
+        // $.parseJSON():将json格式的字符串转换为json对象
+        var o_str = '{"name":"yy","age":18}';
+        var obj = $.parseJSON(o_str);
+        console.log(obj);
+    })
+</script>
+
+</html>

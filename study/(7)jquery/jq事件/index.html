@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>事件</title>
+    <style>
+        #block {
+            width: 200px;
+            height: 200px;
+            background: orange;
+            overflow: hidden;
+        }
+        
+        #inner {
+            width: 100px;
+            height: 100px;
+            background: pink;
+            margin: 50px auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="user_box">
+        <input type="text" id="username">
+    </div>
+    <div id="btn">按钮</div>
+    <div id="block">
+        <div id="inner"></div>
+    </div>
+</body>
+<script src="../jquery-1.11.2.min.js"></script>
+<script>
+    $(document).ready(function() {
+        // $('#username').blur(function() {
+        //     alert(1)
+        // })
+
+        // $('#username').focus(function() {
+        //     console.log(1)
+        // })
+
+        // focusin:可以绑定父元素,通过父元素检测到子元素的变动
+        // $('#user_box').focusin(function() {
+        //     console.log(1);
+        // })
+
+        // $(window).unload(function() {
+        //     console.log(1)
+        // })
+
+        // $('#btn').click('hello', function(e) {
+        //     alert(e.data)
+        // })
+
+
+        /****事件切换****/
+        // hover(fn,fn):第一个参数是mouseenter事件,第二个参数时mouseleave事件,第二个参数可不填,不填的时候只有移入事件
+        // $('#block').hover(function() {
+        //     console.log(1)
+        // }, function() {
+        //     console.log(2)
+        // })
+
+        /***********************************************/
+        // on():给一个元素绑定多个事件,事件的处理函数都一样的情况下使用
+        // 四个参数
+        // 1,事件:可以传多个事件
+        // 2,选择器:不传在本身触发事件,传在传的元素上触发(事件委托原理)
+        // 3,data:e.data取到传的值
+        // 4,执行函数
+        // this指向触发事件的元素
+        // $('#block').on('click mouseleave mouseenter', '#inner', {
+        //     name: 'yy'
+        // }, function(e) {
+        //     console.log(1);
+        //     console.log(e.data.name);
+        //     console.log($(this));
+        // })
+
+        /****事件委托****/
+        // delegate('选择器','事件',data,fn):和on类似,区别写的位置不同
+        // $('#block').delegate('#inner', 'click mouseenter', function() {
+        //     console.log($(this));
+        // })
+        // undelegate('选择器','事件',fn):删除由 delegate() 方法添加的一个或多个事件处理程序
+        // $('#block').undelegate('#inner', 'mouseenter');
+
+        /****移除事件****/
+        // off():可以移除on添加的和普通的事件,传什么事件移除什么事件,不传移除全部事件
+        // $('#btn').click(function(e) {
+        //     alert(1)
+        // })
+        // $('#btn').off('click');
+
+        // $('#block').mouseenter(function() {
+        // 执行点击事件前先把以前的点击事件清除掉
+        //     $('#inner').off('click').click(function() {
+        //         alert(1);
+        //     })
+        // })
+
+        // bind('事件',data,fn):给元素添加一个或多个事件(注:没有事件委托和事件代理的功能)
+        // unblind():传什么事件移除什么事件,不传移除全部事件
+
+        // one():对元素绑定一个或多个一次性的事件
+        $('#block').one('click', function() {
+            alert(1);
+        })
+
+    })
+</script>
+
+</html>

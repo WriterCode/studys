@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jquery</title>
+</head>
+
+<body>
+    <div id="box">
+        <div></div>
+    </div>
+    <div id="box1"></div>
+    <input type="text">
+</body>
+<script src="../jquery-3.2.1.min.js"></script>
+<script>
+    // html
+    $('#box div').html('东时教育');
+
+    // text
+    $('#box1').text('hello world');
+
+    // val
+    $('input').val('你好');
+
+    // html与text的区别
+    console.log($('#box').html()); // <div>东时教育</div>
+    console.log($('#box').text()); // 东时教育
+
+    // css(),设置元素的行内样式,获取元素的表现样式
+    console.log($('#box').css('width'));
+</script>
+
+</html>

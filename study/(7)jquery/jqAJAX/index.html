@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>AJAX</title>
+</head>
+
+<body>
+    <div id="box"></div>
+</body>
+<script src="../jquery-1.11.2.min.js"></script>
+<script>
+    $(function() {
+        // $.ajax({
+        //     type: "get",
+        //     url: "json/data.json",
+        //     dataType: "text",
+        //     success: function(result) {
+        //         console.log(result);
+        //     },
+        //     error: function(XMLhttpRequest) {
+        //         console.log(XMLhttpRequest);
+        //     }
+        // })
+
+        /*************load('url 选择器',data,fn)***************/
+        // $('#box').load('header.html #header_box', function() {
+        //     // fn();
+        // })
+
+        /**********get('url',data,fn,[type])***********/
+        // 执行get请求
+        // $.get('json/data.json', {
+        //     id: 'aaa'
+        // }, function(r) {
+        //     console.log(r);
+        // })
+        // $.get('php/do.php', {
+        //     city: "北京"
+        // }, function(r) {
+        //     console.log(r);
+        // }, 'json')
+
+        /**********getJSON('url',data,fn)***********/
+        // $.getJSON('json/data.json', function(r) {
+        //     console.log(r);
+        // })
+        // $.getJSON('php/do.php', {
+        //     city: "北京"
+        // }, function(r) {
+        //     console.log(r);
+        // })
+
+        // $.post('php/handle.php', {
+        //     userName: "yy",
+        //     password: "123"
+        // }, function(r) {
+        //     console.log(r);
+        // })
+
+        /*********跨域*********/
+        // jsonp
+        $.ajax({
+            type: "get",
+            url: 'http://api.jisuapi.com/weather/query?appkey=dd87100f70330bf1',
+            data: {
+                city: "北京"
+            },
+            dataType: 'jsonp',
+            success: function(r) {
+                console.log(r);
+            }
+        })
+
+    })
+</script>
+
+
+</html>

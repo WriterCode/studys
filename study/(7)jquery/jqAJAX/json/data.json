@@ -1,0 +1,13 @@
+[{
+        "name": "yy",
+        "age": 18,
+        "sex": "man",
+        "class": 1704
+    },
+    {
+        "name": "qq",
+        "age": 21,
+        "sex": "woman",
+        "class": 1702
+    }
+]

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>位置尺寸</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        #outer {
+            width: 300px;
+            height: 300px;
+            background: red;
+            overflow: hidden;
+            margin: 500px 0 0 500px;
+            position: relative;
+            border: 50px solid orange;
+        }
+        
+        #inner {
+            width: 100px;
+            height: 100px;
+            background: blue;
+            margin: 100px 100px;
+            padding: 10px;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="outer">
+        <div id="inner"></div>
+    </div>
+</body>
+<script src="../../jquery-1.11.2.min.js"></script>
+<script>
+    $(function() {
+        var $inner = $('#inner');
+        // offset():返回元素在页面上的绝对位置
+        var $offset = $inner.offset();
+        console.log($offset.left)
+
+        // 返回元素定位之后设置的left top值
+        var $position = $inner.position();
+        console.log($position);
+
+        // scrollTop():无参数时为获取滚动条位置,有参数为设置滚动条位置
+        console.log($('body').scrollTop())
+        $(document).click(function() {
+            $('body').scrollTop(50);
+        })
+
+        // width()/height():无参数时为获取宽高,有参数为设置宽高
+        console.log($inner.height())
+        $(document).click(function() {
+            $inner.height(50);
+        })
+
+        //innerHeight()/innerWidth():获取元素宽高 相当于原生clientWidth
+        console.log($inner.innerWidth());
+
+        // outerWidth()/outerHeight(bol):获取元素尺寸,参数默认为false(width+padding+border) true(width+padding+border+magin)
+        console.log($inner.outerWidth(true));
+    })
+</script>
+
+</html>

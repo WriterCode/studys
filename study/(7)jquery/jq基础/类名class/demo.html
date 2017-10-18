@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>类名class</title>
+</head>
+
+<body>
+    <div id="box"></div>
+</body>
+<script src="../../jquery-1.11.2.min.js"></script>
+<script>
+    // addClass()添加类名
+    $('#box').addClass('box1').addClass('box2');
+    $('#box').addClass('box3 box4');
+
+    // removeClass()传谁移除谁,不传全部移除
+    // $('#box').removeClass('box1 box2');
+    // 移除类名
+    // $('#box').removeClass('class');
+
+    // toggleClass()切换类名
+    $(document).click(function() {
+        $('#box').toggleClass('box1');
+    })
+
+    $('#div').addClass(function() {
+        return 'item_' + $(this).index();
+    })
+</script>
+
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jq对象访问</title>
+</head>
+
+<body>
+    <ul id="oUl">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li id="li1">5</li>
+        <li>6</li>
+        <li>7</li>
+        <li>8</li>
+        <li>9</li>
+        <li><input type="checkbox" id="sex"></li>
+    </ul>
+</body>
+<script src="../jquery-1.11.2.min.js"></script>
+<!-- <script src="../jquery-3.2.1.min.js"></script> -->
+<script>
+    $(function() {
+        // 枚举元素集合,第二个参数代表每个原生DOM对象
+        // $('#oUl>li').each(function(index, item) {
+        // console.log(index)
+        // console.log(item)
+        // $(item).css('color', 'red');
+        // })
+
+        // size():返回长度
+        console.log($('#oUl>li').size());
+
+        // length:返回长度
+        console.log($('#oUl>li').length);
+
+        // selector:返回选择器
+        console.log($('#oUl>li').selector);
+
+        // get(index)获取jq元素集合中某个元素(原生DOM)
+        console.log($('#oUl').get(0));
+
+        // index()
+        // 不传选择器,表示当前元素在其兄弟元素中所处的位置(下表)
+        // 传选择器,表示当前元素在该选择器选中的元素集合中的位置(下表)
+        console.log($('#li1').index('#oUl>li'))
+
+        // data('name','value');
+        $('#li1').data('username', 'itdongshi');
+        $('#li1').data('username1', 'itdongshi1');
+        $('#li1').data('username2', 'itdongshi2');
+        // 不传任何参数时表示获取存在元素上的所有数据
+        var $d = $('#li1').data();
+        console.log($d);
+        var $d1 = $('#li1').data('username');
+        console.log($d1);
+
+        // removeData()移除存储在元素上的数据:不传参数时移除全部,传参数时移除对应的某一条数据
+        $('#li1').removeData(['username', 'username1']);
+        var $d2 = $('#li1').data();
+        console.log($d2);
+
+    })
+
+
+    $(function() {
+        // 属性
+        $('#li1').attr('name', 'yy').css('background', 'red'); // setAttribute()
+        console.log($('#li1').attr('name')); //getAttribute()
+        // removeAttr()移除通过attr()方式添加的属性
+        $('#li1').removeAttr('name').css('color', 'red');
+
+        // prop() 设置,获取元素的内置属性(例如表单控件的checked属性)
+        $('#sex').prop('checked', true);
+        // removeProp()
+        $('#sex').removeProp('checked');
+    })
+</script>
+
+</html>

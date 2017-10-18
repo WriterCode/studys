@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>文档处理</title>
+</head>
+
+<body>
+    <div id="box">
+        <p>nihsidsds1</p>
+        <p>nihsidsds2</p>
+        <p>nihsidsds3</p>
+    </div>
+    <div class="inner">11</div>
+    <div>原生js复制元素</div>
+</body>
+<script src="../jquery-1.11.2.min.js"></script>
+<script>
+    $(function() {
+        var $div = $('<div><span>1234</span></div>').css('color', 'blue');
+        var $box = $('#box');
+
+        /****内部插入****/
+        // append():在容器内部追加新生元素
+        $box.append($div);
+        // appendTo():把新生元素追加到容器元素
+        $div.appendTo($box);
+
+        // prepend():永远加在第一位
+        $box.prepend($div);
+        // prependTo():
+        $div.prependTo($box);
+
+        /****外部插入****/
+        // after():在目标元素之后创建新的元素
+        $box.after($div);
+        // insertAfter():把新生元素插入到目标元素之后
+        $div.insertAfter($box);
+
+        // before():在目标元素之前创建新的元素
+        $box.before($div);
+        // insertBefore():把新生元素插入到目标元素之前
+        $div.before($box);
+
+        /****替换****/
+        // replaceWidth():把选中的元素替换成某个元素
+        // $box.children('p').first().replaceWith('<b></b>');
+        // $box.children('p').first().replaceWith($box.children('p').last());
+        $box.children('p').first().replaceWith(function() {
+            return $(this).siblings('p').eq(-1);
+        })
+
+        // replaceAll():
+        $div.replaceAll($box.children('p').last());
+
+        /****删除****/
+        // 清空匹配元素的文档内容
+        // $box.empty();
+
+        // remove():删除匹配的元素
+        $box.children('p').last().remove();
+
+        /****克隆复制****/
+        $('.inner').click(function() {
+            alert(1);
+        })
+
+        // clone(bol):复制元素,默认参数为false:不复制事件,true:表示复制事件
+        // var $inner_1 = $('.inner').clone();
+        // $('body').append($inner_1);
+
+
+
+        /****原生复制节点****/
+        // cloneNode(bol):复制元素:默认参数false:不复制元素内的文档内容,true:复制元素内的文档内容
+        var last_div = document.getElementsByTagName('div')[3];
+        var n_last_div = last_div.cloneNode(true);
+        document.body.appendChild(n_last_div);
+    })
+</script>
+
+</html>
